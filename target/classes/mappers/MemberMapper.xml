@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.MemberMapper">
+	<insert id="createMember" parameterType="MemberVO">
+		insert into tbl_member (username, birthday, phone)
+		values (#{username}, #{birthday}, #{phone})
+	</insert>
+	<select id="readMember" resultType="MemberVO">
+		select * from tbl_member
+		 where userno = #{userno}
+	</select>
+	<select id="list" resultType="MemberVO">
+		select * from tbl_member
+	</select>
+	<update id="updateMember" parameterType="MemberVO">
+		update tbl_member
+		   set phone=#{phone}, email=#{email}
+		 where userno=#{userno}
+	</update>
+</mapper>
