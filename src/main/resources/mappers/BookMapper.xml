@@ -10,7 +10,8 @@
 		 where bookno = #{bookno}
 	</select>
 	<select id="list" resultType="BookVO">
-		select * from tbl_book
+		select * from tbl_book 
+		 order by bookno desc
 	</select>
 	<delete id="deleteBook" parameterType="BookVO">
 		delete from tbl_book
