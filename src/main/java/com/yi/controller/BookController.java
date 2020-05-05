@@ -8,31 +8,33 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.yi.domain.MemberVO;
-import com.yi.service.MemberService;
+import com.yi.domain.BookVO;
+import com.yi.service.BookService;
 
 @Controller
-public class MemberController {
-
-	@Autowired
-	MemberService service;
+@RequestMapping("/book/*")
+public class BookController {
 	
-	@RequestMapping(value="/member/register", method=RequestMethod.GET)
+	@Autowired
+	BookService service;
+	
+	@RequestMapping(value="register", method=RequestMethod.GET)
 	public String registerGet() {
-		return "/member/register";
+		return "book/register";
 	}
 	
-	@RequestMapping(value="/member/register", method=RequestMethod.POST)
-	public String registerPost(MemberVO vo) throws Exception {
+	@RequestMapping(value="register", method=RequestMethod.POST)
+	public String registerPost(BookVO vo) throws Exception {
 		service.create(vo);
 		
-		return "redirect:/member/list";
+		return "redirect:/book/list";
 	}
 	
-	@RequestMapping(value="member/list", method=RequestMethod.GET)
+	@RequestMapping(value="list", method=RequestMethod.GET)
 	public String list(Model model) throws Exception {
-		List<MemberVO> list = service.list();
+		List<BookVO> list = service.list();
 		model.addAttribute("list", list);
-		return "/member/list";
+		return "/book/list";
 	}
+	
 }

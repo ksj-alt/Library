@@ -12,7 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-	.navbar-inverse { background-color: #221000; position:relative;}
+	.navbar-inverse { background-color: #221000; position: relative;}
 .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #221000}
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #301602}
 .dropdown-menu { background-color: #FFFFFF}
@@ -43,9 +43,7 @@ footer{
 		text-align: center;
 		font-size:12px;
 		color:#5D5D5D;
-		position: absolute;
-		left:0;
-		bottom:0;
+		margin-top:100px;
 	} 
 </style>
 </head>
@@ -107,8 +105,8 @@ footer{
 			<li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">도서관리 <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="#">신규도서등록</a></li>
-	          <li><a href="#">도서목록확인</a></li>
+	          <li><a href="${pageContext.request.contextPath }/book/register">신규도서등록</a></li>
+	          <li><a href="${pageContext.request.contextPath }/book/list">도서목록확인</a></li>
 	        </ul>
 	      </li>
        <li class="dropdown">

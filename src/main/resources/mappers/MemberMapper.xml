@@ -17,4 +17,8 @@
 		   set phone=#{phone}, email=#{email}
 		 where userno=#{userno}
 	</update>
+	<delete id="deleteMember" parameterType="MemberVO">
+		delete from tbl_member
+		where userno=#{userno}
+	</delete>
 </mapper>
