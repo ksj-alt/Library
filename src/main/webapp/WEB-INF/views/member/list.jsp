@@ -7,18 +7,17 @@
 		background-color: #F6F6F6;
 	}
 </style>
-
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 	$(function(){
-		$("#modify").click(function(){
+		$(".modify").click(function(){
 			var no = $(this).attr("data-userno");
 			location.href="${pageContext.request.contextPath }/member/modify?userno="+no;
 		})
 		
-		$("#remove").click(function(){
-			var no = $(this).attr("data-userno");
+		$(".remove").click(function(){
 			if(confirm("정말로 삭제하시겠습니까?")){
-				location.href="${pageContext.request.contextPath }/member/remove?userno="+no;
+				location.href="${pageContext.request.contextPath }/member/remove?userno="+${member.userno };
 			}
 		})
 	})
@@ -39,7 +38,6 @@
 					<th>생년월일</th>
 					<th>전화번호</th>
 					<th>이메일</th>
-					<th style="width:120px;"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -47,14 +45,10 @@
 					<c:forEach var="member" items="${list }">
 						<tr>
 							<td>${member.userno }</td>
-							<td>${member.username }</td>
+							<td><a href="${pageContext.request.contextPath }/member/read?userno=${member.userno}" style="color:#353535">${member.username }</a></td>
 							<td>${member.birthday }</td>
 							<td>${member.phone }</td>
 							<td>${member.email }</td>
-							<td style="font-size:12px;">
-								<button id="modify" data-userno=${member.userno }>수정</button> /
-								<button id="remove" data-userno=${member.userno }>삭제</button>
-							</td>
 						</tr>
 					</c:forEach>
 				</tr>

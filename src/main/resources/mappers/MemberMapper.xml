@@ -6,7 +6,7 @@
 		values (#{username}, #{birthday}, #{phone})
 	</insert>
 	<select id="readMember" resultType="MemberVO">
-		select * from tbl_member
+		select * from tbl_member 
 		 where userno = #{userno}
 	</select>
 	<select id="list" resultType="MemberVO">

@@ -36,9 +36,30 @@ public class MemberController {
 		return "/member/list";
 	}
 	
+	@RequestMapping(value="member/read", method=RequestMethod.GET)
+	public String read(int userno, Model model) throws Exception {
+		MemberVO vo = service.readByNo(userno);
+		model.addAttribute("member", vo);
+		return "/member/read";
+	}
+	
 	@RequestMapping(value="member/remove", method=RequestMethod.GET)
 	public String remove(int userno) throws Exception{
 		service.delete(userno);
 		return "redirect:/member/list";
+	}
+	
+	@RequestMapping(value="member/modify", method=RequestMethod.GET)
+	public String modify(int userno, Model model) throws Exception {
+		MemberVO vo = service.readByNo(userno);
+		model.addAttribute("member", vo);
+		return "/member/modify";
+	}
+	
+	@RequestMapping(value="member/modify", method=RequestMethod.POST)
+	public String update(MemberVO vo, Model model) throws Exception {
+		service.update(vo);
+		model.addAttribute("member", vo);
+		return "/member/read";
 	}
 }
