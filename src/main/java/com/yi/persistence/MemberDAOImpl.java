@@ -37,4 +37,9 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.update(namespace + "updateMember", vo);  
 	}
 
+	@Override
+	public void delete(int userno) throws Exception {
+		sqlSession.delete(namespace + "deleteMember", userno);
+	}
+
 }

@@ -35,4 +35,10 @@ public class MemberController {
 		model.addAttribute("list", list);
 		return "/member/list";
 	}
+	
+	@RequestMapping(value="member/remove", method=RequestMethod.GET)
+	public String remove(int userno) throws Exception{
+		service.delete(userno);
+		return "redirect:/member/list";
+	}
 }
