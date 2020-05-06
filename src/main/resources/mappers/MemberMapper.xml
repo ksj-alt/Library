@@ -10,11 +10,16 @@
 		 where userno = #{userno}
 	</select>
 	<select id="list" resultType="MemberVO">
-		select * from tbl_member
+		select * from tbl_member 
+		 order by userno desc
 	</select>
 	<update id="updateMember" parameterType="MemberVO">
 		update tbl_member
 		   set phone=#{phone}, email=#{email}
 		 where userno=#{userno}
 	</update>
+	<delete id="deleteMember" parameterType="MemberVO">
+		delete from tbl_member
+		where userno=#{userno}
+	</delete>
 </mapper>

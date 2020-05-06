@@ -23,6 +23,7 @@
 					<th>생년월일</th>
 					<th>전화번호</th>
 					<th>이메일</th>
+					<th style="width:120px;"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,6 +35,7 @@
 							<td>${member.birthday }</td>
 							<td>${member.phone }</td>
 							<td>${member.email }</td>
+							<td style="font-size:12px;"><button>수정</button> / <button>삭제</button></td>
 						</tr>
 					</c:forEach>
 				</tr>

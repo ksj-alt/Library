@@ -16,15 +16,15 @@
 					<form role="form" action="register" method="post">
 						<div class="box-body">
 							<div class="form-group">
-								<label>성명</label>
-								<input type="text" name="userno" class="form-control" placeholder="ex) 홍길동">
+								<label>성명<span style="color:red;"> * </span></label>
+								<input type="text" name="username" class="form-control" placeholder="ex) 홍길동">
 							</div>
 							<div class="form-group">
-								<label>생년월일</label>
+								<label>생년월일<span style="color:red;"> * </span></label>
 								<input type="text" name="birthday" class="form-control" placeholder="ex) 20200504">
 							</div>
 							<div class="form-group">
-								<label>전화번호</label>
+								<label>전화번호<span style="color:red;"> * </span></label>
 								<input type="text" name="phone" class="form-control" placeholder="ex) 010-0000-0000">
 							</div>
 							<div class="form-group">
@@ -32,7 +32,7 @@
 								<input type="text" name="email" class="form-control" placeholder="ex) test@naver.com">
 							</div>
 						</div><br>
-						<div class="box-footer" style="padding-left:160px;">  
+						<div class="box-footer"  style="text-align:center;">  
 							<button type="submit" class="btn btn-warning">등록</button>
 						</div>
 					</form>
