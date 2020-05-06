@@ -29,4 +29,8 @@ public class MemberService {
 	public void update(MemberVO vo) throws Exception {
 		dao.update(vo);
 	}
+	
+	public void delete(int userno) throws Exception {
+		dao.delete(userno);
+	}
 }
