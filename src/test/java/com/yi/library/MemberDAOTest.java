@@ -21,7 +21,7 @@ public class MemberDAOTest {
 		System.out.println(dao);
 	}
 	
-//	@Test
+	@Test
 	public void testInsert() throws Exception {
 		MemberVO vo = new MemberVO();
 		vo.setUsername("권수진");
@@ -40,7 +40,7 @@ public class MemberDAOTest {
 		dao.list();
 	}
 	
-	@Test
+//	@Test
 	public void testUpdate() throws Exception {
 		MemberVO vo = new MemberVO();
 		vo.setUserno(1);

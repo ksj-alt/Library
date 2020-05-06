@@ -39,7 +39,7 @@ section{
 footer{
 		height:50px;
 		width:100%;
-		background-color:#FFFED7;
+		background-color:#FFFFE5; 
 		text-align: center;
 		font-size:12px;
 		color:#5D5D5D;
