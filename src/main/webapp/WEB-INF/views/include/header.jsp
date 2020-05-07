@@ -106,7 +106,7 @@ footer{
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">도서관리 <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
 	          <li><a href="${pageContext.request.contextPath }/book/register">신규도서등록</a></li>
-	          <li><a href="${pageContext.request.contextPath }/book/list">도서목록확인</a></li>
+	          <li><a href="${pageContext.request.contextPath }/book/listPage">도서목록확인</a></li>
 	        </ul>
 	      </li>
        <li class="dropdown">
@@ -120,7 +120,7 @@ footer{
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">회원관리 <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
 	          <li><a href="${pageContext.request.contextPath }/member/register">신규회원등록</a></li>
-	          <li><a href="${pageContext.request.contextPath }/member/list">회원목록확인</a></li>
+	          <li><a href="${pageContext.request.contextPath }/member/listPage">회원목록확인</a></li>
 	        </ul>
 	      </li>
       </ul>

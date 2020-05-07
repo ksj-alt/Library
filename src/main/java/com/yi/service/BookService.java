@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yi.domain.BookVO;
+import com.yi.domain.Criteria;
 import com.yi.persistence.BookDAO;
 
 @Service
@@ -26,7 +27,19 @@ public class BookService {
 		return dao.list();
 	}
 	
-	public void delete(BookVO vo) throws Exception {
-		dao.delete(vo);
+	public void update(BookVO vo) throws Exception {
+		dao.update(vo);
+	}
+	
+	public void delete(int bookno) throws Exception {
+		dao.delete(bookno);
+	}
+	
+	public List<BookVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+	
+	public int totalCount() throws Exception {
+		return dao.totalCount();
 	}
 }

@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.yi.domain.BookVO;
+import com.yi.domain.Criteria;
 import com.yi.domain.MemberVO;
 
 @Repository
@@ -39,6 +41,26 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public void delete(int userno) throws Exception {
 		sqlSession.delete(namespace + "deleteMember", userno);
+	}
+
+	@Override
+	public List<MemberVO> listPage(int page) throws Exception {
+		if(page < 0) {
+			page = 1;
+		}
+		page = (page -1) * 10;
+		
+		return sqlSession.selectList(namespace + "listPage", page);
+	}
+
+	@Override
+	public List<MemberVO> listCriteria(Criteria cri) throws Exception {
+		return sqlSession.selectList(namespace + "listCriteria", cri);
+	}
+
+	@Override
+	public int totalCount() throws Exception {
+		return sqlSession.selectOne(namespace + "totalCount");
 	}
 
 }

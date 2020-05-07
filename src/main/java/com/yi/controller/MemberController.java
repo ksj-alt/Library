@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.yi.domain.Criteria;
 import com.yi.domain.MemberVO;
+import com.yi.domain.PageMaker;
 import com.yi.service.MemberService;
 
 @Controller
@@ -61,5 +63,19 @@ public class MemberController {
 		service.update(vo);
 		model.addAttribute("member", vo);
 		return "/member/read";
+	}
+	
+	@RequestMapping(value="member/listPage", method=RequestMethod.GET)
+	public String listPage(Criteria cri, Model model) throws Exception {
+		List<MemberVO> list = service.listCriteria(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.totalCount());
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "member/listPage";
 	}
 }

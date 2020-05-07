@@ -13,8 +13,25 @@
 		select * from tbl_book 
 		 order by bookno desc
 	</select>
+	<update id="updateBook" parameterType="BookVO">
+		update tbl_book
+		   set bookname=#{bookname}, author=#{author}, publisher=#{publisher},
+		   		price=#{price}, page=#{page}, bookintro=#{bookintro},
+		   		bookindex=#{bookindex}, authorintro=#{authorintro} 
+		 where bookno=#{bookno}
+	</update>
 	<delete id="deleteBook" parameterType="BookVO">
 		delete from tbl_book
 		where bookno=#{bookno}
 	</delete>
+	
+	<select id="listPage" resultType="BookVO">
+		select * from tbl_book order by bookno desc limit #{page}, 15
+	</select>
+	<select id="listCriteria" resultType="BookVO">
+		select * from tbl_book order by bookno desc limit #{pageStart}, #{perPageNum}
+	</select>
+	<select id="totalCount" resultType="int">
+		select count(bookno) from tbl_book
+	</select>
 </mapper>
