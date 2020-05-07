@@ -22,4 +22,14 @@
 		delete from tbl_member
 		where userno=#{userno}
 	</delete>
+	
+	<select id="listPage" resultType="MemberVO">
+		select * from tbl_member order by userno desc limit #{page}, 15
+	</select>
+	<select id="listCriteria" resultType="MemberVO">
+		select * from tbl_member order by userno desc limit #{pageStart}, #{perPageNum}
+	</select>
+	<select id="totalCount" resultType="int">
+		select count(userno) from tbl_member
+	</select>
 </mapper>

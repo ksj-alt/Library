@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
 
 <style>
@@ -39,6 +39,22 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	
+	<div class="box-footer">
+		<div class="text-center">
+			<ul class="pagination">
+				<c:if test="${pageMaker.prev == true }">
+					<li><a href="listPage?page=${pageMaker.startPage-1 }">&laquo;</a></li>
+				</c:if>
+				<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+					<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="listPage?page=${idx }">${idx }</a></li>
+				</c:forEach>
+				<c:if test="${pageMaker.next == true }">
+					<li><a href="listPage?page=${pageMaker.endPage+1 }">&raquo;</a></li>
+				</c:if>
+			</ul>
+		</div>
 	</div>
 	
 </section>

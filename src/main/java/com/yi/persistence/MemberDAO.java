@@ -2,6 +2,7 @@ package com.yi.persistence;
 
 import java.util.List;
 
+import com.yi.domain.Criteria;
 import com.yi.domain.MemberVO;
 
 public interface MemberDAO {
@@ -10,4 +11,8 @@ public interface MemberDAO {
 	public List<MemberVO> list() throws Exception;
 	public void update(MemberVO vo) throws Exception;
 	public void delete(int userno) throws Exception;
+	
+	public List<MemberVO> listPage(int page) throws Exception;
+	public List<MemberVO> listCriteria(Criteria cri) throws Exception;
+	public int totalCount() throws Exception;
 }

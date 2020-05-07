@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yi.domain.Criteria;
 import com.yi.domain.MemberVO;
 import com.yi.persistence.MemberDAO;
 
@@ -32,5 +33,13 @@ public class MemberService {
 	
 	public void delete(int userno) throws Exception {
 		dao.delete(userno);
+	}
+	
+	public List<MemberVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+	
+	public int totalCount() throws Exception {
+		return dao.totalCount();
 	}
 }

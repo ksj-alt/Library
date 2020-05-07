@@ -27,34 +27,32 @@
 		<div class="row">
 			<div class="col-sm-8" style="padding-left:300px;">
 				<div class="box box-primary">
-					<form role="form" action="register" method="post">
-						<div class="box-body">
-							<div class="form-group">
-								<label>회원번호</label>
-								<input type="text" class="form-control" value="${member.userno }" readonly>
-							</div>
-							<div class="form-group">
-								<label>성명</label>
-								<input type="text" class="form-control" value="${member.username }" readonly>
-							</div>
-							<div class="form-group">
-								<label>생년월일</label>
-								<input type="text" class="form-control" value="${member.birthday }" readonly>
-							</div>
-							<div class="form-group">
-								<label>전화번호</label>
-								<input type="text" class="form-control" value="${member.phone }" readonly>
-							</div>
-							<div class="form-group">
-								<label>이메일</label>
-								<input type="text" class="form-control" value="${member.email }" readonly>
-							</div>
-						</div><br>
-						<div class="box-footer"  style="text-align:center;">  
-							<button type="button" id="modify" class="btn btn-warning">수정</button>
-							<button type="button" id="remove" class="btn btn-warning">회원삭제</button>
+					<div class="box-body">
+						<div class="form-group">
+							<label>회원번호</label>
+							<input type="text" class="form-control" value="${member.userno }" readonly>
 						</div>
-					</form>
+						<div class="form-group">
+							<label>성명</label>
+							<input type="text" class="form-control" value="${member.username }" readonly>
+						</div>
+						<div class="form-group">
+							<label>생년월일</label>
+							<input type="text" class="form-control" value="${member.birthday }" readonly>
+						</div>
+						<div class="form-group">
+							<label>전화번호</label>
+							<input type="text" class="form-control" value="${member.phone }" readonly>
+						</div>
+						<div class="form-group">
+							<label>이메일</label>
+							<input type="text" class="form-control" value="${member.email }" readonly>
+						</div>
+					</div><br>
+					<div class="box-footer"  style="text-align:center;">  
+						<button type="button" id="modify" class="btn btn-warning">수정</button>
+						<button type="button" id="remove" class="btn btn-warning">회원삭제</button>
+					</div>
 				</div>
 			</div>
 		</div>

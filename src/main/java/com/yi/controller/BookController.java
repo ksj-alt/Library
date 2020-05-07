@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.yi.domain.BookVO;
+import com.yi.domain.Criteria;
+import com.yi.domain.PageMaker;
 import com.yi.service.BookService;
 
 @Controller
@@ -37,4 +39,44 @@ public class BookController {
 		return "/book/list";
 	}
 	
+	@RequestMapping(value="read", method=RequestMethod.GET)
+	public String read(int bookno, Model model) throws Exception {
+		BookVO vo = service.readByNo(bookno);
+		model.addAttribute("book", vo);
+		return "/book/read";
+	}
+	
+	@RequestMapping(value="remove", method=RequestMethod.GET)
+	public String remove(int bookno) throws Exception {
+		service.delete(bookno);
+		return "redirect:/book/list";
+	}
+	
+	@RequestMapping(value="modify", method=RequestMethod.GET)
+	public String modify(int bookno, Model model) throws Exception {
+		BookVO vo = service.readByNo(bookno);
+		model.addAttribute("book", vo);
+		return "/book/modify";
+	}
+	
+	@RequestMapping(value="modify", method=RequestMethod.POST)
+	public String update(BookVO vo, Model model) throws Exception {
+		service.update(vo);
+		model.addAttribute("book", vo);
+		return "/book/read";
+	}
+	
+	@RequestMapping(value="listPage", method=RequestMethod.GET)
+	public String listPage(Criteria cri, Model model) throws Exception {
+		List<BookVO> list = service.listCriteria(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.totalCount());
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "book/listPage";
+	}
 }
