@@ -79,4 +79,35 @@ public class BookController {
 		
 		return "book/listPage";
 	}
+	
+	@RequestMapping(value="readPage", method=RequestMethod.GET)
+	public String readPage(int bookno, Criteria cri, Model model) throws Exception {
+		BookVO vo = service.readByNo(bookno);
+		model.addAttribute("book", vo);
+		model.addAttribute("cri", cri);
+		return "/book/readPage";
+	}
+	
+	@RequestMapping(value="removePage", method=RequestMethod.GET)
+	public String removePage(int bookno, Criteria cri, Model model) throws Exception {
+		service.delete(bookno);
+		return "redirect:/book/listPage?page=" + cri.getPage();
+	}
+	
+	@RequestMapping(value="modifyPage", method=RequestMethod.GET)
+	public String modifyPage(int bookno, Criteria cri, Model model) throws Exception {
+		BookVO vo = service.readByNo(bookno);
+		model.addAttribute("book", vo);
+		model.addAttribute("cri", cri);
+		return "/book/modifyPage";
+	}
+	
+	@RequestMapping(value="modifyPage", method=RequestMethod.POST)
+	public String updatePage(BookVO vo, Criteria cri, Model model) throws Exception {
+		service.update(vo);
+		model.addAttribute("book", vo);
+		model.addAttribute("cri", cri);
+		return "redirect:/book/readPage?bookno="+vo.getBookno() + "&page=" + cri.getPage();
+	}
+
 }
