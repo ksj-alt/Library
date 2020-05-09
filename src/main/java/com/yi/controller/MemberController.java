@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -77,5 +78,35 @@ public class MemberController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "member/listPage";
+	}
+	
+	@RequestMapping(value="member/readPage", method=RequestMethod.GET)
+	public String readPage(int userno, Criteria cri, Model model) throws Exception {
+		MemberVO vo = service.readByNo(userno);
+		model.addAttribute("member", vo);
+		model.addAttribute("cri", cri);
+		return "/member/readPage";
+	}
+	
+	@RequestMapping(value="/member/removePage", method=RequestMethod.GET)
+	public String removePage(int userno, Criteria cri, Model model) throws Exception {
+		service.delete(userno);
+		return "redirect:/member/listPage?page=" + cri.getPage();
+	}
+	
+	@RequestMapping(value="/member/modifyPage", method=RequestMethod.GET)
+	public String modifyPage(int userno, Criteria cri, Model model) throws Exception {
+		MemberVO vo = service.readByNo(userno);
+		model.addAttribute("member", vo);
+		model.addAttribute("cri", cri); 
+		return "/member/modifyPage";
+	}
+	
+	@RequestMapping(value="/member/modifyPage", method=RequestMethod.POST)
+	public String updatePage(MemberVO vo, Criteria cri, Model model) throws Exception {
+		service.update(vo);
+		model.addAttribute("member", vo);
+		model.addAttribute("cri", cri);
+		return "redirect:/member/readPage?userno=" + vo.getUserno() + "&page=" + cri.getPage();
 	}
 }
