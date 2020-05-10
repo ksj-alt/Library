@@ -34,4 +34,6 @@
 	<select id="totalCount" resultType="int">
 		select count(bookno) from tbl_book
 	</select>
+	
+	
 </mapper>

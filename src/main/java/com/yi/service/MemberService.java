@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.yi.domain.Criteria;
 import com.yi.domain.MemberVO;
+import com.yi.domain.SearchCriteria;
 import com.yi.persistence.MemberDAO;
 
 @Service
@@ -42,4 +43,12 @@ public class MemberService {
 	public int totalCount() throws Exception {
 		return dao.totalCount();
 	}
+	
+	public List<MemberVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+		return dao.listSearchCriteria(cri);
+	}
+	
+//	public int totalSearchCount(SearchCriteria cri) throws Exception {
+//		return dao.totalSearchCount(cri);
+//	}
 }
