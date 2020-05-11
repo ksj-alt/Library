@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.MemberVO;
+import com.yi.domain.PageMaker;
+import com.yi.domain.SearchCriteria;
 import com.yi.service.BookService;
 import com.yi.service.MemberService;
 
@@ -23,13 +25,17 @@ public class LoanController {
 	@Autowired
 	MemberService mservice;
 	
-	@RequestMapping(value="approval", method=RequestMethod.GET)
-	public String approval(Model model) throws Exception {
-		List<BookVO> blist = bservice.list();
-		model.addAttribute("blist", blist);
+	@RequestMapping(value="lending", method=RequestMethod.GET)
+	public String approval(SearchCriteria cri, Model model) throws Exception {
+		System.out.println("-----------------------"+ cri); 
+		List<MemberVO> mlist = mservice.listSearchCriteria(cri);
 		
-		List<MemberVO> mlist = mservice.list();
+		model.addAttribute("cri", cri);
 		model.addAttribute("mlist", mlist);
-		return "/loan/approval";
+		
+//		List<BookVO> blist = bservice.list();
+//		model.addAttribute("blist", blist);
+		
+		return "/loan/lending";
 	}
 }

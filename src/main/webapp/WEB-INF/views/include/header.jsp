@@ -112,7 +112,7 @@ footer{
        <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">대출관리 <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="${pageContext.request.contextPath }/loan/approval">대출승인처리</a></li>
+	          <li><a href="${pageContext.request.contextPath }/loan/lending">대출승인처리</a></li>
 	          <li><a href="#">대출반납처리</a></li>
 	        </ul>
 	      </li>
