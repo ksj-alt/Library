@@ -69,9 +69,9 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectList(namespace + "listSearchCriteria", cri);
 	}
 
-//	@Override
-//	public int totalSearchCount(SearchCriteria cri) throws Exception {
-//		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
-//	}
+	@Override
+	public int totalSearchCount(SearchCriteria cri) throws Exception {
+		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
+	}
 
 }

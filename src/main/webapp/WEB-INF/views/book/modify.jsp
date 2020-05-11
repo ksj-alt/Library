@@ -20,7 +20,7 @@
 							</div>
 							<div class="form-group">
 								<label>도서명</label>
-								<input type="text" name="bookname" class="form-control" value="${book.bookname }" placeholder="ex) 내 치즈는 어디에서 왔을까?">
+								<input type="text" name="booktitle" class="form-control" value="${book.booktitle }" placeholder="ex) 내 치즈는 어디에서 왔을까?">
 							</div>
 							<div class="form-group">
 								<label>저자</label>

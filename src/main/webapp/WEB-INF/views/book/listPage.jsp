@@ -8,6 +8,18 @@
 		<li class="active"><a href="${pageContext.request.contextPath }/book/listPage">도서목록</a></li>
 	</ul>
 	<br>
+	<div class="box-body">
+		<select name="searchType" id="searchType">
+			<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
+			<option value="bno" ${cri.searchType=='bno'? 'selected':'' }>도서번호</option>
+			<option value="btitle" ${cri.searchType=='btitle'? 'selected':'' }>도서제목</option>
+			<option value="author" ${cri.searchType=='author'? 'selected':'' }>저자</option>
+			<option value="pub" ${cri.searchType=='pub'? 'selected':'' }>출판사</option>
+		</select>
+		<input type="text" name="keyword" id="keywordInput" value="${cri.keyword }">
+		<button id="btnSearch">검색</button>
+	</div>
+	<br>
 	<div class="container">
 		<table class="table table-hover" style="width:980px;">
 			<thead>
@@ -26,7 +38,7 @@
 						<tr>
 							<td>${book.bookno }</td>
 							<td><a href="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
-											&page=${pageMaker.cri.page}" style="color:#353535">${book.bookname }</a></td>
+											&page=${pageMaker.cri.page}" style="color:#353535">${book.booktitle }</a></td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
 							<td></td>
@@ -55,5 +67,13 @@
 	</div>
 	
 </section>
+
+<script>
+	$("#btnSearch").click(function(){
+		var searchType=$("#searchType").val();
+		var keyword=$("#keywordInput").val();
+		location.href="listPage?searchType="+searchType+"&keyword="+keyword;
+	})
+</script>
 
 <%@ include file="../include/footer.jsp"%>

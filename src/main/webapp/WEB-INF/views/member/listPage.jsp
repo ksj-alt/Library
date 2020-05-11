@@ -14,6 +14,16 @@
 		<li class="active"><a href="${pageContext.request.contextPath }/member/listPage">회원목록</a></li>
 	</ul>
 	<br>
+	<div class="box-body">
+		<select name="searchType" id="searchType">
+			<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
+			<option value="uno" ${cri.searchType=='uno'? 'selected':'' }>회원번호</option>
+			<option value="uname" ${cri.searchType=='uname'? 'selected':'' }>회원성명</option>
+		</select>
+		<input type="text" name="keyword" id="keywordInput" value="${cri.keyword }">
+		<button id="btnSearch">검색</button>
+	</div>
+	<br>
 	<div class="container">
 		<table class="table table-condensed" style="width:980px;">
 			<thead>
@@ -59,5 +69,13 @@
 	</div>
 	
 </section>
+
+<script>
+	$("#btnSearch").click(function(){
+		var searchType=$("#searchType").val();
+		var keyword=$("#keywordInput").val();
+		location.href="listPage?searchType="+searchType+"&keyword="+keyword;
+	})
+</script>
 
 <%@ include file="../include/footer.jsp"%>

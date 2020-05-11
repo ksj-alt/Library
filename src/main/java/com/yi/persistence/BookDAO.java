@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
+import com.yi.domain.SearchCriteria;
 
 public interface BookDAO {
 	public void insert(BookVO vo) throws Exception;
@@ -15,4 +16,7 @@ public interface BookDAO {
 	public List<BookVO> listPage(int page) throws Exception;
 	public List<BookVO> listCriteria(Criteria cri) throws Exception;
 	public int totalCount() throws Exception;
+	
+	public List<BookVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+	public int totalSearchCount(SearchCriteria cri) throws Exception;
 }

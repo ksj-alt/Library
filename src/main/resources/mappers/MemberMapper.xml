@@ -24,7 +24,7 @@
 	</delete>
 	
 	<select id="listPage" resultType="MemberVO">
-		select * from tbl_member order by userno desc limit #{page}, 15
+		select * from tbl_member order by userno desc limit #{page}, 13
 	</select>
 	<select id="listCriteria" resultType="MemberVO">
 		select * from tbl_member order by userno desc limit #{pageStart}, #{perPageNum}
@@ -34,9 +34,9 @@
 	</select>
 	
 	<sql id="search">
-		<!-- <if test="searchType=='uno'">
+		<if test="searchType=='uno'.toString()">
 			where userno like CONCAT('%', '${keyword}', '%')
-		</if> -->
+		</if>
 		<if test="searchType=='uname'.toString()">
 			where username like CONCAT('%', '${keyword}', '%')
 		</if>
@@ -45,7 +45,7 @@
 	<select id="listSearchCriteria" resultType="MemberVO">
 		select * from tbl_member
 			<include refid="search"></include>
-		 order by userno desc
+		 order by userno desc limit #{pageStart}, #{perPageNum}
 	</select>
 	<select id="totalSearchCount" resultType="int">
 		select count(userno) from tbl_member

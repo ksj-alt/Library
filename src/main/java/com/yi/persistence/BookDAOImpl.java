@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
+import com.yi.domain.SearchCriteria;
 
 @Repository
 public class BookDAOImpl implements BookDAO {
@@ -60,6 +61,16 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public int totalCount() throws Exception {
 		return sqlSession.selectOne(namespace + "totalCount");
+	}
+
+	@Override
+	public List<BookVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+		return sqlSession.selectList(namespace + "listSearchCriteria", cri);
+	}
+
+	@Override
+	public int totalSearchCount(SearchCriteria cri) throws Exception {
+		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
 	}
 	
 	

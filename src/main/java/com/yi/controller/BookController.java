@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
 import com.yi.domain.PageMaker;
+import com.yi.domain.SearchCriteria;
 import com.yi.service.BookService;
 
 @Controller
@@ -66,14 +67,29 @@ public class BookController {
 		return "/book/read";
 	}
 	
+//	@RequestMapping(value="listPage", method=RequestMethod.GET)
+//	public String listPage(Criteria cri, Model model) throws Exception {
+//		List<BookVO> list = service.listCriteria(cri);
+//		
+//		PageMaker pageMaker = new PageMaker();
+//		pageMaker.setCri(cri);
+//		pageMaker.setTotalCount(service.totalCount());
+//		
+//		model.addAttribute("list", list);
+//		model.addAttribute("pageMaker", pageMaker);
+//		
+//		return "book/listPage";
+//	}
+	
 	@RequestMapping(value="listPage", method=RequestMethod.GET)
-	public String listPage(Criteria cri, Model model) throws Exception {
-		List<BookVO> list = service.listCriteria(cri);
+	public String listPage(SearchCriteria cri, Model model) throws Exception {
+		List<BookVO> list = service.listSearchCriteria(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(service.totalCount());
+		pageMaker.setTotalCount(service.totalSearchCount(cri));
 		
+		model.addAttribute("cri", cri);
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		

@@ -18,6 +18,6 @@ public interface MemberDAO {
 	public int totalCount() throws Exception;
 	
 	public List<MemberVO> listSearchCriteria(SearchCriteria cri) throws Exception;
-//	public int totalSearchCount(SearchCriteria cri) throws Exception;
+	public int totalSearchCount(SearchCriteria cri) throws Exception;
 	
 }

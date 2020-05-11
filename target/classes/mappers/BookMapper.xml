@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BookMapper">
 	<insert id="createBook" parameterType="BookVO">
-		insert into tbl_book (bookname, author, publisher)
-		values (#{bookname}, #{author}, #{publisher})
+		insert into tbl_book (booktitle, author, publisher)
+		values (#{booktitle}, #{author}, #{publisher})
 	</insert>
 	<select id="readBook" resultType="BookVO">
 		select * from tbl_book
@@ -15,7 +15,7 @@
 	</select>
 	<update id="updateBook" parameterType="BookVO">
 		update tbl_book
-		   set bookname=#{bookname}, author=#{author}, publisher=#{publisher},
+		   set booktitle=#{booktitle}, author=#{author}, publisher=#{publisher},
 		   		price=#{price}, page=#{page}, bookintro=#{bookintro},
 		   		bookindex=#{bookindex}, authorintro=#{authorintro} 
 		 where bookno=#{bookno}
@@ -35,5 +35,28 @@
 		select count(bookno) from tbl_book
 	</select>
 	
+	<sql id="search">
+		<if test="searchType=='bno'.toString()">
+			where bookno like CONCAT('%', '${keyword}', '%')
+		</if>
+		<if test="searchType=='btitle'.toString()">
+			where booktitle like CONCAT('%', '${keyword}', '%')
+		</if>
+		<if test="searchType=='author'.toString()">
+			where author like CONCAT('%', '${keyword}', '%')
+		</if>
+		<if test="searchType=='pub'.toString()">
+			where publisher like CONCAT('%', '${keyword}', '%')
+		</if>
+	</sql>
 	
+	<select id="listSearchCriteria" resultType="BookVO">
+		select * from tbl_book
+			<include refid="search"></include>
+		 order by bookno desc limit #{pageStart}, #{perPageNum}
+	</select>
+	<select id="totalSearchCount" resultType="int">
+		select count(bookno) from tbl_book
+			<include refid="search"></include>
+	</select>
 </mapper>

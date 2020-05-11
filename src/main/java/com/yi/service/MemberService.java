@@ -48,7 +48,7 @@ public class MemberService {
 		return dao.listSearchCriteria(cri);
 	}
 	
-//	public int totalSearchCount(SearchCriteria cri) throws Exception {
-//		return dao.totalSearchCount(cri);
-//	}
+	public int totalSearchCount(SearchCriteria cri) throws Exception {
+		return dao.totalSearchCount(cri);
+	}
 }

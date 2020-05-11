@@ -25,7 +25,7 @@
 					<c:forEach var="book" items="${list }">
 						<tr>
 							<td>${book.bookno }</td>
-							<td><a href="${pageContext.request.contextPath }/book/read?bookno=${book.bookno}" style="color:#353535">${book.bookname }</a></td>
+							<td><a href="${pageContext.request.contextPath }/book/read?bookno=${book.bookno}" style="color:#353535">${book.booktitle }</a></td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
 							<td></td>

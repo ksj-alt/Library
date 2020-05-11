@@ -36,7 +36,7 @@
 						</div>
 						<div class="form-group">
 							<label>도서명</label>
-							<input type="text" class="form-control" value="${book.bookname }" readonly>
+							<input type="text" class="form-control" value="${book.booktitle }" readonly>
 						</div>
 						<div class="form-group">
 							<label>저자</label>

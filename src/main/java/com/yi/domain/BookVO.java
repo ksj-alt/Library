@@ -2,7 +2,7 @@ package com.yi.domain;
 
 public class BookVO {
 	private int bookno;
-	private String bookname;
+	private String booktitle;
 	private String author;
 	private String publisher;
 	private int price;
@@ -19,12 +19,12 @@ public class BookVO {
 		this.bookno = bookno;
 	}
 
-	public String getBookname() {
-		return bookname;
+	public String getBooktitle() {
+		return booktitle;
 	}
 
-	public void setBookname(String bookname) {
-		this.bookname = bookname;
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
 	}
 
 	public String getAuthor() {
@@ -85,9 +85,9 @@ public class BookVO {
 
 	@Override
 	public String toString() {
-		return "BookVO [bookno=" + bookno + ", bookname=" + bookname + ", author=" + author + ", publisher=" + publisher
-				+ ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex=" + bookindex
-				+ ", authorintro=" + authorintro + "]";
+		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
+				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
+				+ bookindex + ", authorintro=" + authorintro + "]";
 	}
 
 }

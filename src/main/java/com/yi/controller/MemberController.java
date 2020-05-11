@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.yi.domain.Criteria;
 import com.yi.domain.MemberVO;
 import com.yi.domain.PageMaker;
+import com.yi.domain.SearchCriteria;
 import com.yi.service.MemberService;
 
 @Controller
@@ -66,14 +67,29 @@ public class MemberController {
 		return "/member/read";
 	}
 	
+//	@RequestMapping(value="member/listPage", method=RequestMethod.GET)
+//	public String listPage(Criteria cri, Model model) throws Exception {
+//		List<MemberVO> list = service.listCriteria(cri);
+//		
+//		PageMaker pageMaker = new PageMaker();
+//		pageMaker.setCri(cri);
+//		pageMaker.setTotalCount(service.totalCount());
+//		
+//		model.addAttribute("list", list);
+//		model.addAttribute("pageMaker", pageMaker);
+//		
+//		return "member/listPage";
+//	}
+	
 	@RequestMapping(value="member/listPage", method=RequestMethod.GET)
-	public String listPage(Criteria cri, Model model) throws Exception {
-		List<MemberVO> list = service.listCriteria(cri);
+	public String listPage(SearchCriteria cri, Model model) throws Exception {
+		List<MemberVO> list = service.listSearchCriteria(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(service.totalCount());
+		pageMaker.setTotalCount(service.totalSearchCount(cri));
 		
+		model.addAttribute("cri", cri);
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		
