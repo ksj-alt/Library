@@ -10,6 +10,7 @@ public class BookVO {
 	private String bookintro;
 	private String bookindex;
 	private String authorintro;
+	private String rent;
 
 	public int getBookno() {
 		return bookno;
@@ -83,11 +84,19 @@ public class BookVO {
 		this.authorintro = authorintro;
 	}
 
+	public String getRent() {
+		return rent;
+	}
+
+	public void setRent(String rent) {
+		this.rent = rent;
+	}
+
 	@Override
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
 				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
-				+ bookindex + ", authorintro=" + authorintro + "]";
+				+ bookindex + ", authorintro=" + authorintro + ", rent=" + rent + "]";
 	}
 
 }

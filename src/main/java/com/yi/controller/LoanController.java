@@ -37,19 +37,23 @@ public class LoanController {
 		model.addAttribute("cri", cri);
 		model.addAttribute("mlist", mlist);
 		model.addAttribute("pageMaker", pageMaker);
-		
-//		List<BookVO> blist = bservice.listSearchCriteria(bcri);
-//		
-//		PageMaker bpageMaker = new PageMaker();
-//		bpageMaker.setCri(bcri);
-//		bpageMaker.setTotalCount(bservice.totalSearchCount(bcri));
-//		
-//		model.addAttribute("bcri", bcri);
-//		model.addAttribute("blist", blist);
-//		model.addAttribute("bpageMaker", bpageMaker);
-		
-		
+				
 		return "/loan/lending";
+	}
+	
+	@RequestMapping(value="lendingSelBook", method=RequestMethod.GET)
+	public String lendingSelBook(SearchCriteria cri, Model model) throws Exception {
+		List<BookVO> blist = bservice.listSearchCriteria(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(bservice.totalSearchCount(cri));
+		
+		model.addAttribute("cri", cri);
+		model.addAttribute("blist", blist);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "/loan/lendingSelBook";
 	}
 	
 	@RequestMapping(value="returnbook", method=RequestMethod.GET)
