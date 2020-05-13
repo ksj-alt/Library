@@ -11,6 +11,14 @@
 	}
 </style>
 
+<script>
+	$(function(){
+		$("#selectBook").click(function(){
+			location.href="${pageContext.request.contextPath }/loan/returnSelBook";
+		})
+	})
+</script>
+
 <section>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">대출승인처리</a></li>
@@ -86,32 +94,32 @@
 					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev == true }">
-								<li><a href="lendingSelBook?page=${pageMaker.startPage-1}&searchType=${cri.searchType}&keyword=${cri.keyword}">&laquo;</a></li>
+								<li><a href="returnSelBook?page=${pageMaker.startPage-1}&searchType=${cri.searchType}&keyword=${cri.keyword}">&laquo;</a></li>
 							</c:if>
 							<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-								<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="lendingSelBook?page=${idx }&searchType=${cri.searchType}&keyword=${cri.keyword}">${idx }</a></li>
+								<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="returnSelBook?page=${idx }&searchType=${cri.searchType}&keyword=${cri.keyword}">${idx }</a></li>
 							</c:forEach>
 							<c:if test="${pageMaker.next == true }">
-								<li><a href="lendingSelBook?page=${pageMaker.endPage+1 }&searchType=${cri.searchType}&keyword=${cri.keyword}">&raquo;</a></li>
+								<li><a href="returnSelBook?page=${pageMaker.endPage+1 }&searchType=${cri.searchType}&keyword=${cri.keyword}">&raquo;</a></li>
 							</c:if>
 						</ul>
 					</div>
 				</div>
 				<br>
 				<div class="box-footer" style="text-align:center;">
-					<button type="submit"  class="btn btn-warning">대출하기</button>
+					<button type="submit"  class="btn btn-warning">반납하기</button>
 					<button type="reset" id="reset" class="btn btn-warning">취소</button>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 </section>
 
 <script>
 	$("#Search").click(function(){
 		var searchType=$("#searchType").val();
 		var keyword=$("#keywordInput").val();
-		location.href="lendingSelBook?searchType="+searchType+"&keyword="+keyword;
+		location.href="returnSelBook?searchType="+searchType+"&keyword="+keyword;
 	})
 	$(".selectBook").click(function(){
 		var btn = $(this);
@@ -131,7 +139,7 @@
 		$('#rent').val(rent);
 	})
 	$("#reset").click(function(){
-		location.href="${pageContext.request.contextPath }/loan/lending";
+		location.href="${pageContext.request.contextPath }/loan/returnbook";
 	})
 </script>
 

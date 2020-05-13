@@ -40,7 +40,7 @@
 					</div>
 				</div>
 				<br>
-				<div class="box-body">
+				<div class="box-body" style="height:500px; float:left;">
 					<table class="table table-condensed" style="width:600px; float:left;">
 						<tr>
 							<th>회원번호</th>
@@ -65,7 +65,7 @@
 					</table>
 				</div>
 				
-				<div class="box-body" style="float:left; margin-left:60px;">
+				<div class="box-body" style="float:left; margin-left:70px;">
 					<div>
 						<h4>대출회원상세정보</h4>
 						<br>
@@ -99,13 +99,13 @@
 					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev == true }">
-								<li><a href="returnbook?page=${pageMaker.startPage-1}">&laquo;</a></li>
+								<li><a href="returnbook?page=${pageMaker.startPage-1}&searchType=${cri.searchType}&keyword=${cri.keyword}">&laquo;</a></li>
 							</c:if>
 							<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-								<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="returnbook?page=${idx }">${idx }</a></li>
+								<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="returnbook?page=${idx }&searchType=${cri.searchType}&keyword=${cri.keyword}">${idx }</a></li>
 							</c:forEach>
 							<c:if test="${pageMaker.next == true }">
-								<li><a href="returnbook?page=${pageMaker.endPage+1 }">&raquo;</a></li>
+								<li><a href="returnbook?page=${pageMaker.endPage+1 }&searchType=${cri.searchType}&keyword=${cri.keyword}">&raquo;</a></li>
 							</c:if>
 						</ul>
 					</div>
@@ -126,8 +126,6 @@
 		var btn = $(this);
 		var tr = btn.parent().parent();
 		var td = tr.children();
-		
-		console.log("데이터 : " + tr.text());
 		
 		var userno = td.eq(0).text();
 		var username = td.eq(1).text();

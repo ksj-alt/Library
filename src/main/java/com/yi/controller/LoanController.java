@@ -70,4 +70,19 @@ public class LoanController {
 		
 		return "/loan/returnbook";
 	}
+	
+	@RequestMapping(value="returnSelBook", method=RequestMethod.GET)
+	public String returnSelBook(SearchCriteria cri, Model model) throws Exception {
+		List<BookVO> blist = bservice.listSearchCriteria(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(bservice.totalSearchCount(cri));
+		
+		model.addAttribute("cri", cri);
+		model.addAttribute("blist", blist);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "/loan/returnSelBook";
+	}
 }

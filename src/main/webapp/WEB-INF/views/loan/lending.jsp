@@ -99,13 +99,13 @@
 					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev == true }">
-								<li><a href="lending?page=${pageMaker.startPage-1}">&laquo;</a></li>
+								<li><a href="lending?page=${pageMaker.startPage-1}&searchType=${cri.searchType}&keyword=${cri.keyword}">&laquo;</a></li>
 							</c:if>
 							<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-								<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="lending?page=${idx }">${idx }</a></li>
+								<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="lending?page=${idx }&searchType=${cri.searchType}&keyword=${cri.keyword}">${idx }</a></li>
 							</c:forEach>
 							<c:if test="${pageMaker.next == true }">
-								<li><a href="lending?page=${pageMaker.endPage+1 }">&raquo;</a></li>
+								<li><a href="lending?page=${pageMaker.endPage+1 }&searchType=${cri.searchType}&keyword=${cri.keyword}">&raquo;</a></li>
 							</c:if>
 						</ul>
 					</div>
@@ -126,8 +126,6 @@
 		var tr = btn.parent().parent();
 		var td = tr.children();
 		
-		console.log("데이터 : " + tr.text());
-		
 		var userno = td.eq(0).text();
 		var username = td.eq(1).text();
 		var birthday = td.eq(2).text();
@@ -140,7 +138,9 @@
 		$('#phone').val(phone);
 		$('#email').val(email);
 	})
-	
+	$("#reset").click(function(){
+		location.href="${pageContext.request.contextPath }/loan/lending";
+	})
 </script>
 
 <%@ include file="../include/footer.jsp" %>
