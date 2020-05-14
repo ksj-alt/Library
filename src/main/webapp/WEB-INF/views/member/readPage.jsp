@@ -5,16 +5,17 @@
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 	$(function(){		
+		$("#list").click(function(){
+			location.href="${pageContext.request.contextPath}/member/listPage?page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}";
+		})
 		$("#remove").click(function(){
 			if(confirm("정말로 삭제하시겠습니까?")){
-				location.href="${pageContext.request.contextPath }/member/removePage?userno="
-						+${member.userno}+"&page=${cri.page}";
+				location.href="${pageContext.request.contextPath }/member/removePage?userno=${member.userno}+&page=${cri.page}";
 			}
 		})
 		
 		$("#modify").click(function(){
-			location.href="${pageContext.request.contextPath }/member/modifyPage?userno="
-					+${member.userno}+"&page=${cri.page}";
+			location.href="${pageContext.request.contextPath }/member/modifyPage?userno=${member.userno}&page=${cri.page}";
 		})
 	})
 </script>
@@ -54,6 +55,7 @@
 					<div class="box-footer"  style="text-align:center;">  
 						<button type="button" id="modify" class="btn btn-warning">수정</button>
 						<button type="button" id="remove" class="btn btn-warning">회원삭제</button>
+						<button type="button" id="list" class="btn btn-warning">리스트</button>
 					</div>
 				</div>
 			</div>

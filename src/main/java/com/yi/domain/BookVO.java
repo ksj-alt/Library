@@ -1,5 +1,7 @@
 package com.yi.domain;
 
+import java.util.ArrayList;
+
 public class BookVO {
 	private int bookno;
 	private String booktitle;
@@ -92,11 +94,12 @@ public class BookVO {
 		this.rent = rent;
 	}
 
+
 	@Override
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
 				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
-				+ bookindex + ", authorintro=" + authorintro + ", rent=" + rent + "]";
+				+ bookindex + ", authorintro=" + authorintro + ", rent=" + rent;
 	}
 
 }

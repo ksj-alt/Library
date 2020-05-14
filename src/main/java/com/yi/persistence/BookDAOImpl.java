@@ -67,6 +67,11 @@ public class BookDAOImpl implements BookDAO {
 	public List<BookVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		return sqlSession.selectList(namespace + "listSearchCriteria", cri);
 	}
+	
+	@Override
+	public List<BookVO> listSearchCriteria2(SearchCriteria cri) throws Exception {
+		return sqlSession.selectList(namespace + "listSearchCriteria2", cri);
+	}
 
 	@Override
 	public int totalSearchCount(SearchCriteria cri) throws Exception {

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.yi.domain.BookVO;
-import com.yi.domain.Criteria;
 import com.yi.domain.PageMaker;
 import com.yi.domain.SearchCriteria;
 import com.yi.service.BookService;
@@ -96,34 +95,68 @@ public class BookController {
 		return "book/listPage";
 	}
 	
+//	@RequestMapping(value="readPage", method=RequestMethod.GET)
+//	public String readPage(int bookno, Criteria cri, Model model) throws Exception {
+//		BookVO vo = service.readByNo(bookno);
+//		model.addAttribute("book", vo);
+//		model.addAttribute("cri", cri);
+//		return "/book/readPage";
+//	}
+	
 	@RequestMapping(value="readPage", method=RequestMethod.GET)
-	public String readPage(int bookno, Criteria cri, Model model) throws Exception {
+	public String readPage(int bookno, SearchCriteria cri, Model model) throws Exception {
 		BookVO vo = service.readByNo(bookno);
 		model.addAttribute("book", vo);
 		model.addAttribute("cri", cri);
 		return "/book/readPage";
 	}
 	
+//	@RequestMapping(value="removePage", method=RequestMethod.GET)
+//	public String removePage(int bookno, Criteria cri, Model model) throws Exception {
+//		service.delete(bookno);
+//		return "redirect:/book/listPage?page=" + cri.getPage();
+//	}
+	
 	@RequestMapping(value="removePage", method=RequestMethod.GET)
-	public String removePage(int bookno, Criteria cri, Model model) throws Exception {
+	public String removePage(int bookno, SearchCriteria cri, Model model) throws Exception {
 		service.delete(bookno);
-		return "redirect:/book/listPage?page=" + cri.getPage();
+		model.addAttribute("page", cri.getPage());
+		model.addAttribute("searchType", cri.getSearchType());
+		model.addAttribute("keyword", cri.getKeyword());
+		return "redirect:/book/listPage";
 	}
 	
+//	@RequestMapping(value="modifyPage", method=RequestMethod.GET)
+//	public String modifyPage(int bookno, Criteria cri, Model model) throws Exception {
+//		BookVO vo = service.readByNo(bookno);
+//		model.addAttribute("book", vo);
+//		model.addAttribute("cri", cri);
+//		return "/book/modifyPage";
+//	}
+	
 	@RequestMapping(value="modifyPage", method=RequestMethod.GET)
-	public String modifyPage(int bookno, Criteria cri, Model model) throws Exception {
+	public String modifyPage(int bookno, SearchCriteria cri, Model model) throws Exception {
 		BookVO vo = service.readByNo(bookno);
 		model.addAttribute("book", vo);
 		model.addAttribute("cri", cri);
 		return "/book/modifyPage";
 	}
 	
+//	@RequestMapping(value="modifyPage", method=RequestMethod.POST)
+//	public String updatePage(BookVO vo, Criteria cri, Model model) throws Exception {
+//		service.update(vo);
+//		model.addAttribute("book", vo);
+//		model.addAttribute("cri", cri);
+//		return "redirect:/book/readPage?bookno="+vo.getBookno() + "&page=" + cri.getPage();
+//	}
+	
 	@RequestMapping(value="modifyPage", method=RequestMethod.POST)
-	public String updatePage(BookVO vo, Criteria cri, Model model) throws Exception {
+	public String updatePage(BookVO vo, SearchCriteria cri, Model model) throws Exception {
 		service.update(vo);
 		model.addAttribute("book", vo);
 		model.addAttribute("cri", cri);
-		return "redirect:/book/readPage?bookno="+vo.getBookno() + "&page=" + cri.getPage();
+		model.addAttribute("keyword", cri.getKeyword());
+		return "redirect:/book/readPage?bookno="+vo.getBookno() + "&page=" + cri.getPage() + "&searchType=" + cri.getSearchType();
 	}
 
 }

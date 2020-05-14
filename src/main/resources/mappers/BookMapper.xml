@@ -55,8 +55,15 @@
 			<include refid="search"></include>
 		 order by bookno desc limit #{pageStart}, #{perPageNum}
 	</select>
+	<select id="listSearchCriteria2" resultType="BookVO">
+		select * from tbl_book
+			<include refid="search"></include>
+		 order by bookno limit #{pageStart}, #{perPageNum}
+	</select>
+	
 	<select id="totalSearchCount" resultType="int">
 		select count(bookno) from tbl_book
 			<include refid="search"></include>
 	</select>
+	
 </mapper>

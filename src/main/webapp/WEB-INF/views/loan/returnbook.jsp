@@ -32,8 +32,8 @@
 					<div class="box-body">
 						<select name="searchType" id="searchType">
 							<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
-							<option value="uno" ${cri.searchType='uno'? 'selected':'' }>회원번호</option>
-							<option value="uname" ${cri.searchType='uname'? 'selected':'' }>회원성명</option>
+							<option value="uno" ${cri.searchType=='uno'? 'selected':'' }>회원번호</option>
+							<option value="uname" ${cri.searchType=='uname'? 'selected':'' }>회원성명</option>
 						</select>
 						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword }">
 						<button id="Search">검색</button>
@@ -95,7 +95,7 @@
 				<div class="box-body" style="padding-left:160px; text-align: center; float:left;">
 					<button class="btn btn-warning" id="selectBook" style="margin-top:20px;">반납도서 >></button>
 				</div>
-				<div class="box-footer" style="clear:both;">
+				<div class="box-body" style="clear:both;">
 					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev == true }">

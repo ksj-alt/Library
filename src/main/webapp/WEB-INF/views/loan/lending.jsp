@@ -138,9 +138,6 @@
 		$('#phone').val(phone);
 		$('#email').val(email);
 	})
-	$("#reset").click(function(){
-		location.href="${pageContext.request.contextPath }/loan/lending";
-	})
 </script>
 
 <%@ include file="../include/footer.jsp" %>

@@ -4,17 +4,20 @@
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-	$(function(){		
+	$(function(){	
+		$("#list").click(function(){
+			location.href="${pageContext.request.contextPath}/book/listPage?page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}";
+		})
 		$("#remove").click(function(){
 			if(confirm("정말로 삭제하시겠습니까?")){
 				location.href="${pageContext.request.contextPath }/book/removePage?bookno="
-						+${book.bookno}+"&page=${cri.page}";
+						+${book.bookno}+"&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}";
 			}
 		})
 		
 		$("#modify").click(function(){
 			location.href="${pageContext.request.contextPath }/book/modifyPage?bookno="
-					+${book.bookno}+"&page=${cri.page}";
+					+${book.bookno}+"&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}";
 		})
 	})
 </script>
@@ -70,6 +73,7 @@
 					<div class="box-footer" style="text-align:center;">  
 						<button type="button" id="modify" class="btn btn-warning">수정</button>
 						<button type="button" id="remove" class="btn btn-warning">도서삭제</button>
+						<button type="button" id="list" class="btn btn-warning">리스트</button>
 					</div>
 				</div>
 			</div>

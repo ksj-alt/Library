@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-sm-8" style="padding-left:300px;">
 				<div class="box box-primary">
-					<form role="form" action="register" method="post">
+					<form role="form" action="register" method="post" enctype="multipart/form-data">
 						<div class="box-body">
 							<div class="form-group">
 								<label>성명<span style="color:red;"> * </span></label>

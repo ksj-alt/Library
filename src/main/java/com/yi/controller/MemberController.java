@@ -83,7 +83,7 @@ public class MemberController {
 	
 	@RequestMapping(value="member/listPage", method=RequestMethod.GET)
 	public String listPage(SearchCriteria cri, Model model) throws Exception {
-		List<MemberVO> list = service.listSearchCriteria(cri);
+		List<MemberVO> list = service.listSearchCriteria1(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);

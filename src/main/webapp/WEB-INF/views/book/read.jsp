@@ -4,13 +4,12 @@
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-	$(function(){		
+	$(function(){
 		$("#remove").click(function(){
 			if(confirm("정말로 삭제하시겠습니까?")){
 				location.href="${pageContext.request.contextPath }/book/remove?bookno="+${book.bookno};
 			}
 		})
-		
 		$("#modify").click(function(){
 			location.href="${pageContext.request.contextPath }/book/modify?bookno="+${book.bookno};
 		})

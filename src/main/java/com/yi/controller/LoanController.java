@@ -28,7 +28,7 @@ public class LoanController {
 	@RequestMapping(value="lending", method=RequestMethod.GET)
 	public String lending(SearchCriteria cri, Model model) throws Exception {
 		System.out.println("-----------------------"+ cri); 
-		List<MemberVO> mlist = mservice.listSearchCriteria(cri);
+		List<MemberVO> mlist = mservice.listSearchCriteria2(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -43,7 +43,7 @@ public class LoanController {
 	
 	@RequestMapping(value="lendingSelBook", method=RequestMethod.GET)
 	public String lendingSelBook(SearchCriteria cri, Model model) throws Exception {
-		List<BookVO> blist = bservice.listSearchCriteria(cri);
+		List<BookVO> blist = bservice.listSearchCriteria2(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -58,7 +58,8 @@ public class LoanController {
 	
 	@RequestMapping(value="returnbook", method=RequestMethod.GET)
 	public String returnbook(SearchCriteria cri, Model model) throws Exception {
-		List<MemberVO> mlist = mservice.listSearchCriteria(cri);
+		System.out.println("-----------------------"+ cri); 
+		List<MemberVO> mlist = mservice.listSearchCriteria2(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -73,7 +74,7 @@ public class LoanController {
 	
 	@RequestMapping(value="returnSelBook", method=RequestMethod.GET)
 	public String returnSelBook(SearchCriteria cri, Model model) throws Exception {
-		List<BookVO> blist = bservice.listSearchCriteria(cri);
+		List<BookVO> blist = bservice.listSearchCriteria2(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);

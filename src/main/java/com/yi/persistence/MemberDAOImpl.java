@@ -70,8 +70,14 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
+	public List<MemberVO> listSearchCriteria2(SearchCriteria cri) throws Exception {
+		return sqlSession.selectList(namespace + "listSearchCriteria2", cri);
+	}
+	
+	@Override
 	public int totalSearchCount(SearchCriteria cri) throws Exception {
 		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
 	}
+
 
 }

@@ -47,6 +47,11 @@
 			<include refid="search"></include>
 		 order by userno desc limit #{pageStart}, #{perPageNum}
 	</select>
+	<select id="listSearchCriteria2" resultType="MemberVO">
+		select * from tbl_member
+			<include refid="search"></include>
+		 order by userno limit #{pageStart}, #{perPageNum}
+	</select>
 	<select id="totalSearchCount" resultType="int">
 		select count(userno) from tbl_member
 			<include refid="search"></include>

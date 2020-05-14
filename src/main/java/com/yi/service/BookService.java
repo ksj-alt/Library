@@ -48,6 +48,10 @@ public class BookService {
 		return dao.listSearchCriteria(cri);
 	}
 	
+	public List<BookVO> listSearchCriteria2(SearchCriteria cri) throws Exception {
+		return dao.listSearchCriteria2(cri);
+	}
+	
 	public int totalSearchCount(SearchCriteria cri) throws Exception {
 		return dao.totalSearchCount(cri);
 	}
