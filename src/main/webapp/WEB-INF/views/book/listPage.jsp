@@ -38,7 +38,7 @@
 						<tr>
 							<td>${book.bookno }</td>
 							<td><a href="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
-											&page=${pageMaker.cri.page}" style="color:#353535">${book.booktitle }</a></td>
+											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${book.booktitle }</a></td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
 							<td></td>

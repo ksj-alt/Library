@@ -10,12 +10,12 @@
 		})
 		$("#remove").click(function(){
 			if(confirm("정말로 삭제하시겠습니까?")){
-				location.href="${pageContext.request.contextPath }/member/removePage?userno=${member.userno}+&page=${cri.page}";
+				location.href="${pageContext.request.contextPath }/member/removePage?userno=${member.userno}&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}";
 			}
 		})
 		
 		$("#modify").click(function(){
-			location.href="${pageContext.request.contextPath }/member/modifyPage?userno=${member.userno}&page=${cri.page}";
+			location.href="${pageContext.request.contextPath }/member/modifyPage?userno=${member.userno}&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}";
 		})
 	})
 </script>
