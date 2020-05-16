@@ -41,7 +41,7 @@
 						<tr>
 							<td>${member.userno }</td>
 							<td><a href="${pageContext.request.contextPath }/member/readPage?userno=${member.userno}
-											&page=${pageMaker.cri.page}" style="color:#353535">${member.username }</a></td>
+											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${member.username }</a></td>
 							<td>${member.birthday }</td>
 							<td>${member.phone }</td>
 							<td>${member.email }</td>

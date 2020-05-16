@@ -12,7 +12,11 @@
 		<div class="row">
 			<div class="col-sm-8" style="padding-left:300px;">
 				<div class="box box-primary">
-					<form role="form" action="modifyPage?userno=${member.userno }&page=${cri.page}" method="post">
+					<form role="form" action="modifyPage" method="post">
+					<input type="hidden" name="userno" value="${member.userno }">
+					<input type="hidden" name="page" value="${cri.page }">
+					<input type="hidden" name="searchType" value="${cri.searchType }">
+					<input type="hidden" name="keyword" value="${cri.keyword }">
 						<div class="box-body">
 							<div class="form-group">
 								<label>회원번호</label>

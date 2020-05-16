@@ -30,55 +30,41 @@ public class MemberController {
 	public String registerPost(MemberVO vo) throws Exception {
 		service.create(vo);
 		
-		return "redirect:/member/list";
+		return "redirect:/member/listPage";
 	}
 	
-	@RequestMapping(value="member/list", method=RequestMethod.GET)
-	public String list(Model model) throws Exception {
-		List<MemberVO> list = service.list();
-		model.addAttribute("list", list);
-		return "/member/list";
-	}
-	
-	@RequestMapping(value="member/read", method=RequestMethod.GET)
-	public String read(int userno, Model model) throws Exception {
-		MemberVO vo = service.readByNo(userno);
-		model.addAttribute("member", vo);
-		return "/member/read";
-	}
-	
-	@RequestMapping(value="member/remove", method=RequestMethod.GET)
-	public String remove(int userno) throws Exception{
-		service.delete(userno);
-		return "redirect:/member/list";
-	}
-	
-	@RequestMapping(value="member/modify", method=RequestMethod.GET)
-	public String modify(int userno, Model model) throws Exception {
-		MemberVO vo = service.readByNo(userno);
-		model.addAttribute("member", vo);
-		return "/member/modify";
-	}
-	
-	@RequestMapping(value="member/modify", method=RequestMethod.POST)
-	public String update(MemberVO vo, Model model) throws Exception {
-		service.update(vo);
-		model.addAttribute("member", vo);
-		return "/member/read";
-	}
-	
-//	@RequestMapping(value="member/listPage", method=RequestMethod.GET)
-//	public String listPage(Criteria cri, Model model) throws Exception {
-//		List<MemberVO> list = service.listCriteria(cri);
-//		
-//		PageMaker pageMaker = new PageMaker();
-//		pageMaker.setCri(cri);
-//		pageMaker.setTotalCount(service.totalCount());
-//		
+//	@RequestMapping(value="member/list", method=RequestMethod.GET)
+//	public String list(Model model) throws Exception {
+//		List<MemberVO> list = service.list();
 //		model.addAttribute("list", list);
-//		model.addAttribute("pageMaker", pageMaker);
-//		
-//		return "member/listPage";
+//		return "/member/list";
+//	}
+//	
+//	@RequestMapping(value="member/read", method=RequestMethod.GET)
+//	public String read(int userno, Model model) throws Exception {
+//		MemberVO vo = service.readByNo(userno);
+//		model.addAttribute("member", vo);
+//		return "/member/read";
+//	}
+//	
+//	@RequestMapping(value="member/remove", method=RequestMethod.GET)
+//	public String remove(int userno) throws Exception{
+//		service.delete(userno);
+//		return "redirect:/member/list";
+//	}
+//	
+//	@RequestMapping(value="member/modify", method=RequestMethod.GET)
+//	public String modify(int userno, Model model) throws Exception {
+//		MemberVO vo = service.readByNo(userno);
+//		model.addAttribute("member", vo);
+//		return "/member/modify";
+//	}
+//	
+//	@RequestMapping(value="member/modify", method=RequestMethod.POST)
+//	public String update(MemberVO vo, Model model) throws Exception {
+//		service.update(vo);
+//		model.addAttribute("member", vo);
+//		return "/member/read";
 //	}
 	
 	@RequestMapping(value="member/listPage", method=RequestMethod.GET)
@@ -97,7 +83,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="member/readPage", method=RequestMethod.GET)
-	public String readPage(int userno, Criteria cri, Model model) throws Exception {
+	public String readPage(int userno, SearchCriteria cri, Model model) throws Exception {
 		MemberVO vo = service.readByNo(userno);
 		model.addAttribute("member", vo);
 		model.addAttribute("cri", cri);
@@ -105,13 +91,16 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/member/removePage", method=RequestMethod.GET)
-	public String removePage(int userno, Criteria cri, Model model) throws Exception {
+	public String removePage(int userno, SearchCriteria cri, Model model) throws Exception {
 		service.delete(userno);
-		return "redirect:/member/listPage?page=" + cri.getPage();
+		model.addAttribute("page", cri.getPage());
+		model.addAttribute("searchType", cri.getSearchType());
+		model.addAttribute("keyword", cri.getKeyword());
+		return "redirect:/member/listPage";
 	}
 	
 	@RequestMapping(value="/member/modifyPage", method=RequestMethod.GET)
-	public String modifyPage(int userno, Criteria cri, Model model) throws Exception {
+	public String modifyPage(int userno, SearchCriteria cri, Model model) throws Exception {
 		MemberVO vo = service.readByNo(userno);
 		model.addAttribute("member", vo);
 		model.addAttribute("cri", cri); 
@@ -119,10 +108,11 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/member/modifyPage", method=RequestMethod.POST)
-	public String updatePage(MemberVO vo, Criteria cri, Model model) throws Exception {
+	public String updatePage(MemberVO vo, SearchCriteria cri, Model model) throws Exception {
 		service.update(vo);
 		model.addAttribute("member", vo);
 		model.addAttribute("cri", cri);
-		return "redirect:/member/readPage?userno=" + vo.getUserno() + "&page=" + cri.getPage();
+		model.addAttribute("keyword", cri.getKeyword());
+		return "redirect:/member/readPage?userno=" + vo.getUserno() + "&page=" + cri.getPage() + "&searchType=" + cri.getSearchType();
 	}
 }

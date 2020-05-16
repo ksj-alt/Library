@@ -90,6 +90,10 @@
 						</p>
 					</div>
 				</div>
+				<div class="box-footer" style="text-align:center;">
+					<button type="submit"  class="btn btn-warning" style="margin-top:20px;">반납하기</button>
+					<button type="reset" id="reset" class="btn btn-warning" style="margin-top:20px;">취소</button>
+				</div>
 				<div class="box-body" style="clear:both;">
 					<div class="text-center">
 						<ul class="pagination">
@@ -104,11 +108,6 @@
 							</c:if>
 						</ul>
 					</div>
-				</div>
-				<br>
-				<div class="box-footer" style="text-align:center;">
-					<button type="submit"  class="btn btn-warning">반납하기</button>
-					<button type="reset" id="reset" class="btn btn-warning">취소</button>
 				</div>
 			</div>
 		</div>

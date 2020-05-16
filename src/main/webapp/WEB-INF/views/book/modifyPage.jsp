@@ -12,7 +12,11 @@
 		<div class="row">
 			<div class="col-sm-12" style="padding:0 160px;">
 				<div class="box box-primary">
-					<form role="form" action="modifyPage?bookno=${book.bookno }&page=${cri.page}" method="post">
+					<form role="form" action="modifyPage" method="post">
+					<input type="hidden" name="bookno" value="${book.bookno }">
+					<input type="hidden" name="page" value="${cri.page }">
+					<input type="hidden" name="searchType" value="${cri.searchType }">
+					<input type="hidden" name="keyword" value="${cri.keyword }">
 						<div class="box-body">
 							<div class="form-group">
 								<label>도서번호</label>

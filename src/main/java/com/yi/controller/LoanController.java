@@ -42,7 +42,7 @@ public class LoanController {
 	}
 	
 	@RequestMapping(value="lendingSelBook", method=RequestMethod.GET)
-	public String lendingSelBook(SearchCriteria cri, Model model) throws Exception {
+	public String lendingSelBook(SearchCriteria cri, Model model, int userno) throws Exception {
 		List<BookVO> blist = bservice.listSearchCriteria2(cri);
 		
 		PageMaker pageMaker = new PageMaker();
@@ -52,8 +52,24 @@ public class LoanController {
 		model.addAttribute("cri", cri);
 		model.addAttribute("blist", blist);
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("userno", userno);
 		
 		return "/loan/lendingSelBook";
+	}
+	
+	@RequestMapping(value="lendCheck", method=RequestMethod.GET)
+	public String lendCheck(SearchCriteria cri, Model model, int userno, int bookno) throws Exception {
+		model.addAttribute("userno", userno);
+		model.addAttribute("bookno", bookno);
+		return "/loan/lendCheck";
+	}
+	
+	@RequestMapping(value="lendCheck", method=RequestMethod.POST)
+	public String lendCheckPost(SearchCriteria cri, Model model, int userno, int bookno) throws Exception {
+		model.addAttribute("userno", userno);
+		model.addAttribute("bookno", bookno);
+		
+		return "/loan/lendCheck";
 	}
 	
 	@RequestMapping(value="returnbook", method=RequestMethod.GET)
@@ -86,4 +102,5 @@ public class LoanController {
 		
 		return "/loan/returnSelBook";
 	}
+	
 }
