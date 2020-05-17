@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.yi.domain.BookVO;
+import com.yi.domain.LoanVO;
 import com.yi.domain.MemberVO;
 import com.yi.domain.PageMaker;
 import com.yi.domain.SearchCriteria;
 import com.yi.service.BookService;
+import com.yi.service.LoanService;
 import com.yi.service.MemberService;
 
 @Controller
@@ -24,6 +26,9 @@ public class LoanController {
 	
 	@Autowired
 	MemberService mservice;
+	
+	@Autowired
+	LoanService lservice;
 	
 	@RequestMapping(value="lending", method=RequestMethod.GET)
 	public String lending(SearchCriteria cri, Model model) throws Exception {
@@ -58,18 +63,20 @@ public class LoanController {
 	}
 	
 	@RequestMapping(value="lendCheck", method=RequestMethod.GET)
-	public String lendCheck(SearchCriteria cri, Model model, int userno, int bookno) throws Exception {
+	public String lendCheck(Model model, int userno, int bookno) throws Exception {
 		model.addAttribute("userno", userno);
 		model.addAttribute("bookno", bookno);
 		return "/loan/lendCheck";
 	}
 	
 	@RequestMapping(value="lendCheck", method=RequestMethod.POST)
-	public String lendCheckPost(SearchCriteria cri, Model model, int userno, int bookno) throws Exception {
-		model.addAttribute("userno", userno);
-		model.addAttribute("bookno", bookno);
-		
-		return "/loan/lendCheck";
+	public String lendCheckPost(LoanVO vo, Model model) throws Exception {
+				
+		lservice.create(vo);
+		model.addAttribute("userno", vo.getUserno());
+		model.addAttribute("bookno", vo.getBookno());		
+
+		return "redirect:/loan/lending";
 	}
 	
 	@RequestMapping(value="returnbook", method=RequestMethod.GET)

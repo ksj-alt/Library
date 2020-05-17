@@ -50,7 +50,7 @@
 									<td>${book.booktitle }</td>
 									<td>${book.author }</td>
 									<td>${book.publisher }</td>
-									<td style="padding-left:32px;">${book.rent }
+									<td style="padding-left:32px;">${book.lend }
 									<td><button class="selectBook" style="font-size:12px;">선택</button></td>
 								</tr>
 							</c:forEach>
@@ -79,7 +79,7 @@
 							</p>
 							<p>
 								<label>대출가능여부 :</label>
-								<input type="text" id="rent" readonly>
+								<input type="text" id="lend" readonly>
 							</p>
 						</div>
 					</div>
@@ -122,13 +122,13 @@
 		var booktitle = td.eq(1).text();
 		var author = td.eq(2).text();
 		var publisher = td.eq(3).text();
-		var rent = td.eq(4).text();
+		var lend = td.eq(4).text();
 		
 		$('#bookno').val(bookno);
 		$('#booktitle').val(booktitle);
 		$('#author').val(author);
 		$('#publisher').val(publisher);
-		$('#rent').val(rent);
+		$('#lend').val(lend);
 	})
 	$("#reset").click(function(){
 		location.href="${pageContext.request.contextPath }/loan/lending";

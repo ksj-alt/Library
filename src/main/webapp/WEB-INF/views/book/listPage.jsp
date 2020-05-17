@@ -41,7 +41,7 @@
 											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${book.booktitle }</a></td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
-							<td></td>
+							<td style="padding-left:32px;">${book.lend }</td>
 							<td></td>
 						</tr>
 					</c:forEach>

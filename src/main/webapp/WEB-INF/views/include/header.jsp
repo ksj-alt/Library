@@ -98,7 +98,7 @@ footer{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="./main" class="navbar-brand">KS Library Management</a>
+      <a href="${pageContext.request.contextPath }" class="navbar-brand">KS Library Management</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">

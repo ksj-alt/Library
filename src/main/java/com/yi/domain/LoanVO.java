@@ -3,19 +3,10 @@ package com.yi.domain;
 import java.util.Date;
 
 public class LoanVO {
-	private int loanno;
 	private int userno;
 	private int bookno;
 	private Date lenddate;
 	private Date returndate;
-
-	public int getLoanno() {
-		return loanno;
-	}
-
-	public void setLoanno(int loanno) {
-		this.loanno = loanno;
-	}
 
 	public int getUserno() {
 		return userno;
@@ -51,8 +42,8 @@ public class LoanVO {
 
 	@Override
 	public String toString() {
-		return "LoanVO [loanno=" + loanno + ", userno=" + userno + ", bookno=" + bookno + ", lenddate=" + lenddate
-				+ ", returndate=" + returndate + "]";
+		return "LoanVO [userno=" + userno + ", bookno=" + bookno + ", lenddate=" + lenddate + ", returndate="
+				+ returndate + "]";
 	}
 
 }
