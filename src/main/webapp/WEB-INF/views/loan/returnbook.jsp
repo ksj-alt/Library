@@ -14,7 +14,8 @@
 <script>
 	$(function(){
 		$("#selectBook").click(function(){
-			location.href="${pageContext.request.contextPath }/loan/returnSelBook";
+			var userno = $("#userno").val();
+			location.href="${pageContext.request.contextPath }/loan/returnSelBook?userno="+userno;
 		})
 	})
 </script>

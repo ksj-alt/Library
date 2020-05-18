@@ -9,7 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
+import com.yi.domain.LoanVO;
 import com.yi.domain.MemberVO;
 import com.yi.domain.PageMaker;
 import com.yi.domain.SearchCriteria;

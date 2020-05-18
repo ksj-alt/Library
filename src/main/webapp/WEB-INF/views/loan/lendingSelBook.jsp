@@ -37,7 +37,7 @@
 					<div class="box-body" style="height:500px; float:left;">
 						<table class="table table-condensed" style="width:600px; float:left;">
 							<tr>
-								<th>도서번호</th>
+								<th>번호</th>
 								<th>도서제목</th>
 								<th>저자</th>
 								<th>출판사</th>
@@ -56,17 +56,17 @@
 							</c:forEach>
 						</table>
 					</div>
+					<input type="hidden" name="userno" value="${userno }">
 					<div class="box-body" style="float:left; margin-left:60px;">
 						<div>
 							<h4>대출도서상세정보</h4>
 							<br>
 							<p>
-								<label>도서번호 : </label>
+								<label>번호 : </label>
 								<input type="text" id="bookno" readonly>
-								<input type="hidden" name="userno" value="${userno }">
 							</p>
 							<p>
-								<label>도서제목 : </label>
+								<label>제목 : </label>
 								<input type="text" id="booktitle" readonly>
 							</p>
 							<p>
@@ -91,13 +91,13 @@
 						<div class="text-center">
 							<ul class="pagination">
 								<c:if test="${pageMaker.prev == true }">
-									<li><a href="lendingSelBook?page=${pageMaker.startPage-1}&searchType=${cri.searchType}&keyword=${cri.keyword}">&laquo;</a></li>
+									<li><a href="lendingSelBook?page=${pageMaker.startPage-1}&searchType=${cri.searchType}&keyword=${cri.keyword}&userno=${userno}">&laquo;</a></li>
 								</c:if>
 								<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-									<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="lendingSelBook?page=${idx }&searchType=${cri.searchType}&keyword=${cri.keyword}">${idx }</a></li>
+									<li class="${pageMaker.cri.page == idx ?'active':'' }"><a href="lendingSelBook?page=${idx }&searchType=${cri.searchType}&keyword=${cri.keyword}&userno=${userno}">${idx }</a></li>
 								</c:forEach>
 								<c:if test="${pageMaker.next == true }">
-									<li><a href="lendingSelBook?page=${pageMaker.endPage+1 }&searchType=${cri.searchType}&keyword=${cri.keyword}">&raquo;</a></li>
+									<li><a href="lendingSelBook?page=${pageMaker.endPage+1 }&searchType=${cri.searchType}&keyword=${cri.keyword}&userno=${userno}">&raquo;</a></li>
 								</c:if>
 							</ul>
 						</div>
@@ -124,11 +124,15 @@
 		var publisher = td.eq(3).text();
 		var lend = td.eq(4).text();
 		
-		$('#bookno').val(bookno);
-		$('#booktitle').val(booktitle);
-		$('#author').val(author);
-		$('#publisher').val(publisher);
-		$('#lend').val(lend);
+		if(lend.indexOf("불가")!=-1){
+			alert("대출불가도서입니다.");
+		}else {
+			$('#bookno').val(bookno);
+			$('#booktitle').val(booktitle);
+			$('#author').val(author);
+			$('#publisher').val(publisher);
+			$('#lend').val(lend);
+		}
 	})
 	$("#reset").click(function(){
 		location.href="${pageContext.request.contextPath }/loan/lending";

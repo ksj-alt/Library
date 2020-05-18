@@ -58,7 +58,7 @@
 								<td>${member.username }</td>
 								<td>${member.birthday }</td>
 								<td>${member.phone }</td>
-								<td>${member.email }</td> 
+								<td>${member.email }</td>
 								<td><button class="selectUser" style="font-size:12px;">선택</button></td>
 							</tr>
 						</c:forEach>

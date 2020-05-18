@@ -70,9 +70,10 @@ public class LoanController {
 	}
 	
 	@RequestMapping(value="lendCheck", method=RequestMethod.POST)
-	public String lendCheckPost(LoanVO vo, Model model) throws Exception {
+	public String lendCheckPost(LoanVO vo, Model model, BookVO bvo) throws Exception {
 				
 		lservice.create(vo);
+		lservice.update(bvo);
 		model.addAttribute("userno", vo.getUserno());
 		model.addAttribute("bookno", vo.getBookno());		
 
@@ -96,7 +97,7 @@ public class LoanController {
 	}
 	
 	@RequestMapping(value="returnSelBook", method=RequestMethod.GET)
-	public String returnSelBook(SearchCriteria cri, Model model) throws Exception {
+	public String returnSelBook(SearchCriteria cri, Model model, int userno) throws Exception {
 		List<BookVO> blist = bservice.listSearchCriteria2(cri);
 		
 		PageMaker pageMaker = new PageMaker();
@@ -106,8 +107,27 @@ public class LoanController {
 		model.addAttribute("cri", cri);
 		model.addAttribute("blist", blist);
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("userno", userno);
 		
 		return "/loan/returnSelBook";
 	}
 	
+	@RequestMapping(value="returnCheck", method=RequestMethod.GET)
+	public String returnCheck(Model model, int userno, int bookno) throws Exception {
+		model.addAttribute("userno", userno);
+		model.addAttribute("bookno", bookno);
+		
+		return "/loan/returnCheck";
+	}
+	
+	@RequestMapping(value="returnCheck", method=RequestMethod.POST)
+	public String returnCheckPost(Model model, BookVO bvo, LoanVO vo) throws Exception{
+		lservice.updateReturn(bvo);
+		lservice.returnLoan(vo);
+		
+		model.addAttribute("userno", vo.getBookno());
+		model.addAttribute("bookno", vo.getBookno());
+		
+		return "redirect:/loan/returnbook";
+	}
 }

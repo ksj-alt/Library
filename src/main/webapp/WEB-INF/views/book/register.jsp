@@ -46,6 +46,7 @@
 								<label>저자소개</label>
 								<textarea rows="5" cols="30" name="authorintro" placeholder="Enter Content" class="form-control"></textarea>
 							</div>
+							
 						</div><br>
 						<div class="box-footer" style="text-align:center;">  
 							<button type="submit" class="btn btn-warning">등록</button>
