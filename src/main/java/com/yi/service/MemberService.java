@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yi.domain.Criteria;
+import com.yi.domain.LoanVO;
 import com.yi.domain.MemberVO;
 import com.yi.domain.SearchCriteria;
 import com.yi.persistence.MemberDAO;
@@ -54,5 +55,9 @@ public class MemberService {
 	
 	public int totalSearchCount(SearchCriteria cri) throws Exception {
 		return dao.totalSearchCount(cri);
+	}
+	
+	public List<LoanVO> listLoan(int userno) throws Exception {
+		return dao.listLoan(userno);
 	}
 }

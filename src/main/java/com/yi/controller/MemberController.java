@@ -84,13 +84,40 @@ public class MemberController {
 		return "member/listPage";
 	}
 	
+//	@RequestMapping(value="member/listPageTest", method=RequestMethod.GET)
+//	public String listPageTest(SearchCriteria cri, Model model) throws Exception {
+//		List<MemberVO> list = service.listSearchCriteria1(cri);
+//		
+//		PageMaker pageMaker = new PageMaker();
+//		pageMaker.setCri(cri);
+//		pageMaker.setTotalCount(service.totalSearchCount(cri));
+//		
+//		model.addAttribute("cri", cri);
+//		model.addAttribute("list", list);
+//		model.addAttribute("pageMaker", pageMaker);
+//		
+//		return "member/listPage";
+//	}
+	
 	@RequestMapping(value="member/readPage", method=RequestMethod.GET)
 	public String readPage(int userno, SearchCriteria cri, Model model) throws Exception {
+		List<LoanVO> list = service.listLoan(userno);
 		MemberVO vo = service.readByNo(userno);
 		model.addAttribute("member", vo);
 		model.addAttribute("cri", cri);
+		model.addAttribute("list", list);
 		return "/member/readPage";
 	}
+	
+//	@RequestMapping(value="member/readPageTest", method=RequestMethod.GET)
+//	public String readPageTest(int userno, SearchCriteria cri, Model model) throws Exception {
+//		List<LoanVO> list = service.listLoan(userno);
+//		MemberVO vo = service.readByNo(userno);
+//		model.addAttribute("member", vo);
+//		model.addAttribute("cri", cri);
+//		model.addAttribute("list", list);
+//		return "/member/readPageTest";
+//	}
 	
 	@RequestMapping(value="/member/removePage", method=RequestMethod.GET)
 	public String removePage(int userno, SearchCriteria cri, Model model) throws Exception {
