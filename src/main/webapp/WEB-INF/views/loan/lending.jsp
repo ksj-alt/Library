@@ -15,7 +15,11 @@
 	$(function(){
 		$("#selectBook").click(function(){
 			var userno = $("#userno").val();
-			location.href="${pageContext.request.contextPath }/loan/lendingSelBook?userno="+userno;
+			if(userno == ''){
+				alert("회원을 선택해주세요.");
+			} else {
+				location.href="${pageContext.request.contextPath }/loan/lendingSelBook?userno="+userno;
+			}
 		})
 	})
 </script>
