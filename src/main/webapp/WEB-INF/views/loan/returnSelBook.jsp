@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<br>
-				<div class="box-body" style="height:500px; float:left;">
+				<div class="box-body">
 					<table class="table table-condensed" style="width:600px; float:left;">
 						<tr>
 							<th>도서번호</th>

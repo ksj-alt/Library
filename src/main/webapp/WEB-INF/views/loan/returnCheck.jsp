@@ -7,7 +7,6 @@
 		<h3>반납하였습니다.</h3>
 		<input type="hidden" name="userno" value="${userno }">
 		<input type="hidden" name="bookno" value="${bookno }">
-		<input type="hidden" name="returndate">
 		<button type="submit" id="return" class="btn btn-warning">확인</button>
 	</form>
 </section>
