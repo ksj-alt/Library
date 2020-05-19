@@ -58,6 +58,12 @@
 							<input type="text" class="form-control" value="${book.page }" readonly>
 						</div>
 						<div class="form-group">
+							<label>이미지</label>
+							<c:forEach var="file" items="${board.files }">
+								<img src="displayFile?filename=${file }">
+							</c:forEach>
+						</div>
+						<div class="form-group">
 							<label>책소개</label>
 							<textarea rows="5" cols="30" class="form-control" readonly>${book.bookintro }</textarea>
 						</div>

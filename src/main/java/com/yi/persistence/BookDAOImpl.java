@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
 import com.yi.domain.SearchCriteria;
-
+ 
 @Repository
 public class BookDAOImpl implements BookDAO {
 	
@@ -77,6 +77,16 @@ public class BookDAOImpl implements BookDAO {
 	public int totalSearchCount(SearchCriteria cri) throws Exception {
 		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
 	}
+
+//	@Override
+//	public void addAttach(String fullname) throws Exception {
+//		sqlSession.insert(namespace + "addAttach", fullname);		
+//	}
+//
+//	@Override
+//	public BookVO readAndAttachByBno(int bookno) throws Exception {
+//		return sqlSession.selectOne(namespace + "readAndAttachByBno", bookno);
+//	}
 	
 	
 

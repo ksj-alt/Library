@@ -13,6 +13,7 @@ public class BookVO {
 	private String bookindex;
 	private String authorintro;
 	private String lend;
+	private ArrayList<String> files;
 
 	public int getBookno() {
 		return bookno;
@@ -94,6 +95,13 @@ public class BookVO {
 		this.lend = lend;
 	}
 
+	public ArrayList<String> getFiles() {
+		return files;
+	}
+
+	public void setFiles(ArrayList<String> files) {
+		this.files = files;
+	}
 
 	@Override
 	public String toString() {

@@ -1,12 +1,22 @@
 package com.yi.controller;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.PageMaker;
@@ -19,6 +29,9 @@ public class BookController {
 	
 	@Autowired
 	BookService service;
+	
+	@Resource(name="uploadPath")
+	String uploadPath;
 	
 	@RequestMapping(value="register", method=RequestMethod.GET)
 	public String registerGet() {
@@ -115,4 +128,34 @@ public class BookController {
 		return "redirect:/book/readPage?bookno="+vo.getBookno() + "&page=" + cri.getPage() + "&searchType=" + cri.getSearchType();
 	}
 
+	@ResponseBody
+	@RequestMapping(value="displayFile", method=RequestMethod.GET)
+	public ResponseEntity<byte[]> displayFile(String filename){
+		ResponseEntity<byte[]> entity = null;
+		
+		InputStream in = null;
+		try {
+			in = new FileInputStream(uploadPath+filename);
+			
+			String format = filename.substring(filename.lastIndexOf(".")+1);
+			MediaType mType = null;
+			if (format.equalsIgnoreCase("png")) {
+				mType = MediaType.IMAGE_PNG;
+			}else if(format.equalsIgnoreCase("jpg") || format.equalsIgnoreCase("jpeg")) {
+				mType = MediaType.IMAGE_JPEG;
+			}else if(format.equalsIgnoreCase("gif")) {
+				mType = MediaType.IMAGE_GIF;
+			}
+			
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(mType);
+			entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in), headers, HttpStatus.OK);
+			in.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<byte[]>(HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}
+	
 }

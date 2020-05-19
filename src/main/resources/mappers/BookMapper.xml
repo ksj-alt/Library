@@ -2,13 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BookMapper">
 	<insert id="createBook" parameterType="BookVO">
-		insert into tbl_book (booktitle, author, publisher)
-		values (#{booktitle}, #{author}, #{publisher})
+		insert into tbl_book (booktitle, author, publisher, price, page, bookintro, bookindex, authorintro)
+		values (#{booktitle}, #{author}, #{publisher}, #{price}, #{page}, #{bookintro}, #{bookindex}, #{authorintro})
 	</insert>
 	<select id="readBook" resultType="BookVO">
 		select * from tbl_book
 		 where bookno = #{bookno}
 	</select>
+	
 	<select id="list" resultType="BookVO">
 		select * from tbl_book 
 		 order by bookno desc
@@ -65,5 +66,4 @@
 		select count(bookno) from tbl_book
 			<include refid="search"></include>
 	</select>
-	
 </mapper>

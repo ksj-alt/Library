@@ -35,6 +35,10 @@
 								<input type="text" name="page" class="form-control" placeholder="ex) 147p">
 							</div>
 							<div class="form-group">
+								<label>이미지</label>
+								<input type="file" name="imageFiles" class="form-control" multiple="multiple" id=files>
+							</div>
+							<div class="form-group">
 								<label>책소개</label>
 								<textarea rows="5" cols="30" name="bookintro" placeholder="Enter Content" class="form-control"></textarea>
 							</div>
@@ -46,7 +50,6 @@
 								<label>저자소개</label>
 								<textarea rows="5" cols="30" name="authorintro" placeholder="Enter Content" class="form-control"></textarea>
 							</div>
-							
 						</div><br>
 						<div class="box-footer" style="text-align:center;">  
 							<button type="submit" class="btn btn-warning">등록</button>
