@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script>
 	$(function(){	
 		$("#list").click(function(){
@@ -59,7 +59,7 @@
 						</div>
 						<div class="form-group">
 							<label>이미지</label>
-							<c:forEach var="file" items="${board.files }">
+							<c:forEach var="file" items="${book.files }">
 								<img src="displayFile?filename=${file }">
 							</c:forEach>
 						</div>

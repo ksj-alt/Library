@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BookMapper">
+	<resultMap type="BookVO" id="BookResult">
+		<id property="bookno" column="bookno"/>
+		<result property="booktitle" column="booktitle"/>
+		<result property="author" column="author"/>
+		<result property="publisher" column="publisher"/>
+		<result property="price" column="price"/>
+		<result property="page" column="page"/>
+		<result property="bookintro" column="bookintro"/>
+		<result property="bookindex" column="bookindex"/>
+		<result property="authorintro" column="authorintro"/>
+		<result property="lend" column="lend"/>
+		<collection property="files" ofType="java.lang.String" javaType="list">
+			<result column="fullName"/>
+		</collection>
+	</resultMap>
+	
 	<insert id="createBook" parameterType="BookVO">
 		insert into tbl_book (booktitle, author, publisher, price, page, bookintro, bookindex, authorintro)
 		values (#{booktitle}, #{author}, #{publisher}, #{price}, #{page}, #{bookintro}, #{bookindex}, #{authorintro})
@@ -65,5 +81,14 @@
 	<select id="totalSearchCount" resultType="int">
 		select count(bookno) from tbl_book
 			<include refid="search"></include>
+	</select>
+	
+	<insert id="addAttach">
+		insert into tbl_attach (fullname, bookno) values (#{fullname}, LAST_INSERT_ID())
+	</insert>
+	<select id="readAndAttachByBookno" resultType="BookResult">
+		select * from tbl_book b left join tbl_attach a
+		    on b.bookno = a.bookno
+		 where b.bookno = #{bookno}
 	</select>
 </mapper>

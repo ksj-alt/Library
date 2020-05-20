@@ -78,16 +78,14 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
 	}
 
-//	@Override
-//	public void addAttach(String fullname) throws Exception {
-//		sqlSession.insert(namespace + "addAttach", fullname);		
-//	}
-//
-//	@Override
-//	public BookVO readAndAttachByBno(int bookno) throws Exception {
-//		return sqlSession.selectOne(namespace + "readAndAttachByBno", bookno);
-//	}
-	
-	
+	@Override
+	public void addAttach(String fullname) throws Exception {
+		sqlSession.insert(namespace + "addAttach", fullname);		
+	}
 
+	@Override
+	public BookVO readAndAttachByBookno(int bookno) throws Exception {
+		return sqlSession.selectOne(namespace + "readAndAttachByBookno", bookno);
+	}
+	
 }

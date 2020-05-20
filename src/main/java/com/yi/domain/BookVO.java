@@ -1,6 +1,7 @@
 package com.yi.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BookVO {
 	private int bookno;
@@ -14,6 +15,7 @@ public class BookVO {
 	private String authorintro;
 	private String lend;
 	private ArrayList<String> files;
+	private Date regdate;
 
 	public int getBookno() {
 		return bookno;
@@ -103,11 +105,19 @@ public class BookVO {
 		this.files = files;
 	}
 
+	public Date getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+
 	@Override
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
 				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
-				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend;
+				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", files=" + files + "]";
 	}
 
 }

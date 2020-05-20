@@ -2,6 +2,7 @@ package com.yi.controller;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -17,11 +18,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.PageMaker;
 import com.yi.domain.SearchCriteria;
 import com.yi.service.BookService;
+import com.yi.util.UploadFileUtils;
 
 @Controller
 @RequestMapping("/book/*")
@@ -39,7 +42,22 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="register", method=RequestMethod.POST)
-	public String registerPost(BookVO vo) throws Exception {
+	public String registerPost(BookVO vo, List<MultipartFile> imageFiles) throws Exception {
+		System.out.println("register POST --------" + vo);
+		
+		ArrayList<String> fullNames = new ArrayList<String>();
+		for(MultipartFile file : imageFiles) {
+			System.out.println(file.getOriginalFilename());
+			System.out.println(file.getSize());
+		
+			//upload처리
+			String savedName = UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes());
+			
+			fullNames.add(savedName);
+		
+		}
+		vo.setFiles(fullNames);
+		
 		service.create(vo);
 		
 		return "redirect:/book/listPage";
@@ -97,6 +115,7 @@ public class BookController {
 	@RequestMapping(value="readPage", method=RequestMethod.GET)
 	public String readPage(int bookno, SearchCriteria cri, Model model) throws Exception {
 		BookVO vo = service.readByNo(bookno);
+		System.out.println("readPage-----------"+vo);
 		model.addAttribute("book", vo);
 		model.addAttribute("cri", cri);
 		return "/book/readPage";

@@ -2,6 +2,29 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 
+<script>
+	
+	$(function() {
+
+		$("#files").change(function() {
+			//var file = $(this)[0].files[0]; // $(this)[0] : javascript 객체
+			
+			var files = $(this)[0].files;
+			//var file = e.target.files;        https://greatps1215.tistory.com/5
+			console.log(files);
+			$("#dropBox").empty();
+ 			for(var i = 0; i<files.length;i++){
+				var reader = new FileReader(); //javascript 객체
+				reader.readAsDataURL(files[i]);
+				reader.onload = function(e){
+					var $img = $("<img>").attr("src", e.target.result);
+					$("#dropBox").append($img);
+				}
+ 			}
+		})
+	})
+</script>
+
 <section>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="${pageContext.request.contextPath }/book/register">도서등록</a></li>
@@ -12,7 +35,7 @@
 		<div class="row">
 			<div class="col-sm-12" style="padding:0 160px;">
 				<div class="box box-primary">
-					<form role="form" action="register" method="post">
+					<form role="form" action="register" method="post" enctype="multipart/form-data">
 						<div class="box-body">
 							<div class="form-group">
 								<label>도서명<span style="color:red;"> * </span></label>
@@ -38,6 +61,7 @@
 								<label>이미지</label>
 								<input type="file" name="imageFiles" class="form-control" multiple="multiple" id=files>
 							</div>
+							<div id="dropBox"></div>
 							<div class="form-group">
 								<label>책소개</label>
 								<textarea rows="5" cols="30" name="bookintro" placeholder="Enter Content" class="form-control"></textarea>
