@@ -1,5 +1,6 @@
 package com.yi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,6 +123,7 @@ public class LoanController {
 	
 	@RequestMapping(value="returnCheck", method=RequestMethod.POST)
 	public String returnCheckPost(Model model, BookVO bvo, LoanVO vo) throws Exception{
+		vo.setReturndate(new Date());
 		lservice.updateReturn(bvo);
 		lservice.returnLoan(vo);
 		

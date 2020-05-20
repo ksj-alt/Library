@@ -22,7 +22,7 @@
 	</update>
 	<update id="returnLoan" parameterType="LoanVO">
 		update tbl_loan
-		   set status='반납완료'
+		   set status='반납완료', returndate=#{returndate}
 		 where userno=#{userno} and bookno=#{bookno}
 	</update>
 </mapper>
