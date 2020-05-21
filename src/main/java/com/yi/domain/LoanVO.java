@@ -7,6 +7,8 @@ public class LoanVO {
 	private int bookno;
 	private Date lenddate;
 	private Date returndate;
+	private String status;
+	private String booktitle;
 
 	public int getUserno() {
 		return userno;
@@ -40,10 +42,26 @@ public class LoanVO {
 		this.returndate = returndate;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getBooktitle() {
+		return booktitle;
+	}
+
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
+	}
+
 	@Override
 	public String toString() {
 		return "LoanVO [userno=" + userno + ", bookno=" + bookno + ", lenddate=" + lenddate + ", returndate="
-				+ returndate + "]";
+				+ returndate + ", status=" + status + ", booktitle=" + booktitle + "]";
 	}
 
 }

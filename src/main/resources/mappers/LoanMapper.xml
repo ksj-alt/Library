@@ -5,4 +5,24 @@
 		insert into tbl_loan (userno, bookno)
 		values (#{userno}, #{bookno})
 	</insert>
+	<update id="updateLend" parameterType="BookVO">
+		update tbl_book
+		   set lend='불가', lendnum=lendnum+1
+		 where bookno=#{bookno}
+	</update>
+	<update id="updateMember" parameterType="MemberVO">
+		update tbl_member
+		   set totallend=totallend+1
+		 where userno=#{userno}
+	</update>
+	<update id="updateReturn" parameterType="BookVO">
+		update tbl_book
+		   set lend='가능'
+		 where bookno=#{bookno}
+	</update>
+	<update id="returnLoan" parameterType="LoanVO">
+		update tbl_loan
+		   set status='반납완료', returndate=#{returndate}
+		 where userno=#{userno} and bookno=#{bookno}
+	</update>
 </mapper>

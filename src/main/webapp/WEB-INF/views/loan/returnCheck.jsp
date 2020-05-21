@@ -3,12 +3,11 @@
 <%@ include file="../include/header.jsp" %>
 
 <section>
-	<form role="form" action="lendCheck" method="post">
-		
-		<h3>대출하였습니다.</h3>
+	<form role="form" action="returnCheck" method="post">
+		<h3>반납하였습니다.</h3>
 		<input type="hidden" name="userno" value="${userno }">
 		<input type="hidden" name="bookno" value="${bookno }">
-		<button type="submit" id="lend" class="btn btn-warning">확인</button>
+		<button type="submit" id="return" class="btn btn-warning">확인</button>
 	</form>
 </section>
 

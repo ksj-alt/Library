@@ -20,4 +20,7 @@ public interface BookDAO {
 	public List<BookVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 	public List<BookVO> listSearchCriteria2(SearchCriteria cri) throws Exception;
 	public int totalSearchCount(SearchCriteria cri) throws Exception;
+	
+	public void addAttach(String fullname) throws Exception;
+	public BookVO readAndAttachByBookno(int bookno) throws Exception;
 }

@@ -11,14 +11,6 @@
 	}
 </style>
 
-<script>
-	$(function(){
-		$("#selectBook").click(function(){
-			location.href="${pageContext.request.contextPath }/loan/returnSelBook";
-		})
-	})
-</script>
-
 <section>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">대출승인처리</a></li>
@@ -42,7 +34,7 @@
 					</div>
 				</div>
 				<br>
-				<div class="box-body" style="height:500px; float:left;">
+				<div class="box-body">
 					<table class="table table-condensed" style="width:600px; float:left;">
 						<tr>
 							<th>도서번호</th>
@@ -58,7 +50,7 @@
 								<td>${book.booktitle }</td>
 								<td>${book.author }</td>
 								<td>${book.publisher }</td>
-								<td style="padding-left:32px;">${book.rent }
+								<td style="padding-left:32px;">${book.lend }
 								<td><button class="selectBook" style="font-size:12px;">선택</button></td>
 							</tr>
 						</c:forEach>
@@ -69,12 +61,12 @@
 						<h4>대출도서상세정보</h4>
 						<br>
 						<p>
-							<label>도서제목 : </label>
-							<input type="text" id="booktitle" readonly>
-						</p>
-						<p>
 							<label>도서번호 : </label>
 							<input type="text" id="bookno" readonly>
+						</p>
+						<p>
+							<label>도서제목 : </label>
+							<input type="text" id="booktitle" readonly>
 						</p>
 						<p>
 							<label>저자 : </label>
@@ -91,7 +83,7 @@
 					</div>
 				</div>
 				<div class="box-footer" style="text-align:center;">
-					<button type="submit"  class="btn btn-warning" style="margin-top:20px;">반납하기</button>
+					<button type="button" id="return" class="btn btn-warning" style="margin-top:20px;">반납하기</button>
 					<button type="reset" id="reset" class="btn btn-warning" style="margin-top:20px;">취소</button>
 				</div>
 				<div class="box-body" style="clear:both;">
@@ -125,20 +117,24 @@
 		var tr = btn.parent().parent();
 		var td = tr.children();
 		
-		var booktitle = td.eq(0).text();
-		var bookno = td.eq(1).text();
+		var bookno = td.eq(0).text();
+		var booktitle = td.eq(1).text();
 		var author = td.eq(2).text();
 		var publisher = td.eq(3).text();
-		var rent = td.eq(4).text();
+		var lend = td.eq(4).text();
 		
 		$('#booktitle').val(booktitle);
 		$('#bookno').val(bookno);
 		$('#author').val(author);
 		$('#publisher').val(publisher);
-		$('#rent').val(rent);
+		$('#lend').val(lend);
 	})
 	$("#reset").click(function(){
 		location.href="${pageContext.request.contextPath }/loan/returnbook";
+	})
+	$("#return").click(function(){
+		var bookno = $("#bookno").val();
+		location.href="${pageContext.request.contextPath}/loan/returnCheck?userno=${userno}&bookno="+bookno;
 	})
 </script>
 

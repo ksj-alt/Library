@@ -3,6 +3,7 @@ package com.yi.persistence;
 import java.util.List;
 
 import com.yi.domain.Criteria;
+import com.yi.domain.LoanVO;
 import com.yi.domain.MemberVO;
 import com.yi.domain.SearchCriteria;
 
@@ -20,5 +21,7 @@ public interface MemberDAO {
 	public List<MemberVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 	public List<MemberVO> listSearchCriteria2(SearchCriteria cri) throws Exception;
 	public int totalSearchCount(SearchCriteria cri) throws Exception;
+	
+	public List<LoanVO> listLoan(int userno) throws Exception;
 	
 }

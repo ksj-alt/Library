@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.MemberMapper">
 	<insert id="createMember" parameterType="MemberVO">
-		insert into tbl_member (username, birthday, phone)
-		values (#{username}, #{birthday}, #{phone})
+		insert into tbl_member (username, birthday, phone, email)
+		values (#{username}, #{birthday}, #{phone}, #{email})
 	</insert>
 	<select id="readMember" resultType="MemberVO">
 		select * from tbl_member 
@@ -55,5 +55,12 @@
 	<select id="totalSearchCount" resultType="int">
 		select count(userno) from tbl_member
 			<include refid="search"></include>
+	</select>
+	
+	<select id="loanList" resultType="LoanVO">
+		select l.userno, l.bookno, b.booktitle, l.lenddate, l.returndate, l.status
+  		  from tbl_loan l, tbl_book b
+ 		 where l.bookno = b.bookno and userno=#{userno}
+ 		 order by userno, lenddate desc
 	</select>
 </mapper>

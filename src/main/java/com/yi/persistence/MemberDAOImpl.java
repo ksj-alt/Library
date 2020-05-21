@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
+import com.yi.domain.LoanVO;
 import com.yi.domain.MemberVO;
 import com.yi.domain.SearchCriteria;
 
@@ -77,6 +78,11 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int totalSearchCount(SearchCriteria cri) throws Exception {
 		return sqlSession.selectOne(namespace + "totalSearchCount", cri);
+	}
+
+	@Override
+	public List<LoanVO> listLoan(int userno) throws Exception {
+		return sqlSession.selectList(namespace + "loanList", userno);
 	}
 
 

@@ -12,7 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-	.navbar-inverse { background-color: #221000; position: relative;}
+.navbar-inverse { background-color: #221000; position: relative;}
 .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #221000}
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #301602}
 .dropdown-menu { background-color: #FFFFFF}
@@ -35,60 +35,22 @@
 section{
 		width:1000px;
 		margin:0 auto;
+		position: relative;
 	}
 footer{
-		height:50px;
+		height:75px;
 		width:100%;
-		background-color:#FFFFE5; 
 		text-align: center;
 		font-size:12px;
 		color:#5D5D5D;
-		margin-top:100px;
-	} 
+		margin-top:80px;
+	}
+footer hr{
+		padding-bottom:5px;
+	}
 </style>
 </head>
 <body>
-	<!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">May Library</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">도서관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">신규도서등록</a></li>
-            <li><a href="#">도서목록확인</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">대출관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">대출승인관리</a></li>
-            <li><a href="#">대출반납관리</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">회원관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">신규회원등록</a></li>
-            <li><a href="#">회원목록확인</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
