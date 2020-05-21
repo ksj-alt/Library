@@ -29,7 +29,6 @@
 					<th>저자</th>
 					<th>출판사</th>
 					<th>대출가능여부</th>
-					<th>예약가능여부</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,7 +41,6 @@
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
 							<td style="padding-left:32px;">${book.lend }</td>
-							<td></td>
 						</tr>
 					</c:forEach>
 				</tr>

@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 
 <footer>
-	대구시 서구 영남인재교육원 KS Library<br>
-	Copyright by ksj © 2020
+	<hr>
+	대구시 서구 영남인재교육원<br>
+	Copyright © KS LIBRARY MANAGEMENT. All rights reserved.
 </footer>
 </body>
 </html>

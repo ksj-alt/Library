@@ -86,7 +86,7 @@
 	<insert id="addAttach">
 		insert into tbl_attach (fullname, bookno) values (#{fullname}, LAST_INSERT_ID())
 	</insert>
-	<select id="readAndAttachByBookno" resultType="BookResult">
+	<select id="readAndAttachByBookno" resultMap="BookResult">
 		select * from tbl_book b left join tbl_attach a
 		    on b.bookno = a.bookno
 		 where b.bookno = #{bookno}
