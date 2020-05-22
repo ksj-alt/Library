@@ -1,6 +1,5 @@
 package com.yi.controller;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -39,6 +38,7 @@ public class BookController {
 	
 	@RequestMapping(value="register", method=RequestMethod.GET)
 	public String registerGet() {
+		System.out.println("register GET --------" );
 		return "book/register";
 	}
 	
