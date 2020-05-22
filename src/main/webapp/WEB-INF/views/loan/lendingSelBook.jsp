@@ -40,7 +40,6 @@
 								<th>번호</th>
 								<th>도서제목</th>
 								<th>저자</th>
-								<th>출판사</th>
 								<th>대출가능여부</th>
 								<th>도서선택</th>
 							</tr>
@@ -49,7 +48,6 @@
 									<td>${book.bookno }</td>
 									<td>${book.booktitle }</td>
 									<td>${book.author }</td>
-									<td>${book.publisher }</td>
 									<td style="padding-left:32px;">${book.lend }
 									<td><button class="selectBook" style="font-size:12px;">선택</button></td>
 								</tr>

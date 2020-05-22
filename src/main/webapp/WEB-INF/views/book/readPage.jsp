@@ -23,12 +23,17 @@
 		padding-right:140px;
 		padding-bottom:10px;
 	}
+	#lendnum{
+		text-align: right;
+		padding-right:140px;
+		padding-bottom:10px;
+	}
 	#lend span{
 		font-weight: bold;
 		color:#ED0000;
 	}
 	#title{
-		width:750px;
+		width:800px;
 		height:40px;
 		font-size: 16px;
 		font-weight: bold;
@@ -43,30 +48,29 @@
 		width:200px;
 		height:280px;
 		margin-right:30px;
+		border: 1px solid #A6A6A6;
+		margin-left:40px;
 	}
 	img{
 		width:200px;
 		height:280px;
-		border: 1px solid #A6A6A6;
 	}
 	label{
 		width:80px;
 	}
-	input{
-		width:250px;
-		border:none;
+	.text{
 		margin-left:20px;
 	}
 	#bottomContent{
 		clear:both;
-		width:670px;
+		width:760px;
 		margin:0 auto;
 		padding-left:15px;
 		font-size:15px;
 	}
 	textarea{
 		border:none;
-		width:670px;
+		width:760px;
 		font-size: 14px;
 	}
 </style>
@@ -104,7 +108,10 @@
 			<button type="button" id="list" class="btn">리스트</button>
 		</div>
 		<br>
-	<div id="lend">대출가능여부 : <span>${lend }</span></div>
+	<div id="lend">
+		대출가능여부 : <span>${lend }　</span>/
+		　총 대출 수 : ${lendnum }
+	</div>
 	<div id="title">${booktitle }</div>
 	<br>
 	<div class="content">
@@ -116,30 +123,30 @@
 							<img src="displayFile?filename=${file }">
 						</c:forEach>
 					</div>
-					<div style="padding-left:30px; float:left;">
+					<div style="padding-left:30px; float:left; width:350px;">
 						<div class="form-group" style="padding-top:15px;">
 							<label>도서번호</label>
-							<strong>:</strong> <input type="text" value="${book.bookno }" readonly>
+							<strong>:</strong> <span class="text">${book.bookno }</span>
 						</div>
 						<div class="form-group">
 							<label>도서명</label>
-							<strong>:</strong> <input type="text" value="${book.booktitle }" readonly>
+							<strong>:</strong> <span class="text">${book.booktitle }</span>
 						</div>
 						<div class="form-group">
 							<label>저자</label>
-							<strong>:</strong> <input type="text" value="${book.author }" readonly>
+							<strong>:</strong> <span class="text">${book.author }</span>
 						</div>
 						<div class="form-group">
 							<label>출판사</label>
-							<strong>:</strong> <input type="text" value="${book.publisher }" readonly>
+							<strong>:</strong> <span class="text">${book.publisher }</span>
 						</div>
 						<div class="form-group">
 							<label>가격</label>
-							<strong>:</strong> <input type="text" value="<fmt:formatNumber value="${book.price }" pattern="#,###"/> 원" readonly>
+							<strong>:</strong> <span class="text"><fmt:formatNumber value="${book.price }" pattern="#,###"/> 원</span>
 						</div>
 						<div class="form-group">
 							<label>페이지</label>
-							<strong>:</strong> <input type="text" value="${book.page } p" readonly>
+							<strong>:</strong> <span class="text">${book.page } p</span>
 						</div>
 					</div>
 				</div>

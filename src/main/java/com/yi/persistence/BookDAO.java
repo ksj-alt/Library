@@ -23,4 +23,5 @@ public interface BookDAO {
 	
 	public void addAttach(String fullname) throws Exception;
 	public BookVO readAndAttachByBookno(int bookno) throws Exception;
+	public void removeAttach(String fullName) throws Exception;
 }

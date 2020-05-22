@@ -91,4 +91,9 @@
 		    on b.bookno = a.bookno
 		 where b.bookno = #{bookno}
 	</select>
+	
+	<delete id="removeAttach">
+		delete from tbl_attach
+		 where fullName=#{fullName}
+	</delete>
 </mapper>

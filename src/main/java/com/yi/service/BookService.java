@@ -61,4 +61,8 @@ public class BookService {
 	public int totalSearchCount(SearchCriteria cri) throws Exception {
 		return dao.totalSearchCount(cri);
 	}
+	
+	public void removeAttach(String fullName) throws Exception {
+		dao.removeAttach(fullName);
+	}
 }

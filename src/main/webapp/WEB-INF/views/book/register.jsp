@@ -43,7 +43,7 @@
 							</div>
 							<div class="form-group">
 								<label>저자<span style="color:red;"> * </span></label>
-								<input type="text" name="author" class="form-control" placeholder="ex) 스펜서 존슨 지음 | 공경희 옮김">
+								<input type="text" name="author" class="form-control" placeholder="ex) 스펜서 존슨">
 							</div>
 							<div class="form-group">
 								<label>출판사<span style="color:red;"> * </span></label>
@@ -55,7 +55,7 @@
 							</div>
 							<div class="form-group">
 								<label>페이지</label>
-								<input type="text" name="page" class="form-control" placeholder="ex) 147p">
+								<input type="text" name="page" class="form-control" placeholder="ex) 147">
 							</div>
 							<div class="form-group">
 								<label>이미지</label>

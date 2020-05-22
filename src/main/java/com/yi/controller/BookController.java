@@ -1,5 +1,6 @@
 package com.yi.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -118,6 +119,7 @@ public class BookController {
 		model.addAttribute("book", vo);
 		model.addAttribute("cri", cri);
 		model.addAttribute("lend", vo.getLend());
+		model.addAttribute("lendnum", vo.getLendnum());
 		model.addAttribute("booktitle", vo.getBooktitle());
 		return "/book/readPage";
 	}
@@ -140,8 +142,24 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="modifyPage", method=RequestMethod.POST)
-	public String updatePage(BookVO vo, SearchCriteria cri, Model model) throws Exception {
+	public String updatePage(BookVO vo, SearchCriteria cri, List<MultipartFile> imageFiles, Model model) throws Exception { //String[] imgFile
+//		for(String imgFiles : imgFile) {
+//			service.removeAttach(imgFiles);
+//			System.out.println(imgFiles);
+//			//thumbnail 이미지 삭제
+//			File file = new File(uploadPath+imgFiles);
+//			file.delete();
+//			
+//			//원본 삭제
+//			String originalName = imgFiles.substring(0,12) + imgFiles.substring(14);
+//			File originFile = new File(uploadPath + originalName);
+//			originFile.delete();
+//		}
+//		
+//		service.update(vo);
+
 		service.update(vo);
+		
 		model.addAttribute("book", vo);
 		model.addAttribute("cri", cri);
 		model.addAttribute("keyword", cri.getKeyword());

@@ -9,11 +9,12 @@ public class BookVO {
 	private String author;
 	private String publisher;
 	private int price;
-	private String page;
+	private int page;
 	private String bookintro;
 	private String bookindex;
 	private String authorintro;
 	private String lend;
+	private String lendnum;
 	private ArrayList<String> files;
 	private Date regdate;
 
@@ -57,11 +58,11 @@ public class BookVO {
 		this.price = price;
 	}
 
-	public String getPage() {
+	public int getPage() {
 		return page;
 	}
 
-	public void setPage(String page) {
+	public void setPage(int page) {
 		this.page = page;
 	}
 
@@ -97,6 +98,14 @@ public class BookVO {
 		this.lend = lend;
 	}
 
+	public String getLendnum() {
+		return lendnum;
+	}
+
+	public void setLendnum(String lendnum) {
+		this.lendnum = lendnum;
+	}
+
 	public ArrayList<String> getFiles() {
 		return files;
 	}
@@ -117,7 +126,8 @@ public class BookVO {
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
 				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
-				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", files=" + files + "]";
+				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", lendnum=" + lendnum + ", files="
+				+ files + ", regdate=" + regdate + "]";
 	}
 
 }

@@ -87,5 +87,10 @@ public class BookDAOImpl implements BookDAO {
 	public BookVO readAndAttachByBookno(int bookno) throws Exception {
 		return sqlSession.selectOne(namespace + "readAndAttachByBookno", bookno);
 	}
+
+	@Override
+	public void removeAttach(String fullName) throws Exception {
+		sqlSession.delete(namespace + "removeAttach", fullName);
+	}
 	
 }
