@@ -2,6 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>    
 
+<style>
+	label{
+		margin-right:2px;
+	}
+	.input{
+		border:none;
+	}
+	.btn{
+		width:75px;
+		height:30px;
+		font-size: 13px;
+	}
+</style>
+
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 	$(function(){		
@@ -25,71 +39,58 @@
 		<li><a href="${pageContext.request.contextPath }/member/listPage" style="color:#221000">회원목록</a></li>
 	</ul>
 	<br>
-	<div class="container" style="width:600px; float:left;">
-	<div style="margin:5px; font-size: 18px; margin-bottom:10px;">회원대출이력</div>
-		<table class="table table-condensed">
-			<thead>
-				<tr>
-					<th>도서번호</th> 
-					<th>도서제목</th>
-					<th>대출날짜</th>
-					<th>반납날짜</th>
-					<th>대출상태</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<c:forEach var="loan" items="${list }">
-						<tr>
-							<td>${loan.bookno }</td>
-							<td>${loan.booktitle }</td>
-							<td><fmt:formatDate pattern="yyyy.MM.dd HH:mm" value="${loan.lenddate }"/></td>
-							<td><fmt:formatDate pattern="yyyy.MM.dd HH:mm" value="${loan.returndate }"/></td>
-							<td>${loan.status }</td>
-						</tr>
-					</c:forEach>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
-	<div class="content">
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="box box-primary">
-					<div style="margin:5px; font-size: 18px; margin-bottom:15px;">회원상세정보</div>
-					<div class="box-body" style="padding-left:15px;">
-						<div class="form-group">
-							<label>회원번호</label>
-							<input type="text" class="form-control" value="${member.userno }" readonly>
-						</div>
-						<div class="form-group">
-							<label>성명</label>
-							<input type="text" class="form-control" value="${member.username }" readonly>
-						</div>
-						<div class="form-group">
-							<label>생년월일</label>
-							<input type="text" class="form-control" value="${member.birthday }" readonly>
-						</div>
-						<div class="form-group">
-							<label>전화번호</label>
-							<input type="text" class="form-control" value="${member.phone }" readonly>
-						</div>
-						<div class="form-group">
-							<label>이메일</label>
-							<input type="text" class="form-control" value="${member.email }" readonly>
-						</div>
-						<br>
-						<div class="box-footer"  style="text-align:center;">  
-							<button type="button" id="modify" class="btn btn-warning">수정</button>
-							<button type="button" id="remove" class="btn btn-warning">회원삭제</button>
-							<button type="button" id="list" class="btn btn-warning">리스트</button>
-						</div>
-					</div>
+	<div class="container" style="width:980px;">
+		<div style="margin:5px; font-size: 18px; margin-bottom:15px; float:left;">회원상세정보</div>
+		<div class="box-footer"  style="text-align:right; float:right; margin-top:18px; margin-bottom:8px;">  
+			<button type="button" id="modify" class="btn">수정</button>
+			<button type="button" id="remove" class="btn">회원삭제</button>
+			<button type="button" id="list" class="btn">리스트</button>
+		</div>
+			<div class="box-body" style="padding-left:15px; clear:both;">
+				<div class="form-group">
+					<label>회원번호 :</label>
+					<input type="text" class="input" value="${member.userno }" readonly>
+					<label>성명 :</label>
+					<input type="text" class="input" value="${member.username }" readonly>
+					<label>생년월일 :</label>
+					<input type="text" class="input" value="${member.birthday }" readonly>
+				</div>
+				<div class="form-group">
+					<label>전화번호 :</label>
+					<input type="text" class="input" value="${member.phone }" readonly>
+					<label>이메일 :</label>
+					<input type="text" class="input" value="${member.email }" readonly>
 				</div>
 			</div>
 		</div>
-	</div>
+		<br><br>
+		<div class="container" style="width:980px;">
+			<div style="margin:5px; font-size: 18px; margin-bottom:10px;">회원대출이력</div>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th>도서번호</th> 
+							<th>도서제목</th>
+							<th>대출날짜</th>
+							<th>반납날짜</th>
+							<th>대출상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<c:forEach var="loan" items="${list }">
+								<tr>
+									<td>${loan.bookno }</td>
+									<td>${loan.booktitle }</td>
+									<td><fmt:formatDate pattern="yyyy.MM.dd HH:mm" value="${loan.lenddate }"/></td>
+									<td><fmt:formatDate pattern="yyyy.MM.dd" value="${loan.returndate }"/></td>
+									<td>${loan.status }</td>
+								</tr>
+							</c:forEach>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 	<%-- <div class="box-body" style="margin: 0 auto;">
 		<div>
 			<h4>회원상세정보</h4>
