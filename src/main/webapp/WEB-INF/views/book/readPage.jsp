@@ -68,9 +68,9 @@
 		padding-left:15px;
 		font-size:15px;
 	}
-	textarea{
-		border:none;
-		width:760px;
+	.bookContent{
+		white-space:pre-wrap;
+		width:740px;
 		font-size: 14px;
 	}
 </style>
@@ -157,20 +157,20 @@
 				<br>
 					<div class="form-group">
 						<label>책소개</label>
-						<br>
-						<textarea rows="6" cols="75" readonly>${book.bookintro }</textarea>
+						<br><br>
+						<div class="bookContent">${book.bookintro }</div>
 					</div>
 					<br>
 					<div class="form-group">
 						<label>목차</label>
-						<br>
-						<textarea rows="6" cols="75" readonly>${book.bookindex }</textarea>
+						<br><br>
+						<div class="bookContent">${book.bookindex }</div>
 					</div>
 					<br>
 					<div class="form-group">
 						<label>저자소개</label>
-						<br>
-						<textarea rows="6" cols="75" readonly>${book.authorintro }</textarea>
+						<br><br>
+						<div class="bookContent">${book.authorintro }</div>
 					</div>
 				</div>
 			</div>
