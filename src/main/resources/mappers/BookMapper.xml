@@ -18,8 +18,8 @@
 	</resultMap>
 	
 	<insert id="createBook" parameterType="BookVO">
-		insert into tbl_book (booktitle, author, publisher, price, page, bookintro, bookindex, authorintro)
-		values (#{booktitle}, #{author}, #{publisher}, #{price}, #{page}, #{bookintro}, #{bookindex}, #{authorintro})
+		insert into tbl_book (booktitle, author, publisher, price, pages, bookintro, bookindex, authorintro)
+		values (#{booktitle}, #{author}, #{publisher}, #{price}, #{pages}, #{bookintro}, #{bookindex}, #{authorintro})
 	</insert>
 	<select id="readBook" resultType="BookVO">
 		select * from tbl_book
@@ -33,7 +33,7 @@
 	<update id="updateBook" parameterType="BookVO">
 		update tbl_book
 		   set booktitle=#{booktitle}, author=#{author}, publisher=#{publisher},
-		   		price=#{price}, page=#{page}, bookintro=#{bookintro},
+		   		price=#{price}, pages=#{pages}, bookintro=#{bookintro},
 		   		bookindex=#{bookindex}, authorintro=#{authorintro} 
 		 where bookno=#{bookno}
 	</update>

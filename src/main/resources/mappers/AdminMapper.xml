@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.AdminMapper">
+	<insert id="createAdmin" parameterType="AdminVO">
+		insert into tbl_admin (id, pw, name, email)
+		values (#{id}, #{pw}, #{name}, #{email})
+	</insert>
+	<select id="readAdmin" resultType="AdminVO">
+		select * from tbl_admin
+		 where id=#{id}
+	</select>
+	<select id="list" resultType="AdminVO">
+		select * from tbl_admin
+	</select>
+	<update id="updateAdmin" parameterType="AdminVO">
+		update admin
+		   set pw=#{pw}, email=#{email}
+		 where id=#{id}
+	</update>
+</mapper>

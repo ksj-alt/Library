@@ -146,7 +146,7 @@
 						</div>
 						<div class="form-group">
 							<label>페이지</label>
-							<strong>:</strong> <span class="text">${book.page } p</span>
+							<strong>:</strong> <span class="text">${book.pages } p</span>
 						</div>
 					</div>
 				</div>

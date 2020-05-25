@@ -9,7 +9,7 @@ public class BookVO {
 	private String author;
 	private String publisher;
 	private int price;
-	private int page;
+	private int pages;
 	private String bookintro;
 	private String bookindex;
 	private String authorintro;
@@ -58,12 +58,12 @@ public class BookVO {
 		this.price = price;
 	}
 
-	public int getPage() {
-		return page;
+	public int getPages() {
+		return pages;
 	}
 
-	public void setPage(int page) {
-		this.page = page;
+	public void setPages(int pages) {
+		this.pages = pages;
 	}
 
 	public String getBookintro() {
@@ -125,7 +125,7 @@ public class BookVO {
 	@Override
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
-				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
+				+ publisher + ", price=" + price + ", pages=" + pages + ", bookintro=" + bookintro + ", bookindex="
 				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", lendnum=" + lendnum + ", files="
 				+ files + ", regdate=" + regdate + "]";
 	}

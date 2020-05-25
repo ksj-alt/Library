@@ -92,7 +92,7 @@
 							</div>
 							<div class="form-group">
 								<label>페이지</label>
-								<input type="text" name="page" class="form-control" value="${book.page }" placeholder="ex) 147">
+								<input type="text" name="pages" class="form-control" value="${book.pages }" placeholder="ex) 147">
 							</div>
 						<%-- 	<div class="form-group">
 								<label>이미지</label>
