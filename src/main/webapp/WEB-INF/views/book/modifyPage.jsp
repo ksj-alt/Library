@@ -31,7 +31,7 @@
 	})
 </script> -->
 
-<script>
+<!-- <script>
 	
 	$(function() {
 
@@ -52,7 +52,7 @@
  			}
 		})
 	})
-</script>
+</script> -->
 
 <section>
 	<ul class="nav nav-tabs">
@@ -94,7 +94,7 @@
 								<label>페이지</label>
 								<input type="text" name="pages" class="form-control" value="${book.pages }" placeholder="ex) 147">
 							</div>
-						<%-- 	<div class="form-group">
+						 	<%-- <div class="form-group">
 								<label>이미지</label>
 								<c:forEach var="file" items="${book.files }">
 								<div class="delItem">
@@ -102,7 +102,7 @@
 									<input type="checkbox" class="check" name="imgFile" value="${file }">
 								</div>
 								</c:forEach>
-							</div> --%>
+							</div>  --%>
 							<div class="form-group">
 								<label>책소개</label>
 								<textarea rows="5" cols="30" name="bookintro" placeholder="Enter Content" class="form-control">${book.bookintro }</textarea>

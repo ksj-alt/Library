@@ -14,7 +14,7 @@ public class BookVO {
 	private String bookindex;
 	private String authorintro;
 	private String lend;
-	private String lendnum;
+	private int lendnum;
 	private ArrayList<String> files;
 	private Date regdate;
 
@@ -98,11 +98,11 @@ public class BookVO {
 		this.lend = lend;
 	}
 
-	public String getLendnum() {
+	public int getLendnum() {
 		return lendnum;
 	}
 
-	public void setLendnum(String lendnum) {
+	public void setLendnum(int lendnum) {
 		this.lendnum = lendnum;
 	}
 

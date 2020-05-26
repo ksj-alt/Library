@@ -43,14 +43,16 @@
 				<br>
 				<div class="box-body" style="height:500px; float:left;">
 					<table class="table table-condensed" style="width:600px; float:left;">
-						<tr>
-							<th>회원번호</th>
-							<th>성명</th>
-							<th>생년월일</th>
-							<th>전화번호</th>
-							<th>이메일</th>
-							<th>회원선택</th>
-						</tr>
+						<thead>
+							<tr>
+								<th>회원번호</th>
+								<th>성명</th>
+								<th>생년월일</th>
+								<th>전화번호</th>
+								<th>이메일</th>
+								<th>회원선택</th>
+							</tr>
+						</thead>
 						<tbody>
 							<c:forEach var="member" items="${mlist }">
 								<tr>

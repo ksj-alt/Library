@@ -50,11 +50,11 @@
 								<input type="text" name="publisher" class="form-control" placeholder="ex) 인플루엔셜">
 							</div>
 							<div class="form-group">
-								<label>가격</label>
+								<label>가격<span style="color:red;"> * </span></label>
 								<input type="text" name="price" class="form-control" placeholder="ex) 13800">
 							</div>
 							<div class="form-group">
-								<label>페이지</label>
+								<label>페이지<span style="color:red;"> * </span></label>
 								<input type="text" name="pages" class="form-control" placeholder="ex) 147">
 							</div>
 							<div class="form-group">

@@ -114,13 +114,14 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="readPage", method=RequestMethod.GET)
-	public String readPage(int bookno, SearchCriteria cri, Model model) throws Exception {
-		BookVO vo = service.readByNo(bookno);
-		model.addAttribute("book", vo);
+	public String readPage(BookVO vo, SearchCriteria cri, Model model) throws Exception {
+		BookVO bvo = service.readByNo(vo.getBookno());
+
+		model.addAttribute("book", bvo);
 		model.addAttribute("cri", cri);
-		model.addAttribute("lend", vo.getLend());
-		model.addAttribute("lendnum", vo.getLendnum());
-		model.addAttribute("booktitle", vo.getBooktitle());
+		model.addAttribute("lend", bvo.getLend());
+		model.addAttribute("lendnum", bvo.getLendnum());
+		model.addAttribute("booktitle", bvo.getBooktitle());
 		return "/book/readPage";
 	}
 	

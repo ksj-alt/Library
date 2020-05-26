@@ -33,9 +33,11 @@ public class AdminController {
 			return "login/loginForm";
 		}
 		
+		session.setAttribute("Name", dbVO.getName()); 
 		session.setAttribute("Auth", vo.getId());
+		session.setAttribute("Email", dbVO.getEmail());
 		
-		return "redirect:/";
+		return "redirect:/main";
 	}
 	
 	@RequestMapping(value="logout", method=RequestMethod.GET)

@@ -36,7 +36,7 @@
 					<c:forEach var="book" items="${list }">
 						<tr>
 							<td>${book.bookno }</td>
-							<td><a href="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
+							<td style="width:500px;"><a href="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
 											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${book.booktitle }</a></td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
@@ -47,7 +47,6 @@
 			</tbody>
 		</table>
 	</div>
-	
 	<div class="box-footer">
 		<div class="text-center">
 			<ul class="pagination">

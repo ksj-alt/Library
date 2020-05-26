@@ -43,7 +43,7 @@ public class LoanController {
 		model.addAttribute("cri", cri);
 		model.addAttribute("mlist", mlist);
 		model.addAttribute("pageMaker", pageMaker);
-				
+		
 		return "/loan/lending";
 	}
 	
@@ -75,6 +75,7 @@ public class LoanController {
 				
 		lservice.create(vo);
 		lservice.update(bvo);
+		System.out.println("update lendnum"+ bvo.getLendnum());
 		model.addAttribute("userno", vo.getUserno());
 		model.addAttribute("bookno", vo.getBookno());		
 

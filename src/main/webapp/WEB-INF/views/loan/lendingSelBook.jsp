@@ -6,6 +6,10 @@
 	label{
 		width:100px;
 	}
+	.input{
+		margin-right:10px;
+		border:none;
+	}
 	tbody tr:hover{
 		background-color: #F6F6F6;
 	}
@@ -21,7 +25,36 @@
 		<div class="row">
 			<div class="col-sm-12">
 					<div class="box box-primary">
-						<div class="box-body">
+						<div class="box-body" style="margin-left:20px;">
+						<div>
+							<h4>대출도서상세정보</h4>
+							<br>
+							<p>
+								<label>번호 : </label>
+								<input type="text" id="bookno" class="input" readonly>
+								<label>제목 : </label>
+								<input type="text" id="booktitle" class="input" style="width:300px;" readonly>
+							</p>
+							<p>
+								<label>저자 : </label>
+								<input type="text" id="author" class="input" readonly>
+								<label>출판사 : </label>
+								<input type="text" id="publisher" class="input" readonly>
+							</p>
+							<p>
+								<label>대출가능여부 :</label>
+								<input type="text" id="lend" class="input" readonly>
+							</p>
+						</div>
+					</div>
+					<div class="box-body" style="text-align: center; margin-top:20px; clear:both;">
+						<button type="button" id="lending" class="btn btn-warning">대출하기</button>
+						<button type="reset" id="reset" class="btn btn-warning">취소</button>
+					</div>
+					<br>
+						<div class="box-body" style="margin-left:20px;">
+							<h4>대출도서 검색 및 선택</h4>
+							<br>
 							<select name="searchType" id="searchType">
 								<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 								<option value="bno" ${cri.searchType=='bno'? 'selected':'' }>도서번호</option>
@@ -34,56 +67,31 @@
 						</div>
 					</div>
 					<br>
-					<div class="box-body" style="height:500px; float:left;">
-						<table class="table table-condensed" style="width:600px; float:left;">
-							<tr>
-								<th>번호</th>
-								<th>도서제목</th>
-								<th>저자</th>
-								<th>대출가능여부</th>
-								<th>도서선택</th>
-							</tr>
-							<c:forEach var="book" items="${blist }">
+					<div class="box-body">
+						<table class="table table-condensed" >
+							<thead>
 								<tr>
-									<td>${book.bookno }</td>
-									<td>${book.booktitle }</td>
-									<td>${book.author }</td>
-									<td style="padding-left:32px;">${book.lend }
-									<td><button class="selectBook" style="font-size:12px;">선택</button></td>
+									<th>번호</th>
+									<th>도서제목</th>
+									<th>저자</th>
+									<th>출판사</th>
+									<th>대출가능여부</th>
+									<th>도서선택</th>
 								</tr>
-							</c:forEach>
+							</thead>
+							<tbody>
+								<c:forEach var="book" items="${blist }">
+									<tr>
+										<td>${book.bookno }</td>
+										<td>${book.booktitle }</td>
+										<td>${book.author }</td>
+										<td>${book.publisher }</td>
+										<td style="padding-left:32px;">${book.lend }
+										<td><button class="selectBook" style="font-size:12px;">선택</button></td>
+									</tr>
+								</c:forEach>
+							</tbody>
 						</table>
-					</div>
-					<input type="hidden" name="userno" value="${userno }">
-					<div class="box-body" style="float:left; margin-left:60px;">
-						<div>
-							<h4>대출도서상세정보</h4>
-							<br>
-							<p>
-								<label>번호 : </label>
-								<input type="text" id="bookno" readonly>
-							</p>
-							<p>
-								<label>제목 : </label>
-								<input type="text" id="booktitle" readonly>
-							</p>
-							<p>
-								<label>저자 : </label>
-								<input type="text" id="author" readonly>
-							</p>
-							<p>
-								<label>출판사 : </label>
-								<input type="text" id="publisher" readonly>
-							</p>
-							<p>
-								<label>대출가능여부 :</label>
-								<input type="text" id="lend" readonly>
-							</p>
-						</div>
-					</div>
-					<div class="box-footer" style="text-align:center;">
-						<button type="button" id="lending" class="btn btn-warning" style="margin-top:20px;">대출하기</button>
-						<button type="reset" id="reset" class="btn btn-warning" style="margin-top:20px;">취소</button>
 					</div>
 					<div class="box-body" style="clear:both;">
 						<div class="text-center">
@@ -100,6 +108,7 @@
 							</ul>
 						</div>
 					</div>
+					<input type="hidden" name="userno" value="${userno }">
 			</div>
 		</div>
 	</div>

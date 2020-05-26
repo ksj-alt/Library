@@ -38,6 +38,7 @@
 			<mapping path="/member/*"/>
 			<mapping path="/loan/*"/>
 			<mapping path="/book/*"/>
+			<mapping path="/main"/>
 			<beans:ref bean="authInterceptor"/>
 		</interceptor>
 	</interceptors>

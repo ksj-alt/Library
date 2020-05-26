@@ -31,8 +31,13 @@ public class HomeController {
 //		return "home";
 //	}
 	 
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String home() { 
+		return "login/loginForm";
+	}
+	
+	@RequestMapping(value="/main", method=RequestMethod.GET)
+	public String main() {
 		return "main";
 	}
 	
