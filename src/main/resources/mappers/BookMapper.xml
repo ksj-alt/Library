@@ -3,6 +3,7 @@
 <mapper namespace="mappers.BookMapper">
 	<resultMap type="BookVO" id="BookResult">
 		<id property="bookno" column="bookno"/>
+		<result property="isbn" column="isbn"/>
 		<result property="booktitle" column="booktitle"/>
 		<result property="author" column="author"/>
 		<result property="publisher" column="publisher"/>
@@ -19,8 +20,8 @@
 	</resultMap>
 	
 	<insert id="createBook" parameterType="BookVO">
-		insert into tbl_book (booktitle, author, publisher, price, pages, bookintro, bookindex, authorintro)
-		values (#{booktitle}, #{author}, #{publisher}, #{price}, #{pages}, #{bookintro}, #{bookindex}, #{authorintro})
+		insert into tbl_book (isbn, booktitle, author, publisher, price, pages, bookintro, bookindex, authorintro)
+		values (#{isbn}, #{booktitle}, #{author}, #{publisher}, #{price}, #{pages}, #{bookintro}, #{bookindex}, #{authorintro})
 	</insert>
 	<select id="readBook" resultType="BookVO">
 		select * from tbl_book

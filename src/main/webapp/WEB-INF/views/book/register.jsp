@@ -3,7 +3,6 @@
 <%@ include file="../include/header.jsp" %>
 
 <script>
-	
 	$(function() {
 
 		$("#files").change(function() {
@@ -42,6 +41,10 @@
 								<input type="text" name="booktitle" class="form-control" placeholder="ex) 내 치즈는 어디에서 왔을까?">
 							</div>
 							<div class="form-group">
+								<label>ISBN<span style="color:red;"> * </span></label>
+								<input type="text" name="isbn" class="form-control" placeholder="ex) 9791186560860">
+							</div>
+							<div class="form-group">
 								<label>저자<span style="color:red;"> * </span></label>
 								<input type="text" name="author" class="form-control" placeholder="ex) 스펜서 존슨">
 							</div>
@@ -55,7 +58,7 @@
 							</div>
 							<div class="form-group">
 								<label>페이지<span style="color:red;"> * </span></label>
-								<input type="text" name="pages" class="form-control" placeholder="ex) 147">
+								<input type="text" name="pages" class="form-control" placeholder="ex) 148">
 							</div>
 							<div class="form-group">
 								<label>이미지</label>

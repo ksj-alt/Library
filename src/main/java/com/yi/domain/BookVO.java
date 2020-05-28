@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class BookVO {
 	private int bookno;
+	private String isbn;
 	private String booktitle;
 	private String author;
 	private String publisher;
@@ -24,6 +25,14 @@ public class BookVO {
 
 	public void setBookno(int bookno) {
 		this.bookno = bookno;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public String getBooktitle() {
@@ -124,10 +133,10 @@ public class BookVO {
 
 	@Override
 	public String toString() {
-		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
-				+ publisher + ", price=" + price + ", pages=" + pages + ", bookintro=" + bookintro + ", bookindex="
-				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", lendnum=" + lendnum + ", files="
-				+ files + ", regdate=" + regdate + "]";
+		return "BookVO [bookno=" + bookno + ", isbn=" + isbn + ", booktitle=" + booktitle + ", author=" + author
+				+ ", publisher=" + publisher + ", price=" + price + ", pages=" + pages + ", bookintro=" + bookintro
+				+ ", bookindex=" + bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", lendnum="
+				+ lendnum + ", files=" + files + ", regdate=" + regdate + "]";
 	}
 
 }

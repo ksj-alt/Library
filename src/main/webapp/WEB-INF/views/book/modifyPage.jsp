@@ -96,13 +96,13 @@
 							</div>
 						 	<%-- <div class="form-group">
 								<label>이미지</label>
-								<c:forEach var="file" items="${book.files }">
+								<c:forEach var="file" items="${book.files }"> 
 								<div class="delItem">
-									<img src="displayFile?filename=${file }">
+									<img src="displayFile?filename=${file }"> 
 									<input type="checkbox" class="check" name="imgFile" value="${file }">
 								</div>
 								</c:forEach>
-							</div>  --%>
+							</div> --%>
 							<div class="form-group">
 								<label>책소개</label>
 								<textarea rows="5" cols="30" name="bookintro" placeholder="Enter Content" class="form-control">${book.bookintro }</textarea>

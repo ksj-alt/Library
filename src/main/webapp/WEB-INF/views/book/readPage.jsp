@@ -124,9 +124,13 @@
 						</c:forEach>
 					</div>
 					<div style="padding-left:30px; float:left; width:350px;">
-						<div class="form-group" style="padding-top:15px;">
+						<div class="form-group" style="padding-top:5px;">
 							<label>도서번호</label>
 							<strong>:</strong> <span class="text">${book.bookno }</span>
+						</div>
+						<div class="form-group">
+							<label>I S B N</label>
+							<strong>:</strong> <span class="text">${book.isbn }</span>
 						</div>
 						<div class="form-group">
 							<label>도서명</label>

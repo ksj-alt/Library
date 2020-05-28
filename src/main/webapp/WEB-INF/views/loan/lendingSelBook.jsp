@@ -24,37 +24,9 @@
 	<div class="content">
 		<div class="row">
 			<div class="col-sm-12">
-					<div class="box box-primary">
-						<div class="box-body" style="margin-left:20px;">
-						<div>
-							<h4>대출도서상세정보</h4>
-							<br>
-							<p>
-								<label>번호 : </label>
-								<input type="text" id="bookno" class="input" readonly>
-								<label>제목 : </label>
-								<input type="text" id="booktitle" class="input" style="width:300px;" readonly>
-							</p>
-							<p>
-								<label>저자 : </label>
-								<input type="text" id="author" class="input" readonly>
-								<label>출판사 : </label>
-								<input type="text" id="publisher" class="input" readonly>
-							</p>
-							<p>
-								<label>대출가능여부 :</label>
-								<input type="text" id="lend" class="input" readonly>
-							</p>
-						</div>
-					</div>
-					<div class="box-body" style="text-align: center; margin-top:20px; clear:both;">
-						<button type="button" id="lending" class="btn btn-warning">대출하기</button>
-						<button type="reset" id="reset" class="btn btn-warning">취소</button>
-					</div>
+				<div class="box box-primary">
 					<br>
 						<div class="box-body" style="margin-left:20px;">
-							<h4>대출도서 검색 및 선택</h4>
-							<br>
 							<select name="searchType" id="searchType">
 								<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 								<option value="bno" ${cri.searchType=='bno'? 'selected':'' }>도서번호</option>
@@ -109,6 +81,32 @@
 						</div>
 					</div>
 					<input type="hidden" name="userno" value="${userno }">
+					<div class="box-body" style="margin-left:20px;">
+						<div>
+							<h4>대출도서상세정보</h4>
+							<br>
+							<p>
+								<label>번호 : </label>
+								<input type="text" id="bookno" class="input" readonly>
+								<label>제목 : </label>
+								<input type="text" id="booktitle" class="input" style="width:300px;" readonly>
+							</p>
+							<p>
+								<label>저자 : </label>
+								<input type="text" id="author" class="input" readonly>
+								<label>출판사 : </label>
+								<input type="text" id="publisher" class="input" readonly>
+							</p>
+							<p>
+								<label>대출가능여부 :</label>
+								<input type="text" id="lend" class="input" readonly>
+							</p>
+						</div>
+					</div>
+					<div class="box-body" style="text-align: center; margin-top:20px; clear:both;">
+						<button type="button" id="lending" class="btn btn-warning">대출하기</button>
+						<button type="reset" id="reset" class="btn btn-warning">취소</button>
+					</div>
 			</div>
 		</div>
 	</div>

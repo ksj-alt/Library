@@ -75,7 +75,6 @@ public class LoanController {
 				
 		lservice.create(vo);
 		lservice.update(bvo);
-		System.out.println("update lendnum"+ bvo.getLendnum());
 		model.addAttribute("userno", vo.getUserno());
 		model.addAttribute("bookno", vo.getBookno());		
 

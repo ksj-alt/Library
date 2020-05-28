@@ -1,5 +1,6 @@
 package com.yi.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -119,9 +120,11 @@ public class BookController {
 
 		model.addAttribute("book", bvo);
 		model.addAttribute("cri", cri);
+		model.addAttribute("isbn", bvo.getIsbn());
 		model.addAttribute("lend", bvo.getLend());
 		model.addAttribute("lendnum", bvo.getLendnum());
 		model.addAttribute("booktitle", bvo.getBooktitle());
+		
 		return "/book/readPage";
 	}
 	
@@ -143,8 +146,8 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="modifyPage", method=RequestMethod.POST)
-	public String updatePage(BookVO vo, SearchCriteria cri, List<MultipartFile> imageFiles, Model model) throws Exception { //String[] imgFile
-//		for(String imgFiles : imgFile) {
+	public String updatePage(BookVO vo, SearchCriteria cri, String[] imgFile, Model model) throws Exception { //String[] imgFile
+//		for(String imgFiles : imgFile) { 
 //			service.removeAttach(imgFiles);
 //			System.out.println(imgFiles);
 //			//thumbnail 이미지 삭제
@@ -156,8 +159,6 @@ public class BookController {
 //			File originFile = new File(uploadPath + originalName);
 //			originFile.delete();
 //		}
-//		
-//		service.update(vo);
 
 		service.update(vo);
 		
