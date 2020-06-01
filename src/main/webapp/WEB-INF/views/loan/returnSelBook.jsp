@@ -18,7 +18,7 @@
 <section>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">대출승인처리</a></li>
-		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">대출반납처리</a></li>
+		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">도서반납처리</a></li>
 	</ul>
 	<br>
 	<div class="content">

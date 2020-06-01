@@ -75,7 +75,7 @@ footer hr{
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">대출관리 <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
 	          <li><a href="${pageContext.request.contextPath }/loan/lending">대출승인처리</a></li>
-	          <li><a href="${pageContext.request.contextPath }/loan/returnbook">대출반납처리</a></li>
+	          <li><a href="${pageContext.request.contextPath }/loan/returnbook">도서반납처리</a></li>
 	        </ul>
 	      </li>
 	      <li class="dropdown">
@@ -89,20 +89,19 @@ footer hr{
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="hidden-xs">${Name } 로그인</span>
+                  <span class="hidden-xs">${Auth } 로그인</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header" style="text-align: center;">
                    <%--  <img src="${pageContext.request.contextPath }/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" /> --%>
                     <p>
-                    	<strong>${Auth }</strong> 님.<br>
+                    	<strong>${Name }</strong> 님.<br>
                    		${Email }
                    	</p>
                    	<a href="${pageContext.request.contextPath }/logout" class="btn btn-default btn-flat">로그아웃</a>
                   </li>
           		</ul>
-        <%-- <li><a href="${pageContext.request.contextPath }/login"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li> --%>
       </ul>
     </nav>
   </div>
