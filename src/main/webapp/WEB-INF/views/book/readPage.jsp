@@ -18,6 +18,10 @@
 		height:30px;
 		font-size: 13px;
 	}
+	#cate{
+		float: left;
+		padding-left:110px;
+	}
 	#lend{
 		text-align: right;
 		padding-right:140px;
@@ -108,6 +112,9 @@
 			<button type="button" id="list" class="btn">리스트</button>
 		</div>
 		<br>
+	<div id="cate">
+		${category }
+	</div>
 	<div id="lend">
 		대출가능여부 : <span>${lend }　</span>/
 		　총 대출 수 : ${lendnum }

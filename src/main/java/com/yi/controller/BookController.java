@@ -1,6 +1,5 @@
 package com.yi.controller;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -120,7 +119,7 @@ public class BookController {
 
 		model.addAttribute("book", bvo);
 		model.addAttribute("cri", cri);
-		model.addAttribute("isbn", bvo.getIsbn());
+		model.addAttribute("category", bvo.getCategory());
 		model.addAttribute("lend", bvo.getLend());
 		model.addAttribute("lendnum", bvo.getLendnum());
 		model.addAttribute("booktitle", bvo.getBooktitle());
