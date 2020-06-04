@@ -43,7 +43,7 @@ public class LoanController {
 		model.addAttribute("cri", cri);
 		model.addAttribute("mlist", mlist);
 		model.addAttribute("pageMaker", pageMaker);
-				
+		
 		return "/loan/lending";
 	}
 	

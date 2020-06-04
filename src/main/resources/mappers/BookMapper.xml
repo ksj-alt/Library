@@ -3,23 +3,26 @@
 <mapper namespace="mappers.BookMapper">
 	<resultMap type="BookVO" id="BookResult">
 		<id property="bookno" column="bookno"/>
+		<result property="category" column="category"/>
+		<result property="isbn" column="isbn"/>
 		<result property="booktitle" column="booktitle"/>
 		<result property="author" column="author"/>
 		<result property="publisher" column="publisher"/>
 		<result property="price" column="price"/>
-		<result property="page" column="page"/>
+		<result property="pages" column="pages"/>
 		<result property="bookintro" column="bookintro"/>
 		<result property="bookindex" column="bookindex"/>
 		<result property="authorintro" column="authorintro"/>
 		<result property="lend" column="lend"/>
+		<result property="lendnum" column="lendnum"/>
 		<collection property="files" ofType="java.lang.String" javaType="list">
 			<result column="fullName"/>
 		</collection>
 	</resultMap>
 	
 	<insert id="createBook" parameterType="BookVO">
-		insert into tbl_book (booktitle, author, publisher, price, page, bookintro, bookindex, authorintro)
-		values (#{booktitle}, #{author}, #{publisher}, #{price}, #{page}, #{bookintro}, #{bookindex}, #{authorintro})
+		insert into tbl_book (isbn, booktitle, category, author, publisher, price, pages, bookintro, bookindex, authorintro)
+		values (#{isbn}, #{booktitle}, #{category}, #{author}, #{publisher}, #{price}, #{pages}, #{bookintro}, #{bookindex}, #{authorintro})
 	</insert>
 	<select id="readBook" resultType="BookVO">
 		select * from tbl_book
@@ -32,8 +35,8 @@
 	</select>
 	<update id="updateBook" parameterType="BookVO">
 		update tbl_book
-		   set booktitle=#{booktitle}, author=#{author}, publisher=#{publisher},
-		   		price=#{price}, page=#{page}, bookintro=#{bookintro},
+		   set booktitle=#{booktitle}, category=#{category}, author=#{author}, publisher=#{publisher},
+		   		price=#{price}, pages=#{pages}, bookintro=#{bookintro},
 		   		bookindex=#{bookindex}, authorintro=#{authorintro} 
 		 where bookno=#{bookno}
 	</update>

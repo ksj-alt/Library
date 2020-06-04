@@ -5,16 +5,18 @@ import java.util.Date;
 
 public class BookVO {
 	private int bookno;
+	private String category;
+	private String isbn;
 	private String booktitle;
 	private String author;
 	private String publisher;
 	private int price;
-	private int page;
+	private int pages;
 	private String bookintro;
 	private String bookindex;
 	private String authorintro;
 	private String lend;
-	private String lendnum;
+	private int lendnum;
 	private ArrayList<String> files;
 	private Date regdate;
 
@@ -24,6 +26,22 @@ public class BookVO {
 
 	public void setBookno(int bookno) {
 		this.bookno = bookno;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public String getBooktitle() {
@@ -58,12 +76,12 @@ public class BookVO {
 		this.price = price;
 	}
 
-	public int getPage() {
-		return page;
+	public int getPages() {
+		return pages;
 	}
 
-	public void setPage(int page) {
-		this.page = page;
+	public void setPages(int pages) {
+		this.pages = pages;
 	}
 
 	public String getBookintro() {
@@ -98,11 +116,11 @@ public class BookVO {
 		this.lend = lend;
 	}
 
-	public String getLendnum() {
+	public int getLendnum() {
 		return lendnum;
 	}
 
-	public void setLendnum(String lendnum) {
+	public void setLendnum(int lendnum) {
 		this.lendnum = lendnum;
 	}
 
@@ -124,10 +142,10 @@ public class BookVO {
 
 	@Override
 	public String toString() {
-		return "BookVO [bookno=" + bookno + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
-				+ publisher + ", price=" + price + ", page=" + page + ", bookintro=" + bookintro + ", bookindex="
-				+ bookindex + ", authorintro=" + authorintro + ", lend=" + lend + ", lendnum=" + lendnum + ", files="
-				+ files + ", regdate=" + regdate + "]";
+		return "BookVO [bookno=" + bookno + ", category=" + category + ", isbn=" + isbn + ", booktitle=" + booktitle
+				+ ", author=" + author + ", publisher=" + publisher + ", price=" + price + ", pages=" + pages
+				+ ", bookintro=" + bookintro + ", bookindex=" + bookindex + ", authorintro=" + authorintro + ", lend="
+				+ lend + ", lendnum=" + lendnum + ", files=" + files + ", regdate=" + regdate + "]";
 	}
 
 }

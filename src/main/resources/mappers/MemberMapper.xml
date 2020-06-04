@@ -61,6 +61,6 @@
 		select l.userno, l.bookno, b.booktitle, l.lenddate, l.returndate, l.status
   		  from tbl_loan l, tbl_book b
  		 where l.bookno = b.bookno and userno=#{userno}
- 		 order by userno, lenddate desc
+ 		 order by status, returndate, lenddate desc
 	</select>
 </mapper>

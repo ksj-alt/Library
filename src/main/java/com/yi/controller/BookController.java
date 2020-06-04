@@ -114,13 +114,16 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="readPage", method=RequestMethod.GET)
-	public String readPage(int bookno, SearchCriteria cri, Model model) throws Exception {
-		BookVO vo = service.readByNo(bookno);
-		model.addAttribute("book", vo);
+	public String readPage(BookVO vo, SearchCriteria cri, Model model) throws Exception {
+		BookVO bvo = service.readByNo(vo.getBookno());
+
+		model.addAttribute("book", bvo);
 		model.addAttribute("cri", cri);
-		model.addAttribute("lend", vo.getLend());
-		model.addAttribute("lendnum", vo.getLendnum());
-		model.addAttribute("booktitle", vo.getBooktitle());
+		model.addAttribute("category", bvo.getCategory());
+		model.addAttribute("lend", bvo.getLend());
+		model.addAttribute("lendnum", bvo.getLendnum());
+		model.addAttribute("booktitle", bvo.getBooktitle());
+		
 		return "/book/readPage";
 	}
 	
@@ -142,8 +145,8 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="modifyPage", method=RequestMethod.POST)
-	public String updatePage(BookVO vo, SearchCriteria cri, List<MultipartFile> imageFiles, Model model) throws Exception { //String[] imgFile
-//		for(String imgFiles : imgFile) {
+	public String updatePage(BookVO vo, SearchCriteria cri, String[] imgFile, Model model) throws Exception { //String[] imgFile
+//		for(String imgFiles : imgFile) { 
 //			service.removeAttach(imgFiles);
 //			System.out.println(imgFiles);
 //			//thumbnail 이미지 삭제
@@ -155,8 +158,6 @@ public class BookController {
 //			File originFile = new File(uploadPath + originalName);
 //			originFile.delete();
 //		}
-//		
-//		service.update(vo);
 
 		service.update(vo);
 		

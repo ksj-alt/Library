@@ -18,6 +18,10 @@
 		height:30px;
 		font-size: 13px;
 	}
+	#cate{
+		float: left;
+		padding-left:110px;
+	}
 	#lend{
 		text-align: right;
 		padding-right:140px;
@@ -68,9 +72,9 @@
 		padding-left:15px;
 		font-size:15px;
 	}
-	textarea{
-		border:none;
-		width:760px;
+	.bookContent{
+		white-space:pre-wrap;
+		width:740px;
 		font-size: 14px;
 	}
 </style>
@@ -108,6 +112,9 @@
 			<button type="button" id="list" class="btn">리스트</button>
 		</div>
 		<br>
+	<div id="cate">
+		${category }
+	</div>
 	<div id="lend">
 		대출가능여부 : <span>${lend }　</span>/
 		　총 대출 수 : ${lendnum }
@@ -124,9 +131,13 @@
 						</c:forEach>
 					</div>
 					<div style="padding-left:30px; float:left; width:350px;">
-						<div class="form-group" style="padding-top:15px;">
+						<div class="form-group" style="padding-top:5px;">
 							<label>도서번호</label>
 							<strong>:</strong> <span class="text">${book.bookno }</span>
+						</div>
+						<div class="form-group">
+							<label>I S B N</label>
+							<strong>:</strong> <span class="text">${book.isbn }</span>
 						</div>
 						<div class="form-group">
 							<label>도서명</label>
@@ -146,7 +157,7 @@
 						</div>
 						<div class="form-group">
 							<label>페이지</label>
-							<strong>:</strong> <span class="text">${book.page } p</span>
+							<strong>:</strong> <span class="text">${book.pages } p</span>
 						</div>
 					</div>
 				</div>
@@ -157,20 +168,20 @@
 				<br>
 					<div class="form-group">
 						<label>책소개</label>
-						<br>
-						<textarea rows="6" cols="75" readonly>${book.bookintro }</textarea>
+						<br><br>
+						<div class="bookContent">${book.bookintro }</div>
 					</div>
 					<br>
 					<div class="form-group">
 						<label>목차</label>
-						<br>
-						<textarea rows="6" cols="75" readonly>${book.bookindex }</textarea>
+						<br><br>
+						<div class="bookContent">${book.bookindex }</div>
 					</div>
 					<br>
 					<div class="form-group">
 						<label>저자소개</label>
-						<br>
-						<textarea rows="6" cols="75" readonly>${book.authorintro }</textarea>
+						<br><br>
+						<div class="bookContent">${book.authorintro }</div>
 					</div>
 				</div>
 			</div>

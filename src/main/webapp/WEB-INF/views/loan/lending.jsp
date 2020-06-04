@@ -27,7 +27,7 @@
 <section>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="${pageContext.request.contextPath }/loan/lending">대출승인처리</a></li>
-		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">대출반납처리</a></li>
+		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">도서반납처리</a></li>
 	</ul>
 	<br>
 	<div class="content">
@@ -47,14 +47,16 @@
 				<br>
 				<div class="box-body" style="height:500px; float:left;">
 					<table class="table table-condensed" style="width:600px; float:left;">
-						<tr>
-							<th>회원번호</th>
-							<th>성명</th>
-							<th>생년월일</th>
-							<th>전화번호</th>
-							<th>이메일</th>
-							<th>회원선택</th>
-						</tr>
+						<thead>
+							<tr>
+								<th>회원번호</th>
+								<th>성명</th>
+								<th>생년월일</th>
+								<th>전화번호</th>
+								<th>이메일</th>
+								<th>회원선택</th>
+							</tr>
+						</thead>
 						<tbody>
 						<c:forEach var="member" items="${mlist }">
 							<tr>

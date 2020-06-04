@@ -91,28 +91,6 @@
 					</tbody>
 				</table>
 			</div>
-	<%-- <div class="box-body" style="margin: 0 auto;">
-		<div>
-			<h4>회원상세정보</h4>
-			<br>
-			<p>
-				<label>회원번호 : </label>
-				<input type="text" id="userno" value="${member.userno }" readonly>
-				<label>회원성명 : </label>
-				<input type="text" id="username" value="${member.username }" readonly>
-			</p>
-			<p>
-				<label>생년월일 : </label>
-				<input type="text" id="birthday" value="${member.birthday }" readonly>
-				<label>전화번호 : </label>
-				<input type="text" id="phone" value="${member.phone }" readonly>
-			</p>
-			<p>
-				<label>  이메일 :</label>
-				<input type="text" id="email" value="${member.email }" readonly>
-			</p>
-		</div>
-	</div> --%>	
 </section>	
 
 <%@ include file="../include/footer.jsp" %>

@@ -13,10 +13,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		HttpSession session = request.getSession();
 		Object object = session.getAttribute("Auth");
-		if(object == null) { //login안한경우
-			// /ex01/member/login
-			response.sendRedirect(request.getContextPath() + "/member/login");
-			return false; //기존 controller 진입을 막게 됨
+		if(object == null) {
+			response.sendRedirect(request.getContextPath() + "/login");
+			return false;
 		}
 		return true;
 	}

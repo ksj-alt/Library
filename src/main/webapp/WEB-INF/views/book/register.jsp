@@ -3,7 +3,6 @@
 <%@ include file="../include/header.jsp" %>
 
 <script>
-	
 	$(function() {
 
 		$("#files").change(function() {
@@ -42,6 +41,35 @@
 								<input type="text" name="booktitle" class="form-control" placeholder="ex) 내 치즈는 어디에서 왔을까?">
 							</div>
 							<div class="form-group">
+								<label>분야<span style="color:red;"> * </span></label><br>
+								<select name="status">
+									<option>선택</option>
+									<option value="가정/육아">가정/육아</option>
+									<option value="건강">건강</option>
+									<option value="경제/경영">경제/경영</option>
+									<option value="과학">과학</option>
+									<option value="만화">만화</option>
+									<option value="소설">소설</option>
+									<option value="시/에세이">시/에세이</option>
+									<option value="어린이(초등)">어린이(초등)</option>
+									<option value="여행">여행</option>
+									<option value="역사/문화">역사/문화</option>
+									<option value="예술/대중문화">예술/대중문화</option>
+									<option value="외국어">외국어</option>
+									<option value="요리">요리</option>
+									<option value="유아(0~7세)">유아(0~7세)</option>
+									<option value="인문">인문</option>
+									<option value="자기계발">자기계발</option>
+									<option value="정치/사회">정치/사회</option>
+									<option value="종교">종교</option>
+									<option value="취미/실용/스포츠">취미/실용/스포츠</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>ISBN<span style="color:red;"> * </span></label>
+								<input type="text" name="isbn" class="form-control" placeholder="ex) 9791186560860">
+							</div>
+							<div class="form-group">
 								<label>저자<span style="color:red;"> * </span></label>
 								<input type="text" name="author" class="form-control" placeholder="ex) 스펜서 존슨">
 							</div>
@@ -50,12 +78,12 @@
 								<input type="text" name="publisher" class="form-control" placeholder="ex) 인플루엔셜">
 							</div>
 							<div class="form-group">
-								<label>가격</label>
+								<label>가격<span style="color:red;"> * </span></label>
 								<input type="text" name="price" class="form-control" placeholder="ex) 13800">
 							</div>
 							<div class="form-group">
-								<label>페이지</label>
-								<input type="text" name="page" class="form-control" placeholder="ex) 147">
+								<label>페이지<span style="color:red;"> * </span></label>
+								<input type="text" name="pages" class="form-control" placeholder="ex) 148">
 							</div>
 							<div class="form-group">
 								<label>이미지</label>
