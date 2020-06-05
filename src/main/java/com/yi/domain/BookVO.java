@@ -19,6 +19,7 @@ public class BookVO {
 	private int lendnum;
 	private ArrayList<String> files;
 	private Date regdate;
+	private int userno;
 
 	public int getBookno() {
 		return bookno;
@@ -140,12 +141,21 @@ public class BookVO {
 		this.regdate = regdate;
 	}
 
+	public int getUserno() {
+		return userno;
+	}
+
+	public void setUserno(int userno) {
+		this.userno = userno;
+	}
+
 	@Override
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", category=" + category + ", isbn=" + isbn + ", booktitle=" + booktitle
 				+ ", author=" + author + ", publisher=" + publisher + ", price=" + price + ", pages=" + pages
 				+ ", bookintro=" + bookintro + ", bookindex=" + bookindex + ", authorintro=" + authorintro + ", lend="
-				+ lend + ", lendnum=" + lendnum + ", files=" + files + ", regdate=" + regdate + "]";
+				+ lend + ", lendnum=" + lendnum + ", files=" + files + ", regdate=" + regdate + ", userno=" + userno
+				+ "]";
 	}
 
 }

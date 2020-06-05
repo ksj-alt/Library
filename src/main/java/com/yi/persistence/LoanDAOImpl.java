@@ -1,5 +1,7 @@
 package com.yi.persistence;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -41,4 +43,8 @@ public class LoanDAOImpl implements LoanDAO {
 		sqlSession.update(namespace + "returnLoan", vo);
 	}
 
+	@Override
+	public List<LoanVO> returnBookByUserno(int userno) throws Exception {
+		return sqlSession.selectList(namespace + "returnBookByUserno", userno); 
+	}
 }

@@ -99,14 +99,15 @@ public class LoanController {
 	
 	@RequestMapping(value="returnSelBook", method=RequestMethod.GET)
 	public String returnSelBook(SearchCriteria cri, Model model, int userno) throws Exception {
-		List<BookVO> blist = bservice.listSearchCriteria2(cri);
+//		List<BookVO> blist = bservice.listSearchCriteria2(cri);
+		List<LoanVO> rlist = lservice.returnBookByUserno(userno);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(bservice.totalSearchCount(cri));
 		
 		model.addAttribute("cri", cri);
-		model.addAttribute("blist", blist);
+		model.addAttribute("blist", rlist);
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("userno", userno);
 		

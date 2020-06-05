@@ -99,4 +99,5 @@
 		delete from tbl_attach
 		 where fullName=#{fullName}
 	</delete>
+	
 </mapper>

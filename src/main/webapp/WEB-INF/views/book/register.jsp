@@ -43,7 +43,7 @@
 							<div class="form-group">
 								<label>분야<span style="color:red;"> * </span></label><br>
 								<select name="status">
-									<option>선택</option>
+									<option>-----</option>
 									<option value="가정/육아">가정/육아</option>
 									<option value="건강">건강</option>
 									<option value="경제/경영">경제/경영</option>
