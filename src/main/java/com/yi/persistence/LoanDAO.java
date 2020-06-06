@@ -13,5 +13,5 @@ public interface LoanDAO {
 	public void updateReturn(BookVO vo) throws Exception;
 	public void returnLoan(LoanVO vo) throws Exception;
 	
-	public List<LoanVO> returnBookByUserno(int userno) throws Exception;
+	public List<BookVO> returnBookByUserno(int userno) throws Exception;
 }

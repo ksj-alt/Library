@@ -44,7 +44,7 @@ public class LoanDAOImpl implements LoanDAO {
 	}
 
 	@Override
-	public List<LoanVO> returnBookByUserno(int userno) throws Exception {
+	public List<BookVO> returnBookByUserno(int userno) throws Exception {
 		return sqlSession.selectList(namespace + "returnBookByUserno", userno); 
 	}
 }

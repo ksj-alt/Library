@@ -15,9 +15,6 @@
 		<result property="authorintro" column="authorintro"/>
 		<result property="lend" column="lend"/>
 		<result property="lendnum" column="lendnum"/>
-		<collection property="userno" ofType="java.lang.String" javaType="list">
-			<result column="userno"/>
-		</collection>
 	</resultMap>
 	<insert id="createLoan" parameterType="LoanVO">
 		insert into tbl_loan (userno, bookno)
@@ -47,6 +44,6 @@
 	<select id="returnBookByUserno" resultMap="BookResult">
 		select * from tbl_book b left join tbl_loan l
 		    on b.bookno = l.bookno
-		 where l.userno = #{userno}
+		 where l.userno = #{userno} and l.returndate is null
 	</select>
 </mapper>
