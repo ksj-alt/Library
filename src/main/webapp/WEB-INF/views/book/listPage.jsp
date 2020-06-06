@@ -37,13 +37,12 @@
 					<c:forEach var="book" items="${list }">
 						<tr>
 							<td>${book.bookno }</td>
-							<td><a href="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
-											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${book.booktitle }</a></td>
+							<td>${book.booktitle }</td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
 							<td style="padding-left:32px;">${book.lend }</td>
-							<td><button style="font-size:12px;" onClick="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
-											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}">상세보기</button></td>
+							<td><button onClick="location.href='${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}'"
+											style="font-size:12px;">상세보기</button></td>
 						</tr>
 					</c:forEach>
 				</tr>

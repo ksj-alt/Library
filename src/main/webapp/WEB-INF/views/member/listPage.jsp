@@ -35,12 +35,12 @@
 					<c:forEach var="member" items="${list }">
 						<tr>
 							<td>${member.userno }</td>
-							<td><a href="${pageContext.request.contextPath }/member/readPage?userno=${member.userno}
-											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${member.username }</a></td>
+							<td>${member.username }</td>
 							<td>${member.birthday }</td>
 							<td>${member.phone }</td>
 							<td>${member.email }</td>
-							<td><button style="font-size:12px;">상세보기</button></td>
+							<td><button onClick="location.href='${pageContext.request.contextPath }/member/readPage?userno=${member.userno}&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}'"
+									style="font-size:12px;">상세보기</button></td>
 						</tr>
 					</c:forEach>
 				</tr>

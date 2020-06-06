@@ -76,7 +76,7 @@
 								<th>생년월일</th>
 								<th>전화번호</th>
 								<th>이메일</th>
-								<th>회원선택</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -87,7 +87,7 @@
 									<td>${member.birthday }</td>
 									<td>${member.phone }</td>
 									<td>${member.email }</td> 
-									<td><button class="selectUser" style="font-size:12px;">선택</button></td>
+									<td><button class="selectUser" style="font-size:12px;">회원선택</button></td>
 								</tr>
 							</c:forEach>
 						</tbody>
