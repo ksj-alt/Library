@@ -2,19 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
 
-<style>
-	tbody tr:hover{
-		background-color: #F6F6F6;
-	}
-</style>
-
 <section>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/member/register" style="color:#221000">회원등록</a></li>
 		<li class="active"><a href="${pageContext.request.contextPath }/member/listPage">회원목록</a></li>
 	</ul>
 	<br>
-	<div class="box-body">
+	<div class="box-body" style="text-align:right; margin-right:15px; margin-top:8px;">
 		<select name="searchType" id="searchType">
 			<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 			<option value="uno" ${cri.searchType=='uno'? 'selected':'' }>회원번호</option>
@@ -25,7 +19,7 @@
 	</div>
 	<br>
 	<div class="container">
-		<table class="table table-condensed" style="width:980px;">
+		<table class="table table-hover" style="width:980px;">
 			<thead>
 				<tr>
 					<th>회원번호</th> 
@@ -33,6 +27,7 @@
 					<th>생년월일</th>
 					<th>전화번호</th>
 					<th>이메일</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,13 +40,14 @@
 							<td>${member.birthday }</td>
 							<td>${member.phone }</td>
 							<td>${member.email }</td>
+							<td><button style="font-size:12px;">상세보기</button></td>
 						</tr>
 					</c:forEach>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	
+	<br>
 	<div class="box-footer">
 		<div class="text-center">
 			<ul class="pagination">

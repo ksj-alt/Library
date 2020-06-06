@@ -17,7 +17,7 @@
 
 <section>
 	<ul class="nav nav-tabs">
-		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">대출승인처리</a></li>
+		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">도서대출처리</a></li>
 		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">도서반납처리</a></li>
 	</ul>
 	<br>
@@ -28,7 +28,7 @@
 				<div class="box-body">
 					<h4 style="margin-left:20px;">반납도서목록</h4>
 					<br>
-					<table class="table table-condensed">
+					<table class="table table-hover">
 						<thead>
 							<tr>
 								<th>도서번호</th>

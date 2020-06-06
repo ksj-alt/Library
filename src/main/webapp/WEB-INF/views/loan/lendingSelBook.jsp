@@ -17,7 +17,7 @@
 
 <section>
 	<ul class="nav nav-tabs">
-		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">대출승인처리</a></li>
+		<li><a href="${pageContext.request.contextPath }/loan/lending" style="color:#221000">도서대출처리</a></li>
 		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">도서반납처리</a></li>
 	</ul>
 	<br>
@@ -25,8 +25,8 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="box box-primary">
-					<br>
-						<div class="box-body" style="margin-left:20px;">
+					<h4 style="margin-left:20px; margin-top:10px;">대출도서목록</h4>
+						<div class="box-body" style="text-align:right; margin-right:15px;">
 							<select name="searchType" id="searchType">
 								<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 								<option value="bno" ${cri.searchType=='bno'? 'selected':'' }>도서번호</option>
@@ -40,7 +40,7 @@
 					</div>
 					<br>
 					<div class="box-body">
-						<table class="table table-condensed" >
+						<table class="table table-hover" >
 							<thead>
 								<tr>
 									<th>번호</th>
@@ -83,7 +83,7 @@
 					<input type="hidden" name="userno" value="${userno }">
 					<div class="box-body" style="margin-left:20px;">
 						<div>
-							<h4>대출도서상세정보</h4>
+							<h4>도서상세정보</h4>
 							<br>
 							<p>
 								<label>번호 : </label>
