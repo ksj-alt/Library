@@ -99,9 +99,9 @@ public class LoanController {
 	
 	@RequestMapping(value="returnSelBook", method=RequestMethod.GET)
 	public String returnSelBook(Model model, int userno) throws Exception {
-		List<BookVO> blist = lservice.returnBookByUserno(userno);
+		List<LoanVO> list = lservice.returnBookList(userno);
 		
-		model.addAttribute("blist", blist);
+		model.addAttribute("list", list);
 		model.addAttribute("userno", userno);
 		
 		return "/loan/returnSelBook";

@@ -40,7 +40,7 @@
 							<td>${member.phone }</td>
 							<td>${member.email }</td>
 							<td><button onClick="location.href='${pageContext.request.contextPath }/member/readPage?userno=${member.userno}&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}'"
-									style="font-size:12px;">상세보기</button></td>
+									style="font-size:12px;">상세정보</button></td>
 						</tr>
 					</c:forEach>
 				</tr>

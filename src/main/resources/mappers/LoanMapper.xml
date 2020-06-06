@@ -40,10 +40,12 @@
 		   set status='반납완료', returndate=#{returndate}
 		 where userno=#{userno} and bookno=#{bookno}
 	</update>
-	
-	<select id="returnBookByUserno" resultMap="BookResult">
-		select * from tbl_book b left join tbl_loan l
+
+	<select id="returnBookList" resultType="LoanVO">
+		select b.bookno, b.booktitle, b.author, b.publisher, l.lenddate
+		  from tbl_book b left join tbl_loan l
 		    on b.bookno = l.bookno
 		 where l.userno = #{userno} and l.returndate is null
+		 order by l.lenddate
 	</select>
 </mapper>

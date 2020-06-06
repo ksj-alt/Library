@@ -40,13 +40,13 @@
 	</ul>
 	<br>
 	<div class="container" style="width:980px;">
-		<div style="margin:5px; font-size: 18px; margin-bottom:15px; float:left;">회원상세정보</div>
-		<div class="box-footer"  style="text-align:right; float:right; margin-top:18px; margin-bottom:8px;">  
+		<div class="box-footer" style="text-align: right;">  
 			<button type="button" id="modify" class="btn">수정</button>
 			<button type="button" id="remove" class="btn">회원삭제</button>
 			<button type="button" id="list" class="btn">리스트</button>
 		</div>
-			<div class="box-body" style="padding-left:15px; clear:both;">
+		<div style="margin:5px; font-size: 18px; margin-bottom:25px;">회원상세정보</div>
+			<div class="box-body" style="padding-left:15px;">
 				<div class="form-group">
 					<label>회원번호 :</label>
 					<input type="text" class="input" value="${member.userno }" readonly>
@@ -63,9 +63,9 @@
 				</div>
 			</div>
 		</div>
-		<br><br>
+		<br><br><br>
 		<div class="container" style="width:980px;">
-			<div style="margin:5px; font-size: 18px; margin-bottom:10px;">회원대출이력</div>
+			<div style="margin:5px; font-size: 18px; margin-bottom:25px;">회원대출이력</div>
 				<table class="table table-condensed">
 					<thead>
 						<tr>
@@ -83,7 +83,7 @@
 									<td>${loan.bookno }</td>
 									<td>${loan.booktitle }</td>
 									<td><fmt:formatDate pattern="yyyy.MM.dd HH:mm" value="${loan.lenddate }"/></td>
-									<td><fmt:formatDate pattern="yyyy.MM.dd" value="${loan.returndate }"/></td>
+									<td><fmt:formatDate pattern="yyyy.MM.dd HH:mm" value="${loan.returndate }"/></td>
 									<td>${loan.status }</td>
 								</tr>
 							</c:forEach>

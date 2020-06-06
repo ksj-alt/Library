@@ -36,7 +36,7 @@ public class LoanService {
 		dao.returnLoan(vo);
 	}
 	
-	public List<BookVO> returnBookByUserno(int userno) throws Exception {
-		return dao.returnBookByUserno(userno);
+	public List<LoanVO> returnBookList(int userno) throws Exception {
+		return dao.returnBookList(userno);
 	}
 }

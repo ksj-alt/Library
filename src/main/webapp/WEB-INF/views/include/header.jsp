@@ -89,17 +89,16 @@ footer hr{
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="hidden-xs">${Auth } 로그인</span>
+                  <span class="hidden-xs">${Name }(${Auth }) Login</span> 
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header" style="text-align: center;">
                    <%--  <img src="${pageContext.request.contextPath }/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" /> --%>
                     <p>
-                    	<strong>${Name }</strong> 님.<br>
                    		${Email }
                    	</p>
-                   	<a href="${pageContext.request.contextPath }/logout" class="btn btn-default btn-flat">로그아웃</a>
+                   	<a href="${pageContext.request.contextPath }/logout" class="btn btn-default btn-flat" style="width:100px; margin:0 auto;">Logout</a>
                   </li>
           		</ul>
       </ul>

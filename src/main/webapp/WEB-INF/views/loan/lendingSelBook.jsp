@@ -10,9 +10,6 @@
 		margin-right:10px;
 		border:none;
 	}
-	tbody tr:hover{
-		background-color: #F6F6F6;
-	}
 </style>
 
 <section>
@@ -21,12 +18,11 @@
 		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">도서반납처리</a></li>
 	</ul>
 	<br>
-	<div class="content">
+	<div class="container" style="width:980px;">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="box box-primary">
-					<h4 style="margin-left:20px; margin-top:10px;">대출도서목록</h4>
-						<div class="box-body" style="text-align:right; margin-right:15px;">
+						<div class="box-body" style="text-align:right; margin-right:15px; margin-top:8px;">
 							<select name="searchType" id="searchType">
 								<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 								<option value="bno" ${cri.searchType=='bno'? 'selected':'' }>도서번호</option>
@@ -48,7 +44,7 @@
 									<th>저자</th>
 									<th>출판사</th>
 									<th>대출가능여부</th>
-									<th>도서선택</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -59,7 +55,7 @@
 										<td>${book.author }</td>
 										<td>${book.publisher }</td>
 										<td style="padding-left:32px;">${book.lend }
-										<td><button class="selectBook" style="font-size:12px;">선택</button></td>
+										<td><button class="selectBook" style="font-size:12px;">도서선택</button></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -81,26 +77,27 @@
 						</div>
 					</div>
 					<input type="hidden" name="userno" value="${userno }">
-					<div class="box-body" style="margin-left:20px;">
+					<div class="box-body">
 						<div>
-							<h4>도서상세정보</h4>
-							<br>
-							<p>
-								<label>번호 : </label>
-								<input type="text" id="bookno" class="input" readonly>
-								<label>제목 : </label>
-								<input type="text" id="booktitle" class="input" style="width:300px;" readonly>
-							</p>
-							<p>
-								<label>저자 : </label>
-								<input type="text" id="author" class="input" readonly>
-								<label>출판사 : </label>
-								<input type="text" id="publisher" class="input" readonly>
-							</p>
-							<p>
-								<label>대출가능여부 :</label>
-								<input type="text" id="lend" class="input" readonly>
-							</p>
+							<div style="margin:5px; font-size: 18px; margin-bottom:25px;">도서상세정보</div>
+							<div style="padding-left:15px;">
+								<p>
+									<label>번호 : </label>
+									<input type="text" id="bookno" class="input" readonly>
+									<label>제목 : </label>
+									<input type="text" id="booktitle" class="input" style="width:300px;" readonly>
+								</p>
+								<p>
+									<label>저자 : </label>
+									<input type="text" id="author" class="input" readonly>
+									<label>출판사 : </label>
+									<input type="text" id="publisher" class="input" readonly>
+								</p>
+								<p>
+									<label>대출가능여부 :</label>
+									<input type="text" id="lend" class="input" readonly>
+								</p>
+							</div>
 						</div>
 					</div>
 					<div class="box-body" style="text-align: center; margin-top:20px; clear:both;">

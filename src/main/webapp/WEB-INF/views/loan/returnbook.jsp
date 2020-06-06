@@ -38,30 +38,31 @@
 					</div>
 				</div>
 				<br>
-				<div class="box-body" style="float:left; margin-left:25px; margin-right:70px;">
+				<div class="box-body" style="float:left; margin-left:25px; margin-right:60px;">
 					<div style="margin-top:50px;">
-						<h4>회원상세정보</h4>
-						<br>
-						<p>
-							<label>성명 : </label>
-							<input type="text" id="username" readonly>
-						</p>
-						<p>
-							<label>회원번호 : </label>
-							<input type="text" id="userno" readonly>
-						</p>
-						<p>
-							<label>생년월일 : </label>
-							<input type="text" id="birthday" readonly>
-						</p>
-						<p>
-							<label>전화번호 : </label>
-							<input type="text" id="phone" readonly>
-						</p>
-						<p>
-							<label>이메일 : </label>
-							<input type="text" id="email" readonly>
-						</p>
+						<div style="margin:5px; font-size: 18px; margin-bottom:25px;">회원상세정보</div>
+						<div style="padding-left:15px;">
+							<p>
+								<label>성명 : </label>
+								<input type="text" id="username" readonly>
+							</p>
+							<p>
+								<label>회원번호 : </label>
+								<input type="text" id="userno" readonly>
+							</p>
+							<p>
+								<label>생년월일 : </label>
+								<input type="text" id="birthday" readonly>
+							</p>
+							<p>
+								<label>전화번호 : </label>
+								<input type="text" id="phone" readonly>
+							</p>
+							<p>
+								<label>이메일 : </label>
+								<input type="text" id="email" readonly>
+							</p>
+						</div>
 					</div>
 					<div class="box-body" style="text-align: center;">
 					<button class="btn btn-warning" id="selectBook" style="margin-top:35px;">반납도서 >></button>
