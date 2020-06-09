@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>KS Library Management</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,7 +43,7 @@ footer{
 		text-align: center;
 		font-size:12px;
 		color:#5D5D5D;
-		margin-top:80px;
+		margin-top:180px;
 	}
 footer hr{
 		padding-bottom:5px;
@@ -64,6 +64,13 @@ footer hr{
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
+      		<li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">회원관리 <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="${pageContext.request.contextPath }/member/register">신규회원등록</a></li>
+	          <li><a href="${pageContext.request.contextPath }/member/listPage">회원목록확인</a></li>
+	        </ul>
+	      </li>
 			<li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">도서관리 <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
@@ -76,13 +83,6 @@ footer hr{
 	        <ul class="dropdown-menu">
 	          <li><a href="${pageContext.request.contextPath }/loan/lending">도서대출처리</a></li>
 	          <li><a href="${pageContext.request.contextPath }/loan/returnbook">도서반납처리</a></li>
-	        </ul>
-	      </li>
-	      <li class="dropdown">
-	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">회원관리 <b class="caret"></b></a>
-	        <ul class="dropdown-menu">
-	          <li><a href="${pageContext.request.contextPath }/member/register">신규회원등록</a></li>
-	          <li><a href="${pageContext.request.contextPath }/member/listPage">회원목록확인</a></li>
 	        </ul>
 	      </li>
       </ul>

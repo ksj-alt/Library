@@ -69,7 +69,7 @@
 						</div>
 					</div>
 					<div class="box-body" style="text-align: center;">
-					<button class="btn btn-warning" id="selectBook" style="margin-top:35px;">도서선택 >></button>
+					<button class="btn btn-primary" id="selectBook" style="margin-top:35px;">도서선택 >></button>
 				</div>
 				</div>
 				

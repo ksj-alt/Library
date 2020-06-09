@@ -50,7 +50,7 @@
 						</tbody>
 					</table>
 				</div>
-				<br><br><br>
+				<br><br>
 				<div class="box-body">
 					<div>
 						<div style="margin:5px; font-size: 18px; margin-bottom:25px;">도서상세정보</div>
@@ -70,9 +70,10 @@
 						</div>
 					</div>
 				</div>
+				<br>
 				<div class="box-footer" style="text-align:center; padding-top:55px; clear:both;">
-					<button type="button" id="return" class="btn btn-warning">반납하기</button>
-					<button type="reset" id="reset" class="btn btn-warning">취소</button>
+					<button type="button" id="return" class="btn btn-primary">반납하기</button>
+					<button type="reset" id="reset" class="btn btn-primary">회원선택</button>
 				</div>
 			</div>
 		</div>
