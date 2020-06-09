@@ -3,6 +3,7 @@
 <%@ include file="../include/header.jsp"%>
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/member/register" style="color:#221000">회원등록</a></li>
 		<li class="active"><a href="${pageContext.request.contextPath }/member/listPage">회원목록</a></li>

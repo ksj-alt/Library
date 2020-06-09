@@ -25,6 +25,7 @@
 </script>
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="${pageContext.request.contextPath }/book/register">도서등록</a></li>
 		<li><a href="${pageContext.request.contextPath }/book/listPage" style="color:#221000">도서목록</a></li>
@@ -104,7 +105,7 @@
 							</div>
 						</div><br>
 						<div class="box-footer" style="text-align:center;">  
-							<button type="submit" class="btn btn-warning">등록</button>
+							<br><button type="submit" class="btn btn-primary">등록</button>
 						</div>
 					</form>
 				</div>
