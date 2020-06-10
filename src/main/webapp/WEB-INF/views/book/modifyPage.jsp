@@ -81,27 +81,27 @@
 							</div>
 							<div class="form-group">
 								<label>분야<span style="color:red;"> * </span></label><br>
-								<select>
-									<option>선택</option>
-									<option>가정/육아</option>
-									<option>건강</option>
-									<option>경제/경영</option>
-									<option>과학</option>
-									<option>만화</option>
-									<option>소설</option>
-									<option>시/에세이</option>
-									<option>어린이(초등)</option>
-									<option>여행</option>
-									<option>역사/문화</option>
-									<option>예술/대중문화</option>
-									<option>외국어</option>
-									<option>요리</option>
-									<option>유아(0~7세)</option>
-									<option>인문</option>
-									<option>자기계발</option>
-									<option>정치/사회</option>
-									<option>종교</option>
-									<option>취미/실용/스포츠</option>
+								<select name="category" id="category">
+									<option>-----</option>
+									<option value="가정/육아">가정/육아</option>
+									<option value="건강">건강</option>
+									<option value="경제/경영">경제/경영</option>
+									<option value="과학">과학</option>
+									<option value="만화">만화</option>
+									<option value="소설">소설</option>
+									<option value="시/에세이">시/에세이</option>
+									<option value="어린이(초등)">어린이(초등)</option>
+									<option value="여행">여행</option>
+									<option value="역사/문화">역사/문화</option>
+									<option value="예술/대중문화">예술/대중문화</option>
+									<option value="외국어">외국어</option>
+									<option value="요리">요리</option>
+									<option value="유아(0~7세)">유아(0~7세)</option>
+									<option value="인문">인문</option>
+									<option value="자기계발">자기계발</option>
+									<option value="정치/사회">정치/사회</option>
+									<option value="종교">종교</option>
+									<option value="취미/실용/스포츠">취미/실용/스포츠</option>
 								</select>
 							</div>
 							<div class="form-group">
