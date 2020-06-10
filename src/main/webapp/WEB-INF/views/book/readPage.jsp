@@ -49,8 +49,8 @@
 		border-radius: 5px;
 	}
 	#image{
-		width:200px;
-		height:280px;
+		width:202px;
+		height:282px;
 		margin-right:30px;
 		border: 1px solid #A6A6A6;
 		margin-left:40px;

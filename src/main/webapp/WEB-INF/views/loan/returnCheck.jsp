@@ -8,7 +8,7 @@
 		<input type="hidden" name="userno" value="${userno }">
 		<input type="hidden" name="bookno" value="${bookno }">
 		<br>
-		<button type="submit" id="return" class="btn btn-warning">확인</button>
+		<button type="submit" id="return" class="btn btn-default">확인</button>
 	</form>
 </section>
 

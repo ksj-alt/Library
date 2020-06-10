@@ -33,7 +33,7 @@
 							</div>
 						</div>
 						<div class="box-footer"  style="text-align:center;">  
-							<br><br><button type="submit" class="btn btn-primary">등록</button>
+							<br><br><button type="submit" class="btn btn-default">등록</button>
 						</div>
 					</form>
 				</div>

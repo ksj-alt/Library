@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
+import com.yi.domain.MemberVO;
 import com.yi.domain.SearchCriteria;
 import com.yi.persistence.BookDAO;
 
@@ -64,5 +65,13 @@ public class BookService {
 	
 	public void removeAttach(String fullName) throws Exception {
 		dao.removeAttach(fullName);
+	}
+	
+	public List<BookVO> listBestTen() throws Exception {
+		return dao.listBestTen();
+	}
+	
+	public List<MemberVO> listBestMember() throws Exception {
+		return dao.listBestMember();
 	}
 }

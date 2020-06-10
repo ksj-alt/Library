@@ -88,9 +88,10 @@ public class LoanController {
 	}
 	
 	@RequestMapping(value="lendCheck", method=RequestMethod.POST)
-	public String lendCheckPost(LoanVO vo, Model model, BookVO bvo) throws Exception {
+	public String lendCheckPost(LoanVO vo, Model model, BookVO bvo, MemberVO mvo) throws Exception {
 		lservice.create(vo);
 		lservice.update(bvo);
+		lservice.updateMember(mvo);
 		
 		model.addAttribute("userno", vo.getUserno());
 		model.addAttribute("bookno", vo.getBookno());

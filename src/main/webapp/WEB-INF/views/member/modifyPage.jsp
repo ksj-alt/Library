@@ -38,9 +38,9 @@
 								<label>이메일</label>
 								<input type="text" name="email" class="form-control" value="${member.email }" placeholder="ex) test@naver.com">
 							</div>
-						</div><br>
+						</div><br><br>
 						<div class="box-footer"  style="text-align:center;">  
-							<br><button type="submit" class="btn btn-default" style="font-weight: bold;">수정</button>
+							<button type="submit" class="btn btn-default" style="font-weight: bold;">수정</button>
 						</div>
 					</form>
 				</div>

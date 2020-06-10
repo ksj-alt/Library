@@ -141,9 +141,9 @@
 								<label>저자소개</label>
 								<textarea rows="5" cols="30" name="authorintro" placeholder="Enter Content" class="form-control">${book.authorintro }</textarea>
 							</div>
-						</div><br>
+						</div><br><br><br>
 						<div class="box-footer" style="text-align:center;">  
-							<button type="submit" class="btn btn-warning">수정</button>
+							<button type="submit" class="btn btn-default">수정</button>
 						</div>
 					</form>
 				</div>
