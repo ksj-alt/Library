@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.yi.domain.BookVO;
 import com.yi.domain.Criteria;
+import com.yi.domain.MemberVO;
 import com.yi.domain.SearchCriteria;
  
 @Repository
@@ -91,6 +92,16 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public void removeAttach(String fullName) throws Exception {
 		sqlSession.delete(namespace + "removeAttach", fullName);
+	}
+
+	@Override
+	public List<BookVO> listBestTen() throws Exception {
+		return sqlSession.selectList(namespace + "bestTen");
+	}
+
+	@Override
+	public List<MemberVO> listBestMember() throws Exception {
+		return sqlSession.selectList(namespace + "bestMember");
 	}
 	
 }

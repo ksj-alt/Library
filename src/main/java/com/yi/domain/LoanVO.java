@@ -9,6 +9,9 @@ public class LoanVO {
 	private Date returndate;
 	private String status;
 	private String booktitle;
+	private String author;
+	private String publisher;
+	private String username;
 
 	public int getUserno() {
 		return userno;
@@ -58,10 +61,35 @@ public class LoanVO {
 		this.booktitle = booktitle;
 	}
 
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
 		return "LoanVO [userno=" + userno + ", bookno=" + bookno + ", lenddate=" + lenddate + ", returndate="
-				+ returndate + ", status=" + status + ", booktitle=" + booktitle + "]";
+				+ returndate + ", status=" + status + ", booktitle=" + booktitle + ", author=" + author + ", publisher="
+				+ publisher + ", username=" + username + "]";
 	}
 
 }

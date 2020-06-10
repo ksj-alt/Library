@@ -4,14 +4,14 @@
   
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="${pageContext.request.contextPath }/member/register">회원등록</a></li>
 		<li><a href="${pageContext.request.contextPath }/member/listPage" style="color:#221000">회원목록</a></li>
 	</ul>
 	<br>
-	<div class="content">
+	<div class="content" style="width:300px; margin:0 auto;">
 		<div class="row">
-			<div class="col-sm-8" style="padding-left:300px;">
 				<div class="box box-primary">
 					<form role="form" action="register" method="post" enctype="multipart/form-data">
 						<div class="box-body">
@@ -31,15 +31,15 @@
 								<label>이메일</label>
 								<input type="text" name="email" class="form-control" placeholder="ex) test@naver.com">
 							</div>
-						</div><br>
+						</div>
 						<div class="box-footer"  style="text-align:center;">  
-							<button type="submit" class="btn btn-warning">등록</button>
+							<br><br><button type="submit" class="btn btn-default">등록</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-	</div>
+
 </section>
 
 <%@ include file="../include/footer.jsp" %>

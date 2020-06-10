@@ -25,6 +25,7 @@
 </script>
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="${pageContext.request.contextPath }/book/register">도서등록</a></li>
 		<li><a href="${pageContext.request.contextPath }/book/listPage" style="color:#221000">도서목록</a></li>
@@ -43,7 +44,7 @@
 							<div class="form-group">
 								<label>분야<span style="color:red;"> * </span></label><br>
 								<select name="status">
-									<option>선택</option>
+									<option>-----</option>
 									<option value="가정/육아">가정/육아</option>
 									<option value="건강">건강</option>
 									<option value="경제/경영">경제/경영</option>
@@ -102,9 +103,9 @@
 								<label>저자소개</label>
 								<textarea rows="5" cols="30" name="authorintro" placeholder="Enter Content" class="form-control"></textarea>
 							</div>
-						</div><br>
+						</div><br><br>
 						<div class="box-footer" style="text-align:center;">  
-							<button type="submit" class="btn btn-warning">등록</button>
+							<br><button type="submit" class="btn btn-default">등록</button>
 						</div>
 					</form>
 				</div>

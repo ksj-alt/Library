@@ -99,4 +99,15 @@
 		delete from tbl_attach
 		 where fullName=#{fullName}
 	</delete>
+	
+	<select id="bestTen" resultType="BookVO">
+		select * from tbl_book
+		 order by lendnum desc limit 10
+	</select>
+	
+	<select id="bestMember" resultType="MemberVO">
+		select * from tbl_member
+		 order by totallend desc limit 5
+	</select>
+	
 </mapper>

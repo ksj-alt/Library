@@ -6,9 +6,6 @@
 	label{
 		width:100px;
 	}
-	tbody tr:hover{
-		background-color: #F6F6F6;
-	}
 </style>
 
 <script>
@@ -25,8 +22,9 @@
 </script>
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${pageContext.request.contextPath }/loan/lending">대출승인처리</a></li>
+		<li class="active"><a href="${pageContext.request.contextPath }/loan/lending">도서대출처리</a></li>
 		<li><a href="${pageContext.request.contextPath }/loan/returnbook" style="color:#221000">도서반납처리</a></li>
 	</ul>
 	<br>
@@ -34,7 +32,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="box box-primary">
-					<div class="box-body">
+					<div class="box-body" style="text-align:right; margin-right:15px; margin-top:8px;">
 						<select name="searchType" id="searchType">
 							<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 							<option value="uno" ${cri.searchType=='uno'? 'selected':'' }>회원번호</option>
@@ -45,8 +43,39 @@
 					</div>
 				</div>
 				<br>
+				<div class="box-body" style="float:left; margin-left:25px; margin-right:60px;">
+					<div style="margin-top:50px;">
+						<div style="margin:5px; font-size: 18px; margin-bottom:25px;">회원상세정보</div>
+						<div style="padding-left:15px;">
+							<p>
+								<label>성명 : </label>
+								<input type="text" id="username" readonly>
+							</p>
+							<p>
+								<label>회원번호 : </label>
+								<input type="text" id="userno" readonly>
+							</p>
+							<p>
+								<label>생년월일 : </label>
+								<input type="text" id="birthday" readonly>
+							</p>
+							<p>
+								<label>전화번호 : </label>
+								<input type="text" id="phone" readonly>
+							</p>
+							<p>
+								<label>이메일 : </label>
+								<input type="text" id="email" readonly>
+							</p>
+						</div>
+					</div>
+					<div class="box-body" style="text-align: center;">
+					<button class="btn btn-primary" id="selectBook" style="margin-top:35px;">도서선택 >></button>
+				</div>
+				</div>
+				
 				<div class="box-body" style="height:500px; float:left;">
-					<table class="table table-condensed" style="width:600px; float:left;">
+					<table class="table table-hover" style="width:600px; float:left;">
 						<thead>
 							<tr>
 								<th>회원번호</th>
@@ -54,7 +83,7 @@
 								<th>생년월일</th>
 								<th>전화번호</th>
 								<th>이메일</th>
-								<th>회원선택</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -65,44 +94,12 @@
 								<td>${member.birthday }</td>
 								<td>${member.phone }</td>
 								<td>${member.email }</td>
-								<td><button class="selectUser" style="font-size:12px;">선택</button></td>
+								<td><button class="selectUser" style="font-size:12px;">회원선택</button></td>
 							</tr>
 						</c:forEach>
 						</tbody>
 					</table>
-				</div>
-				
-				<div class="box-body" style="float:left; margin-left:70px;">
-					<div>
-						<h4>대출회원상세정보</h4>
-						<br>
-						<p>
-							<label>성명 : </label>
-							<input type="text" id="username" readonly>
-						</p>
-						<p>
-							<label>회원번호 : </label>
-							<input type="text" id="userno" readonly>
-						</p>
-						<p>
-							<label>생년월일 : </label>
-							<input type="text" id="birthday" readonly>
-						</p>
-						<p>
-							<label>전화번호 : </label>
-							<input type="text" id="phone" readonly>
-						</p>
-						<p>
-							<label>이메일 : </label>
-							<input type="text" id="email" readonly>
-						</p>
-					</div>
-				</div>
-				<br>
-				<div class="box-body" style="padding-left:160px; text-align: center; float:left;">
-					<button class="btn btn-warning" id="selectBook" style="margin-top:20px;">도서선택 >></button>
-				</div>
-				<div class="box-body" style="clear:both;">
+					<div class="box-body">
 					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev == true }">
@@ -117,6 +114,9 @@
 						</ul>
 					</div>
 				</div>
+				</div>
+				
+				
 			</div>
 		</div>
 	</div> 

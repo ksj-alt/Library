@@ -1,5 +1,7 @@
 package com.yi.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,4 +36,7 @@ public class LoanService {
 		dao.returnLoan(vo);
 	}
 	
+	public List<LoanVO> returnBookList(int userno) throws Exception {
+		return dao.returnBookList(userno);
+	}
 }

@@ -3,12 +3,13 @@
 <%@ include file="../include/header.jsp"%>
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/book/register" style="color:#221000">도서등록</a></li>
 		<li class="active"><a href="${pageContext.request.contextPath }/book/listPage">도서목록</a></li>
 	</ul>
 	<br>
-	<div class="box-body">
+	<div class="box-body" style="text-align:right; margin-right:15px; margin-top:8px;">
 		<select name="searchType" id="searchType">
 			<option value="n" ${cri.searchType==null? 'selected':'' }>-----</option>
 			<option value="bno" ${cri.searchType=='bno'? 'selected':'' }>도서번호</option>
@@ -24,11 +25,12 @@
 		<table class="table table-hover" style="width:980px;">
 			<thead>
 				<tr>
-					<th>도서번호</th> 
+					<th>번호</th> 
 					<th>도서명</th>
 					<th>저자</th>
 					<th>출판사</th>
 					<th>대출가능여부</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,17 +38,19 @@
 					<c:forEach var="book" items="${list }">
 						<tr>
 							<td>${book.bookno }</td>
-							<td style="width:500px;"><a href="${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}
-											&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}" style="color:#353535">${book.booktitle }</a></td>
+							<td>${book.booktitle }</td>
 							<td>${book.author }</td>
 							<td>${book.publisher }</td>
 							<td style="padding-left:32px;">${book.lend }</td>
+							<td><button onClick="location.href='${pageContext.request.contextPath }/book/readPage?bookno=${book.bookno}&page=${cri.page}&searchType=${cri.searchType}&keyword=${cri.keyword}'"
+											style="font-size:12px;">상세보기</button></td>
 						</tr>
 					</c:forEach>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	<br>
 	<div class="box-footer">
 		<div class="text-center">
 			<ul class="pagination">

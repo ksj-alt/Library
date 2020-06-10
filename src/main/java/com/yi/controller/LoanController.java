@@ -63,22 +63,40 @@ public class LoanController {
 		return "/loan/lendingSelBook";
 	}
 	
+//	@RequestMapping(value="lendingSelBook", method=RequestMethod.POST)
+//	public String lendingSelBookPost(LoanVO vo, BookVO bvo, SearchCriteria cri, Model model, int userno) throws Exception {
+//		List<BookVO> blist = bservice.listSearchCriteria2(cri);
+//		
+//		PageMaker pageMaker = new PageMaker();
+//		pageMaker.setCri(cri);
+//		pageMaker.setTotalCount(bservice.totalSearchCount(cri));
+//		
+//		model.addAttribute("cri", cri);
+//		model.addAttribute("blist", blist);
+//		model.addAttribute("pageMaker", pageMaker);
+//		model.addAttribute("userno", userno);
+//		
+//		return "/loan/lendingSelBook";
+//	}
+	
 	@RequestMapping(value="lendCheck", method=RequestMethod.GET)
 	public String lendCheck(Model model, int userno, int bookno) throws Exception {
 		model.addAttribute("userno", userno);
-		model.addAttribute("bookno", bookno);
+		model.addAttribute("bookno", bookno);		
+		
 		return "/loan/lendCheck";
 	}
 	
 	@RequestMapping(value="lendCheck", method=RequestMethod.POST)
-	public String lendCheckPost(LoanVO vo, Model model, BookVO bvo) throws Exception {
-				
+	public String lendCheckPost(LoanVO vo, Model model, BookVO bvo, MemberVO mvo) throws Exception {
 		lservice.create(vo);
 		lservice.update(bvo);
+		lservice.updateMember(mvo);
+		
 		model.addAttribute("userno", vo.getUserno());
-		model.addAttribute("bookno", vo.getBookno());		
+		model.addAttribute("bookno", vo.getBookno());
 
-		return "redirect:/loan/lending";
+		return "redirect:/loan/lendingSelBook";
 	}
 	
 	@RequestMapping(value="returnbook", method=RequestMethod.GET)
@@ -98,16 +116,10 @@ public class LoanController {
 	}
 	
 	@RequestMapping(value="returnSelBook", method=RequestMethod.GET)
-	public String returnSelBook(SearchCriteria cri, Model model, int userno) throws Exception {
-		List<BookVO> blist = bservice.listSearchCriteria2(cri);
+	public String returnSelBook(Model model, int userno) throws Exception {
+		List<LoanVO> list = lservice.returnBookList(userno);
 		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(bservice.totalSearchCount(cri));
-		
-		model.addAttribute("cri", cri);
-		model.addAttribute("blist", blist);
-		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("list", list);
 		model.addAttribute("userno", userno);
 		
 		return "/loan/returnSelBook";
@@ -130,6 +142,6 @@ public class LoanController {
 		model.addAttribute("userno", vo.getBookno());
 		model.addAttribute("bookno", vo.getBookno());
 		
-		return "redirect:/loan/returnbook";
+		return "redirect:/loan/returnSelBook";
 	}
 }

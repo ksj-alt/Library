@@ -49,8 +49,8 @@
 		border-radius: 5px;
 	}
 	#image{
-		width:200px;
-		height:280px;
+		width:202px;
+		height:282px;
 		margin-right:30px;
 		border: 1px solid #A6A6A6;
 		margin-left:40px;
@@ -100,6 +100,7 @@
 </script>
 
 <section>
+	<br>
 	<ul class="nav nav-tabs">
 		<li><a href="${pageContext.request.contextPath }/book/register" style="color:#221000">도서등록</a></li>
 		<li><a href="${pageContext.request.contextPath }/book/listPage" style="color:#221000">도서목록</a></li>
