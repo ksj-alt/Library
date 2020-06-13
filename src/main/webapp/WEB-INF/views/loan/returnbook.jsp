@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="box-body" style="text-align: center;">
-					<button class="btn btn-primary" id="selectBook" style="margin-top:35px;">반납도서 >></button>
+					<button class="btn btn-warning" id="selectBook" style="margin-top:35px;">반납도서 >></button>
 				</div>
 				</div>
 				<div class="box-body" style="height:500px; float:left;">

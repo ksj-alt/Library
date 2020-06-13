@@ -35,6 +35,7 @@ public class HomeController {
 		List<BookVO> list = bservice.listBestTen();
 		List<MemberVO> mlist = bservice.listBestMember();
 		
+		
 		model.addAttribute("list", list);
 		model.addAttribute("mlist", mlist);
 		return "main";

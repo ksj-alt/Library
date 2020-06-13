@@ -101,7 +101,8 @@
 	</delete>
 	
 	<select id="bestTen" resultType="BookVO">
-		select * from tbl_book
+		select * from tbl_book b left join tbl_attach a
+		    on b.bookno = a.bookno 
 		 order by lendnum desc limit 10
 	</select>
 	
