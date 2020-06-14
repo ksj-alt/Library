@@ -127,9 +127,10 @@
 			<div id="rightContent">
 				<div class="box box-primary">
 					<div class="form-group" style="float:left;" id="image">
-						<c:forEach var="file" items="${book.files }">
+						<%-- <c:forEach var="file" items="${book.files }">
 							<img src="displayFile?filename=${file }">
-						</c:forEach>
+						</c:forEach> --%>
+						<img src="${pageContext.request.contextPath }/resources/images/x${book.isbn}.jpg">
 					</div>
 					<div style="padding-left:30px; float:left; width:350px;">
 						<div class="form-group" style="padding-top:5px;">
